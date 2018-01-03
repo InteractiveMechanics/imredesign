@@ -58,6 +58,12 @@ if ( ! function_exists( 'im2018_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
+		
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary', 'im2018' ),
+		) );
+
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'im2018_custom_background_args', array(
@@ -133,7 +139,11 @@ add_action( 'widgets_init', 'im2018_widgets_init' );
  * Enqueue scripts and styles.
  */
 function im2018_scripts() {
+	wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+	
 	wp_enqueue_style( 'im2018-style', get_stylesheet_uri() );
+	
+	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',  array('jquery'), '3.3.7', true);
 
 	wp_enqueue_script( 'im2018-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
