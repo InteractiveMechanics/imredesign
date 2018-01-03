@@ -83,6 +83,18 @@ if ( ! function_exists( 'im2018_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'im2018_setup' );
 
+
+/** 
+* Add featured image custom sizes
+*/
+
+add_image_size( 'im2018_thumbnail', 550, 700, true ); // width, height, crop
+add_image_size( 'staff_headshot_thumbnail', 400, 400, true );
+
+
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -112,6 +124,10 @@ function im2018_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'im2018_widgets_init' );
+
+
+
+
 
 /**
  * Enqueue scripts and styles.
