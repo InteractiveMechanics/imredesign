@@ -1,7 +1,7 @@
+.btn,
 button,
 input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type="reset"] {
 	border: 1px solid;
 	border-color: $color__border-button;
 	border-radius: 3px;
@@ -19,4 +19,25 @@ input[type="submit"] {
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+}
+
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $grey;
+	@include special_el_text;
+	border-radius: 0px;
+	background: $grey;
+	color: $white;
+	padding: 20px 30px;
+	
+	&:hover {
+		border-color: $grey;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $grey;
+	}
+
+	
 }

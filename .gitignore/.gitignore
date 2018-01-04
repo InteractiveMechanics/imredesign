@@ -9,7 +9,11 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
+
 wp-content/themes/im2018/node_modules/
+wp-content/themes/im2018/bower_components
+wp-content/themes/im2018/dist
+
 
 /.htaccess
 /license.txt

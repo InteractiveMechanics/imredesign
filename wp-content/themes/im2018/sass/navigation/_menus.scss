@@ -1,3 +1,9 @@
+.navbar-brand {
+	height: 65px;
+	margin-left: 0px !important;
+	padding: 0px;
+}
+
 .navbar-default {
 	background-color: transparent;
 	border-color: transparent;
@@ -9,26 +15,40 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .nav-menu {
-	width: calc(100% - 150px);
+	width: calc(100% - 315px); //315 = width of .navbar-right + width of logo-header.svg
+	height: 65px;
 }
 
 .navbar-default .navbar-collapse, 
 .navbar-default .navbar-form {
 	border-color: transparent;
+	margin: 0px;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+	color: $dark_grey;
+	font-family: $proxima_nova;
+	font-size: 14px;
+	letter-spacing: 2.5px; //1px listed in comps but 2.5px matches visually
+	text-transform: uppercase;
 }
 
 .navbar-right {
-	float: right!important;
-    margin-right: 0px;
+    margin-right: -15px;
     padding: 0px;
-    width: 95px;
+    width: 142px;
+    height: 65px;
     li>a {
-	    text-alignt: right;
+	    text-align: right;
 	    padding-right: 0px;
+	    color: $royal_blue !important;
+	    font-family: $proxima_nova--semibold !important;
+	    
     }
 }
-
 

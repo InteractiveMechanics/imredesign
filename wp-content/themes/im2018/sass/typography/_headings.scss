@@ -7,7 +7,7 @@ h1, h2, h3 {
 }
 
 h4, h5 {
-	font-family: $proxima-nova;
+	font-family: $proxima_nova;
 }
 
 h1 {
@@ -33,7 +33,8 @@ h4 {
 
 h5 {
 	font-size: 12px;
-	letter-spacing: 1px;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
 }
 
 

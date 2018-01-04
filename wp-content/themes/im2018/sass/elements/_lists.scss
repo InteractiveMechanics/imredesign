@@ -23,3 +23,18 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+// https://getbootstrap.com/docs/3.3/components/#list-group-linked
+.list-group {
+	margin-bottom: 0px;
+}
+
+.list-group-item {
+	display: inline-block;
+    padding: 15px 20px;
+    border: none;
+    margin-bottom: 0px;
+    &:last-child {
+	    padding-right: 0px;
+    }	
+}

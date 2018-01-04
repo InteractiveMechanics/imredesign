@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Normalize
 # Typography
 # Elements
+# Layout
 # Forms
 # Navigation
 	## Links
@@ -267,7 +268,8 @@ h4 {
 
 h5 {
   font-size: 12px;
-  letter-spacing: 1px; }
+  letter-spacing: 2.5px;
+  text-transform: uppercase; }
 
 p {
   margin-bottom: 1.5em; }
@@ -331,6 +333,13 @@ header {
   margin-left: 40px;
   margin-right: 40px; }
 
+section {
+  margin-left: 40px;
+  margin-right: 40px; }
+
+address {
+  margin-bottom: 0px; }
+
 ul, ol {
   margin: 0 0 1.5em 3em; }
 
@@ -351,6 +360,17 @@ dt {
 dd {
   margin: 0 1.5em 1.5em; }
 
+.list-group {
+  margin-bottom: 0px; }
+
+.list-group-item {
+  display: inline-block;
+  padding: 15px 20px;
+  border: none;
+  margin-bottom: 0px; }
+  .list-group-item:last-child {
+    padding-right: 0px; }
+
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
@@ -366,12 +386,20 @@ table {
   width: 100%; }
 
 /*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+.full-width-border {
+  border-bottom: 1px solid #e5e5e6;
+  padding: 0px;
+  margin: 0px; }
+
+/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+.btn,
 button,
 input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type="reset"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
@@ -381,19 +409,35 @@ input[type="submit"] {
   font-size: 0.75rem;
   line-height: 1;
   padding: .6em 1em .4em; }
+  .btn:hover,
   button:hover,
   input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
+  input[type="reset"]:hover {
     border-color: #ccc #bbb #aaa; }
-  button:active, button:focus,
+  .btn:active, .btn:focus,
+  button:active,
+  button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
   input[type="reset"]:active,
-  input[type="reset"]:focus,
-  input[type="submit"]:active,
-  input[type="submit"]:focus {
+  input[type="reset"]:focus {
     border-color: #aaa #bbb #bbb; }
+
+input[type="submit"] {
+  border: 1px solid;
+  border-color: #808084;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border-radius: 0px;
+  background: #808084;
+  color: #ffffff;
+  padding: 20px 30px; }
+  input[type="submit"]:hover {
+    border-color: #808084; }
+  input[type="submit"]:active, input[type="submit"]:focus {
+    border-color: #808084; }
 
 input[type="text"],
 input[type="email"],
@@ -411,10 +455,14 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px; }
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #808084;
+  border: 1px solid #808084;
+  border-radius: 0px;
+  padding: 20px; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -431,10 +479,10 @@ textarea {
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
   textarea:focus {
-    color: #111; }
+    color: #808084; }
 
 select {
-  border: 1px solid #ccc; }
+  border: 1px solid #808084; }
 
 textarea {
   width: 100%; }
@@ -459,6 +507,11 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.navbar-brand {
+  height: 65px;
+  margin-left: 0px !important;
+  padding: 0px; }
+
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
@@ -471,20 +524,31 @@ a {
   align-items: center; }
 
 .nav-menu {
-  width: calc(100% - 150px); }
+  width: calc(100% - 315px);
+  height: 65px; }
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: transparent; }
+  border-color: transparent;
+  margin: 0px; }
+
+.navbar-default .navbar-nav > li > a {
+  color: #2d3142;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase; }
 
 .navbar-right {
-  float: right !important;
-  margin-right: 0px;
+  margin-right: -15px;
   padding: 0px;
-  width: 95px; }
+  width: 142px;
+  height: 65px; }
   .navbar-right li > a {
-    text-alignt: right;
-    padding-right: 0px; }
+    text-align: right;
+    padding-right: 0px;
+    color: #3a598d !important;
+    font-family: "proxima-nova--semibold", Helvetica, Arial, sans-serif !important; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -614,6 +678,37 @@ a {
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+#colophon input[type="email"] {
+  width: 350px;
+  margin-right: 30px; }
+#colophon .flex-container {
+  display: flex;
+  justify-content: space-between; }
+#colophon section:first-of-type {
+  margin-top: 30px;
+  margin-bottom: 30px; }
+#colophon section:last-of-type {
+  margin-top: 40px;
+  margin-bottom: 45px; }
+
+.site-info {
+  text-align: right;
+  color: #808084; }
+  .site-info h3 {
+    color: #3a598d;
+    font-size: 18px;
+    font-style: italic;
+    line-height: initial;
+    margin-top: 0px;
+    margin-bottom: 20px; }
+  .site-info a {
+    color: #808084; }
+    .site-info a:visited {
+      color: #808084; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

@@ -14,17 +14,49 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'im2018' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'im2018' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'im2018' ), 'im2018', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+		<section class="fluid-container">
+			<div class="row">
+				<div class="col-sm-12 flex-container">
+					<form class="form-inline">
+						<label class="sr-only" for="email">Email</label>
+						<input type="email" name="email" placeholder="Sign Up for Our Email List">
+						
+						<input class="btn" type="submit" value="Submit">
+					</form>
+				
+					<div id="footer-social" class="social list-group">
+						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-facebook.svg"); ?></a>
+						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-twitter.svg"); ?></a>
+						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-instagram.svg"); ?></a>
+						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-dribbble.svg"); ?></a>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		
+		<div class="full-width-border"></div>
+		
+		<section class="fluid-container">
+			
+			<div class="row">
+				<div class="col-sm-12 flex-container">
+					<a class="" href="#">
+						<?php include("assets/logos/logo-footer.svg"); ?>
+					</a>
+					
+					<div class="site-info">
+						<h3>Beautiful digital design for arts, culture, and education</h3>
+						<address>
+							<h5>219 Cuthbert Street Suite 210 Philadelphia, PA 19102</h5>
+						</address>
+						<h5><a href="">hello@interactivemechanics.com</a> &#47; <a href="#">(267) 888-2483</a> &#47; <a href="#">Careers</a></h5>
+					</div>
+					
+				</div>
+			</div>
+			
+		</section><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
