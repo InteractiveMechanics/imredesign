@@ -6,6 +6,10 @@
  *
  * @package im2018
  */
+ 
+function printThemePath() {
+   echo get_site_url() . '/wp-content/themes/' . get_template();
+}
 
 if ( ! function_exists( 'im2018_setup' ) ) :
 	/**

@@ -15,7 +15,25 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<h1>Hello, World!</h1>
+		<div class="jumbotron">
+			<div class="media-container">
+				<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-8">
+						<h1>Beautiful digital experiences for museums and archives</h1>
+					</div>
+					<div class="col-sm-9">
+						<p>Interactive Mechanics is a digital design firm that partners with cultural and educational organizations on design, development, user experience, and digital strategy.</p>
+						
+						<a class="btn btn-default" href="#" role="button">Explore Our Work</a>
+					</div>
+					
+					
+				</div>
+  			</div>
+		</div>
 
 		<?php
 		// Show the selected front page content.

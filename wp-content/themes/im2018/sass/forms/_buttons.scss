@@ -3,22 +3,24 @@ button,
 input[type="button"],
 input[type="reset"] {
 	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
-	line-height: 1;
-	padding: .6em 1em .4em;
+	border-color: transparent;
+	border-radius: 0px;
+	@include special_el_text;
+	
+	background: linear-gradient(to right, $light_blue, $royal_blue);
+	color: $white;
+	padding: 20px 30px;
+	font-size: 14px;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		background: linear-gradient(to left, $royal_blue, $royal_blue);
 	}
 
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+	
 }
 
 input[type="submit"] {

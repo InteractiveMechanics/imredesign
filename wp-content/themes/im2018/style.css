@@ -241,13 +241,14 @@ th {
   src: url("fonts/adelle/Adelle.otf");
   font-weight: normal;
   font-style: normal; }
-h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+h1, h2, h3, h4, .jumbotron p, h5, h6 {
+  clear: both;
+  color: #221f1f; }
 
 h1, h2, h3 {
   font-family: "adelle", Georgia, serif; }
 
-h4, h5 {
+h4, .jumbotron p, h5 {
   font-family: "proxima-nova", Helvetica, Arial, sans-serif; }
 
 h1 {
@@ -262,7 +263,7 @@ h3 {
   font-size: 30px;
   line-height: 44px; }
 
-h4 {
+h4, .jumbotron p {
   font-size: 24px;
   line-height: 36px; }
 
@@ -272,7 +273,8 @@ h5 {
   text-transform: uppercase; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -401,19 +403,21 @@ button,
 input[type="button"],
 input[type="reset"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
+  border-color: transparent;
+  border-radius: 0px;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: .6em 1em .4em; }
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #478ebb, #3a598d);
+  color: #ffffff;
+  padding: 20px 30px;
+  font-size: 14px; }
   .btn:hover,
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover {
-    border-color: #ccc #bbb #aaa; }
+    background: linear-gradient(to left, #3a598d, #3a598d); }
   .btn:active, .btn:focus,
   button:active,
   button:focus,
@@ -515,7 +519,8 @@ a {
 .navbar-default {
   background-color: transparent;
   border-color: transparent;
-  margin: 40px -15px; }
+  margin: 40px -15px;
+  z-index: 2; }
 
 .navbar-nav {
   margin: 0;
@@ -636,6 +641,32 @@ a {
 .site-content:after,
 .site-footer:after {
   clear: both; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.jumbotron {
+  padding-left: 65px;
+  padding-top: 65px;
+  padding-bottom: 105px; }
+  .jumbotron h1 {
+    margin: 0px;
+    font-size: 54px;
+    line-height: 62px; }
+  .jumbotron p {
+    margin-top: 15px; }
+  .jumbotron .btn {
+    margin-top: 60px; }
+
+.media-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden; }
+  .media-container img {
+    height: initial;
+    max-width: initial; }
 
 /*--------------------------------------------------------------
 # Widgets
