@@ -498,7 +498,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  transition: all 0.25s ease-in-out; }
   a:visited {
     color: purple; }
   a:hover, a:focus, a:active {
@@ -514,7 +514,10 @@ a {
 .navbar-brand {
   height: 65px;
   margin-left: 0px !important;
-  padding: 0px; }
+  padding: 0px;
+  transition: all 0.25s ease-in-out; }
+  .navbar-brand:hover {
+    opacity: 0.65; }
 
 .navbar-default {
   background-color: transparent;
@@ -537,12 +540,34 @@ a {
   border-color: transparent;
   margin: 0px; }
 
+.nav-menu > li {
+  padding: 0px 15px; }
+
 .navbar-default .navbar-nav > li > a {
   color: #2d3142;
   font-family: "proxima-nova", Helvetica, Arial, sans-serif;
   font-size: 14px;
   letter-spacing: 2.5px;
+  padding: 10px 0px;
   text-transform: uppercase; }
+  .navbar-default .navbar-nav > li > a:after {
+    content: "";
+    border-bottom: 1px solid #3a598d;
+    position: absolute;
+    margin-right: 0px;
+    left: 50%;
+    height: 2px;
+    background: transparent;
+    width: 0%;
+    bottom: 8px;
+    transition: width 0.5s ease, left 0.5s ease; }
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #3a598d; }
+    .navbar-default .navbar-nav > li > a:hover:after {
+      right: 0;
+      height: 2px;
+      width: 100%;
+      left: 0; }
 
 .navbar-right {
   margin-right: -15px;

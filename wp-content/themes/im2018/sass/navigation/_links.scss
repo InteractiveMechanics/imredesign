@@ -1,6 +1,6 @@
 a {
-	color: $color__link;
-
+	transition: $transition;
+	
 	&:visited {
 		color: $color__link-visited;
 	}
