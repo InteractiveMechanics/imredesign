@@ -43,3 +43,11 @@
 	
 }
 
+// footer logo
+#Footer_3_copy {
+	transition: $transition;
+	&:hover {
+		opacity: 0.65;
+	}
+}
+

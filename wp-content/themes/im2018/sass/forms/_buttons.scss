@@ -1,4 +1,5 @@
 .btn,
+.btn-default,
 button,
 input[type="button"],
 input[type="reset"] {
@@ -10,10 +11,32 @@ input[type="reset"] {
 	background: linear-gradient(to right, $light_blue, $royal_blue);
 	color: $white;
 	padding: 20px 30px;
+	
 	font-size: 14px;
+	
+	 position: relative;
+	 z-index: 100;
+	
+	&:before {
+	    border-radius: inherit;
+	    background-image: linear-gradient(to right, $royal_blue, $royal_blue);
+	    content: '';    
+	    display: block;
+	    height: 100%;
+	    position: absolute;
+	    top: 0; left: 0;
+	    opacity: 0;
+	    width: 100%;
+	    z-index: -100;
+	    transition: opacity 0.25s linear;
+  	}
+
 
 	&:hover {
-		background: linear-gradient(to left, $royal_blue, $royal_blue);
+		border-color: transparent;
+		&:before {
+			opacity: 1.0;
+		}
 	}
 
 	&:active,
@@ -31,9 +54,13 @@ input[type="submit"] {
 	background: $grey;
 	color: $white;
 	padding: 20px 30px;
+	transition: $transition;
 	
 	&:hover {
-		border-color: $grey;
+		border-color: $royal_blue;
+		background: $royal_blue;
+		color: $white;
+		
 	}
 
 	&:active,

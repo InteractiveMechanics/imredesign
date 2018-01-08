@@ -17,3 +17,24 @@ a {
 		outline: 0;
 	}
 }
+
+a.btn {
+	&:visited {
+		color: $white;
+	}
+}
+
+
+
+a.list-group-item {
+	.st0 {
+		transition: all 0.5s ease-in-out;
+	}
+	&:hover {
+		background-color: transparent;
+		.st0 {
+			fill: $gold;
+		}
+	}
+	
+}
