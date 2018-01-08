@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<section class="fluid-container">
+		<section class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12 flex-container">
 					<form class="form-inline">
@@ -37,7 +37,7 @@
 		
 		<div class="full-width-border"></div>
 		
-		<section class="fluid-container">
+		<section class="container-fluid">
 			
 			<div class="row">
 				<div class="col-sm-12 flex-container">

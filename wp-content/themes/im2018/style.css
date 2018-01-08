@@ -336,8 +336,8 @@ header {
   margin-right: 40px; }
 
 section {
-  margin-left: 40px;
-  margin-right: 40px; }
+  margin-left: 25px !important;
+  margin-right: 25px !important; }
 
 address {
   margin-bottom: 0px; }
@@ -388,13 +388,35 @@ table {
   width: 100%; }
 
 /*--------------------------------------------------------------
-# Elements
+# Helpers
 --------------------------------------------------------------*/
 .full-width-border {
   border-bottom: 1px solid #e5e5e6;
   padding: 0px;
   margin: 0px; }
 
+/*--------------------------------------------------------------
+# Client Blocks
+--------------------------------------------------------------*/
+#client-blocks-container {
+  background: #e5e5e6;
+  padding-top: 45px;
+  padding-bottom: 45px; }
+  #client-blocks-container .row {
+    margin-left: -5px;
+    margin-right: -5px; }
+    #client-blocks-container .row .col-sm-3 {
+      padding-left: 5px;
+      padding-right: 5px; }
+
+.client-block {
+  background: #ffffff;
+  height: auto;
+  margin: 5px 0px; }
+
+/*--------------------------------------------------------------
+# Featured Content Blocks
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/

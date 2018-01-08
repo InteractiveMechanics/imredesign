@@ -34,6 +34,73 @@ get_header(); ?>
 				</div>
   			</div>
 		</div>
+		
+		<article id="featured-content">
+			<section class="container-fluid">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="featured-content-block">
+						</div>
+					</div>
+				</div>
+			</section>
+		</article>
+		
+		<article id="client-blocks-container">
+			<section class="container-fluid">
+				<div class="row">
+						
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>
+					
+					<div class="col-sm-3">
+						<div class="client-block">
+							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
+						</div>
+					</div>												
+						
+				</div>
+			</section>
+		</article>
 
 		<?php
 		// Show the selected front page content.
