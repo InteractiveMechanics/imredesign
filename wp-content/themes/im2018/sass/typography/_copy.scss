@@ -1,5 +1,6 @@
 p {
-	margin-bottom: 1.5em;
+	font-size: 17px;
+	line-height: 1.8;
 	font-family: $proxima_nova;
 }
 
@@ -8,8 +9,44 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0px 0px 55px;
+	padding: 0px;
+	border-left: none;
+	border-bottom: 1px solid $light_grey;
+	padding-bottom: 55px;
+	position: relative;
+	
+	p {
+		@extend h3;
+		color: $royal_blue;
+	}
+	
+	footer {
+		h5 {
+			color: $grey !important;
+			&:first-of-type {
+				color: $gold !important;
+				font-size: 18px;
+			}
+		}
+		
+		
+		&:before {
+			content: "";
+		}
+		
+	}
+	
+	&:before {
+		content: url('assets/icons/icon-blockquote.svg');
+		position: absolute;
+		left: -47px;
+		top: -25px;
+	}
+	
+	
 }
+
 
 address {
 	margin: 0 0 1.5em;

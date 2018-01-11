@@ -1,0 +1,88 @@
+#feat-content-container {
+	background: $white;
+	padding-top: 0px;
+	padding-bottom: 45px;
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+		.col-sm-4 {
+			padding-left: 0px;
+			padding-right: 0px;
+					}
+		
+	}
+}
+
+
+.feat-content-block,
+.feat-content-block-wide {
+	display: block;
+	height: 550px;
+	margin: 0px;
+	padding: 45px 40px;
+	transition: $transition;
+	z-index: 1;
+	position: relative;
+	
+	h3 {
+		color: $white;
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	h5 {
+		color: $white;
+		margin-top: 0px;	
+	}
+	
+	
+	img {
+		width: 50%;
+		position: absolute;
+		bottom: 45px;
+	}
+	
+	&:hover {
+		// changing background size on hover looks janky -- to see this jankiness in action, change the inline css property from background to background-image
+		background-size: 125% 125%;
+		background-position: top left;
+		transform: scale(1.025, 1.025);
+		box-shadow: 0px 0px 5px rgba(0,0,0, 0.75);
+		z-index: 3;
+		text-decoration: none;
+	
+	}
+	
+	&:focus {
+		text-decoration: none;
+	}
+	
+}
+
+.feat-content-block-wide {
+	h3 {
+		margin: 20px 0px 0px;
+	}
+	
+	p {
+		color: $white;
+		@extend h4;
+	}
+	
+	img {
+		width: 20%;
+		bottom: 50px;
+	}
+	
+	.btn {
+		position: absolute;
+		bottom: 50px;
+		right: 40px;
+	}
+	
+	&:hover {
+		transform: scale(1, 1);
+		box-shadow: none;
+		z-index: initial;
+	}
+}

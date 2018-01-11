@@ -241,14 +241,14 @@ th {
   src: url("fonts/adelle/Adelle.otf");
   font-weight: normal;
   font-style: normal; }
-h1, h2, h3, h4, .jumbotron p, h5, h6 {
+h1, h2, h3, blockquote p, h4, .feat-content-block-wide p, .jumbotron p, h5, h6 {
   clear: both;
   color: #221f1f; }
 
-h1, h2, h3 {
+h1, h2, h3, blockquote p {
   font-family: "adelle", Georgia, serif; }
 
-h4, .jumbotron p, h5 {
+h4, .feat-content-block-wide p, .jumbotron p, h5 {
   font-family: "proxima-nova", Helvetica, Arial, sans-serif; }
 
 h1 {
@@ -259,11 +259,11 @@ h2 {
   font-size: 36px;
   line-height: 1.4em; }
 
-h3 {
+h3, blockquote p {
   font-size: 30px;
   line-height: 44px; }
 
-h4, .jumbotron p {
+h4, .feat-content-block-wide p, .jumbotron p {
   font-size: 24px;
   line-height: 36px; }
 
@@ -273,14 +273,34 @@ h5 {
   text-transform: uppercase; }
 
 p {
-  margin-bottom: 1.5em;
+  font-size: 17px;
+  line-height: 1.8;
   font-family: "proxima-nova", Helvetica, Arial, sans-serif; }
 
 dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em; }
+  margin: 0px 0px 55px;
+  padding: 0px;
+  border-left: none;
+  border-bottom: 1px solid #e5e5e6;
+  padding-bottom: 55px;
+  position: relative; }
+  blockquote p {
+    color: #3a598d; }
+  blockquote footer h5 {
+    color: #808084 !important; }
+    blockquote footer h5:first-of-type {
+      color: #cfa667 !important;
+      font-size: 18px; }
+  blockquote footer:before {
+    content: ""; }
+  blockquote:before {
+    content: url("assets/icons/icon-blockquote.svg");
+    position: absolute;
+    left: -47px;
+    top: -25px; }
 
 address {
   margin: 0 0 1.5em; }
@@ -395,6 +415,14 @@ table {
   padding: 0px;
   margin: 0px; }
 
+.content-wrapper p {
+  margin-bottom: 40px; }
+.content-wrapper h5 {
+  color: #cfa667; }
+.content-wrapper img {
+  min-width: 100%;
+  margin-bottom: 40px; }
+
 /*--------------------------------------------------------------
 # Client Blocks
 --------------------------------------------------------------*/
@@ -412,11 +440,78 @@ table {
 .client-block {
   background: #ffffff;
   height: auto;
-  margin: 5px 0px; }
+  margin: 5px 0px;
+  transition: all 0.25s ease-in-out; }
+  .client-block:hover {
+    opacity: 0.65; }
 
 /*--------------------------------------------------------------
 # Featured Content Blocks
 --------------------------------------------------------------*/
+#feat-content-container {
+  background: #ffffff;
+  padding-top: 0px;
+  padding-bottom: 45px; }
+  #feat-content-container .row {
+    margin-left: 0px;
+    margin-right: 0px; }
+    #feat-content-container .row .col-sm-4 {
+      padding-left: 0px;
+      padding-right: 0px; }
+
+.feat-content-block,
+.feat-content-block-wide {
+  display: block;
+  height: 550px;
+  margin: 0px;
+  padding: 45px 40px;
+  transition: all 0.25s ease-in-out;
+  z-index: 1;
+  position: relative; }
+  .feat-content-block h3, .feat-content-block blockquote p, blockquote .feat-content-block p,
+  .feat-content-block-wide h3,
+  .feat-content-block-wide blockquote p,
+  blockquote .feat-content-block-wide p {
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px; }
+  .feat-content-block h5,
+  .feat-content-block-wide h5 {
+    color: #ffffff;
+    margin-top: 0px; }
+  .feat-content-block img,
+  .feat-content-block-wide img {
+    width: 50%;
+    position: absolute;
+    bottom: 45px; }
+  .feat-content-block:hover,
+  .feat-content-block-wide:hover {
+    background-size: 125% 125%;
+    background-position: top left;
+    transform: scale(1.025, 1.025);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+    z-index: 3;
+    text-decoration: none; }
+  .feat-content-block:focus,
+  .feat-content-block-wide:focus {
+    text-decoration: none; }
+
+.feat-content-block-wide h3, .feat-content-block-wide blockquote p, blockquote .feat-content-block-wide p {
+  margin: 20px 0px 0px; }
+.feat-content-block-wide p {
+  color: #ffffff; }
+.feat-content-block-wide img {
+  width: 20%;
+  bottom: 50px; }
+.feat-content-block-wide .btn {
+  position: absolute;
+  bottom: 50px;
+  right: 40px; }
+.feat-content-block-wide:hover {
+  transform: scale(1, 1);
+  box-shadow: none;
+  z-index: initial; }
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -496,6 +591,16 @@ input[type="submit"] {
     color: #ffffff; }
   input[type="submit"]:active, input[type="submit"]:focus {
     border-color: #808084; }
+
+.btn-gold {
+  background: linear-gradient(to right, #f2c777, #d2a967); }
+  .btn-gold:before {
+    background-image: linear-gradient(to right, #d2a967, #d2a967); }
+
+.btn-pill {
+  background: #478ebb;
+  border-radius: 60px;
+  padding: 10px 15px; }
 
 input[type="text"],
 input[type="email"],
@@ -737,7 +842,7 @@ a.list-group-item:hover {
 .jumbotron {
   padding-left: 65px;
   padding-top: 65px;
-  padding-bottom: 105px; }
+  padding-bottom: 75px; }
   .jumbotron h1 {
     margin: 0px;
     font-size: 54px;
@@ -818,7 +923,7 @@ a.list-group-item:hover {
 .site-info {
   text-align: right;
   color: #808084; }
-  .site-info h3 {
+  .site-info h3, .site-info blockquote p, blockquote .site-info p {
     color: #3a598d;
     font-size: 18px;
     font-style: italic;
@@ -834,6 +939,34 @@ a.list-group-item:hover {
   transition: all 0.25s ease-in-out; }
   #Footer_3_copy:hover {
     opacity: 0.65; }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+#cs-hero-container {
+  border-bottom: 1px solid #e5e5e6; }
+
+.awards-wrapper {
+  display: flex;
+  justify-content: center; }
+
+.awards-wrapper > a {
+  border-left: 1px solid #e5e5e6; }
+  .awards-wrapper > a:last-of-type {
+    border-right: 1px solid #e5e5e6; }
+
+.awards-block {
+  display: block;
+  height: 140px;
+  width: 330px; }
+
+#cs-main {
+  padding-top: 90px; }
+
+#cs-project-details h5 {
+  color: #cfa667; }
+#cs-project-details .col-sm-6 {
+  padding-left: 0px; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

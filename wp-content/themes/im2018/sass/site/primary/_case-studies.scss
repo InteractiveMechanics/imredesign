@@ -1,0 +1,35 @@
+#cs-hero-container {
+	border-bottom: 1px solid $light_grey;
+}
+
+.awards-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.awards-wrapper>a {
+	border-left: 1px solid $light_grey;
+	&:last-of-type {
+		border-right: 1px solid $light_grey;
+	}
+}
+
+.awards-block {
+	display: block;
+	height: 140px;
+	width: 330px;
+	
+}
+
+#cs-main {
+	padding-top: 90px;
+}
+
+#cs-project-details {
+	h5 {
+		color: $gold;
+	}
+	.col-sm-6 {
+		padding-left: 0px;
+	}
+}
