@@ -101,8 +101,11 @@
 	<article id="cs-project-details">
 		<section class="container-fluid">
 			<div class="row">
+				
 				<div class="col-sm-8 col-sm-offset-2">
+					
 					<h3>Project Details</h3>
+					
 					<div class="col-sm-6">
 						<h5>Year</h5>
 						<button class="btn-pill">2015</button>
@@ -113,19 +116,101 @@
 						<button class="btn-pill">Jekyll</button>
 						
 						<h5>Services</h5>
-						<button class="btn-pill">Interactive Exhibits</button>
-						
+						<button class="btn-pill">Interactive Exhibits</button>	
 					</div>
+					
 					<div class="col-sm-6">
 						<h5>Partners</h5>
-						<a href="">Metcalfe Architecture and Design</a>
+						<h4><a href="#" target="_blank">Metcalfe Architecture and Design</a></h4>
+						
+						<h5>Funders</h5>
+						<h4><a href="#" target="_blank">National Endowment for the Humanities</a></h4>
+						
+						<h5>Press</h5>
+						<h4><a href="#" target="_blank">Celebrating the Rice Room Opening</a></h4>
+						<h4><a href="#" target="_blank">Using Digital Screens at the Philadelphia Museum of Art</a></h4>
 					</div>
 					
 				</div>
+				
 			</div>
 		</section>
-
 	</article>
+	
+	<article id="cs-learn-more">
+		<section class="container-fluid">
+			<div class="row">
+				
+				
+				<div class="col-sm-7 col-sm-offset-2">
+					
+					<h3>Learn More</h3>
+					
+					<div class="learn-more-wrapper">
+						<img class="staff-thumb-sm"src="<?php printThemePath(); ?>/assets/staff-thumbnails/staff-thumbnail-longo@1x.jpg" />
+						
+						<div>
+							<h4>Amelia Longo</h4>
+							<h5>Director of Strategic Initiatives</h5>
+							<h4><a href="mailto:someone@example.com">amelia@interactivemechanics.com</a></h4>
+						</div>
+					</div>
+						
+				</div>
+				
+				
+			</div>
+		</section>
+	</article>
+	
+	<article id="related-content">
+		<section class="container-fluid">
+			<div class="row">
+				
+					<div class="col-sm-12 related-content-heading">
+						<h3>Browse Related</h3>
+						<h5><a href="#">All Projects</a></h5>
+					</div>
+				
+			
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5><span class="featured-block-cat">Behind the Scenes</span> / <span class="featured-block-date">July 2017</span></h5>
+							
+							<h3>Meet LaNeshe, our new Marketing Manager</h3>
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5><span class="featured-block-cat">Behind the Scenes</span> / <span class="featured-block-date">July 2017</span></h5>
+							
+							<h3>Meet LaNeshe, our new Marketing Manager</h3>
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5><span class="featured-block-cat">Behind the Scenes</span> / <span class="featured-block-date">July 2017</span></h5>
+							
+							<h3>Meet LaNeshe, our new Marketing Manager</h3>
+							
+						</a>
+					</div>		
+									
+			</div>
+		</section>
+	</article>
+
+
 	
 	
 	

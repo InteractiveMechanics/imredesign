@@ -2,7 +2,7 @@ a {
 	transition: $transition;
 	
 	&:visited {
-		color: $color__link-visited;
+		color: initial;
 	}
 	&:hover,
 	&:focus,
@@ -37,4 +37,19 @@ a.list-group-item {
 		}
 	}
 	
+}
+
+h4>a {
+	color: $light_blue;
+	border-bottom: 1px solid $royal_blue_2;
+	transition: $transition;
+		
+	&:hover {
+		text-decoration: none;
+		color: $royal_blue_2;
+	}
+		
+	&:visited {
+		color: $light_blue
+	}
 }

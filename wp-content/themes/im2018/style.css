@@ -423,6 +423,33 @@ table {
   min-width: 100%;
   margin-bottom: 40px; }
 
+.staff-thumb-sm {
+  width: 125px;
+  height: 125px; }
+
+#related-content {
+  background: #e5e5e6;
+  padding-top: 30px;
+  padding-bottom: 80px; }
+  #related-content .row {
+    margin-left: 0px;
+    margin-right: 0px; }
+    #related-content .row .col-sm-12 {
+      padding-left: 0px;
+      padding-right: 0px; }
+    #related-content .row .col-sm-4 {
+      padding-left: 0px;
+      padding-right: 0px; }
+
+.related-content-heading {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 20px; }
+  .related-content-heading h5 {
+    margin-left: 20px; }
+    .related-content-heading h5 a {
+      color: #808084; }
+
 /*--------------------------------------------------------------
 # Client Blocks
 --------------------------------------------------------------*/
@@ -599,8 +626,9 @@ input[type="submit"] {
 
 .btn-pill {
   background: #478ebb;
-  border-radius: 60px;
-  padding: 10px 15px; }
+  border-radius: 99px;
+  padding: 10px 15px;
+  margin: 0px 10px 0px 0px; }
 
 input[type="text"],
 input[type="email"],
@@ -659,7 +687,7 @@ textarea {
 a {
   transition: all 0.25s ease-in-out; }
   a:visited {
-    color: purple; }
+    color: initial; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
   a:focus {
@@ -676,6 +704,16 @@ a.list-group-item:hover {
   background-color: transparent; }
   a.list-group-item:hover .st0 {
     fill: #cfa667; }
+
+h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
+  color: #478ebb;
+  border-bottom: 1px solid #3a5999;
+  transition: all 0.25s ease-in-out; }
+  h4 > a:hover, .feat-content-block-wide p > a:hover, .jumbotron p > a:hover {
+    text-decoration: none;
+    color: #3a5999; }
+  h4 > a:visited, .feat-content-block-wide p > a:visited, .jumbotron p > a:visited {
+    color: #478ebb; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -963,10 +1001,38 @@ a.list-group-item:hover {
 #cs-main {
   padding-top: 90px; }
 
-#cs-project-details h5 {
-  color: #cfa667; }
-#cs-project-details .col-sm-6 {
-  padding-left: 0px; }
+#cs-project-details {
+  border-bottom: 1px solid #e5e5e6;
+  padding-bottom: 65px; }
+  #cs-project-details h3, #cs-project-details blockquote p, blockquote #cs-project-details p {
+    margin-bottom: 0px; }
+  #cs-project-details h5 {
+    color: #cfa667;
+    margin-top: 40px; }
+  #cs-project-details h4, #cs-project-details .feat-content-block-wide p, .feat-content-block-wide #cs-project-details p, #cs-project-details .jumbotron p, .jumbotron #cs-project-details p {
+    font-size: 21px;
+    line-height: 24px;
+    margin-bottom: 20px; }
+  #cs-project-details .col-sm-6 {
+    padding-left: 0px; }
+
+#cs-learn-more {
+  padding-top: 65px;
+  padding-bottom: 90px;
+  border-bottom: 1px solid #e5e5e6; }
+  #cs-learn-more h3, #cs-learn-more blockquote p, blockquote #cs-learn-more p {
+    margin-bottom: 30px; }
+
+.learn-more-wrapper {
+  display: flex;
+  justify-content: left; }
+  .learn-more-wrapper img {
+    margin-right: 30px; }
+  .learn-more-wrapper h4, .learn-more-wrapper .feat-content-block-wide p, .feat-content-block-wide .learn-more-wrapper p, .learn-more-wrapper .jumbotron p, .jumbotron .learn-more-wrapper p {
+    line-height: initial;
+    margin-top: 0px; }
+  .learn-more-wrapper h5 {
+    color: #cfa667; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

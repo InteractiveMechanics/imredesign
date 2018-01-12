@@ -19,3 +19,39 @@
 	}
 }
 
+.staff-thumb-sm {
+	width: 125px;
+	height: 125px;
+}
+
+
+#related-content {
+	background: $light_grey;
+	padding-top: 30px;
+	padding-bottom: 80px;
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+		.col-sm-12 {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.col-sm-4 {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		
+	}
+}
+
+.related-content-heading {
+	display: flex;
+	align-items: baseline;
+	padding-bottom: 20px;
+	h5 {
+		margin-left: 20px;
+		a {
+			color: $grey;
+		}
+	}
+}
