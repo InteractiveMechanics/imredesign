@@ -1,0 +1,46 @@
+#about-main {
+	h3 {
+		padding-bottom: 55px;
+		margin-bottom: 0px;
+	}
+	
+	.content-wrapper {
+		&:last-child {
+			margin-bottom: 90px;
+		}
+	}
+}
+
+
+.values-wrapper {
+	margin-top: 0px;
+	margin-bottom: 60px;
+	overflow: auto;
+	
+	img {
+		margin-bottom: 0px;
+	}
+	
+	h5 {
+		margin-top: 0px;
+		margin-bottom: 25px;
+	}
+	
+	p {
+		margin-bottom: initial;
+	}
+	
+	.col-sm-2 {
+		padding-left: 0px;
+		
+	}
+}
+
+#related-content.team {
+	background-color: $white;
+	padding-top: 40px;
+	
+	.related-content-heading {
+		padding-bottom: 10px;
+	}
+}

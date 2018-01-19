@@ -455,19 +455,32 @@ table {
     .related-content-heading h5 a {
       color: #808084; }
 
+.center {
+  text-align: center; }
+
 /*--------------------------------------------------------------
 # Client Blocks
 --------------------------------------------------------------*/
-#client-blocks-container {
+#client-blocks-container, #partners-blocks-container {
   background: #e5e5e6;
   padding-top: 45px;
   padding-bottom: 45px; }
-  #client-blocks-container .row {
+  #client-blocks-container .row, #partners-blocks-container .row {
     margin-left: -5px;
-    margin-right: -5px; }
-    #client-blocks-container .row .col-sm-3 {
+    margin-right: -5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    #client-blocks-container .row .col-sm-3, #partners-blocks-container .row .col-sm-3 {
       padding-left: 5px;
       padding-right: 5px; }
+
+#partners-blocks-container {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e6; }
+  #partners-blocks-container .client-block {
+    background: #e5e5e6; }
 
 .client-block {
   background: #ffffff;
@@ -543,6 +556,34 @@ table {
   transform: scale(1, 1);
   box-shadow: none;
   z-index: initial; }
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonial {
+  background-size: cover;
+  padding-top: 130px;
+  padding-bottom: 90px; }
+  .testimonial blockquote {
+    border-bottom: none;
+    margin: 0px;
+    padding: 0px; }
+    .testimonial blockquote p {
+      color: #ffffff;
+      line-height: 66px;
+      letter-spacing: 0.5px;
+      margin-bottom: 0px; }
+    .testimonial blockquote footer {
+      margin-top: 30px;
+      margin-bottom: 55px; }
+      .testimonial blockquote footer h5 {
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: rgba(250, 250, 250, 0.65) !important; }
+        .testimonial blockquote footer h5:first-of-type {
+          font-size: 21px;
+          letter-spacing: 1px;
+          color: #ffffff !important; }
 
 /*--------------------------------------------------------------
 # Forms
@@ -1042,6 +1083,32 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 /*--------------------------------------------------------------
 ## About
 --------------------------------------------------------------*/
+#about-main h3, #about-main blockquote p, blockquote #about-main p {
+  padding-bottom: 55px;
+  margin-bottom: 0px; }
+#about-main .content-wrapper:last-child {
+  margin-bottom: 90px; }
+
+.values-wrapper {
+  margin-top: 0px;
+  margin-bottom: 60px;
+  overflow: auto; }
+  .values-wrapper img {
+    margin-bottom: 0px; }
+  .values-wrapper h5 {
+    margin-top: 0px;
+    margin-bottom: 25px; }
+  .values-wrapper p {
+    margin-bottom: initial; }
+  .values-wrapper .col-sm-2 {
+    padding-left: 0px; }
+
+#related-content.team {
+  background-color: #ffffff;
+  padding-top: 40px; }
+  #related-content.team .related-content-heading {
+    padding-bottom: 10px; }
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
