@@ -53,3 +53,46 @@ h4>a {
 		color: $light_blue
 	}
 }
+
+.filter-group {
+	margin: 0px 0px 48px 40px;
+	-webkit-padding-start: 0px;
+	
+	li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	
+	
+}
+
+.filter-group>li>a {
+	@extend h5;
+	position: relative;
+	
+	&:after {
+			content: "";
+			border-bottom: 1px solid $black;
+			position: absolute;
+		    margin-right: 0px;
+		    left: 50%;
+		    height: 2px;
+		    background: transparent;
+		    width: 0%;
+		    bottom: -4px;
+		    transition: width 0.5s ease, left 0.5s ease;
+	}
+		
+	&:hover {
+		color: $black;
+		text-decoration: none;
+		
+		&:after {
+			right: 0;
+			  height: 2px;
+			    width: 100%;
+			    left: 0;
+		}
+	}
+	
+}
