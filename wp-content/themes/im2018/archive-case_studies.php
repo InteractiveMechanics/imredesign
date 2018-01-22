@@ -33,7 +33,7 @@ get_header(); ?>
 		<section class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12">
-						<ul class="filter-group">
+						<ul class="filter-group filter-blue">
 							<li><a href="#">All Work</a></li>
 							<li><a href="#">Interactive Exhibits</a></li>
 							<li><a href="#">Websites</a></li>			
@@ -47,6 +47,8 @@ get_header(); ?>
 							<h5>Interactive Exhibits</h5>
 							
 							<h3>Muscle Hatchery Exhibits</h3>
+							
+							<p>The Mussel Hatchery hopes to change freshwater mussels' endangered status by breeding mussels and educating the public on how these creatures can improve the health of drinking water.</p>
 							
 							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 							

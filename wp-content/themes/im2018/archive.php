@@ -11,7 +11,30 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<div class="jumbotron jumbo-short">
+				<div class="media-container">
+					<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+				</div>
+				
+				<div class="container-fluid">
+					<div class="row">
+						
+						<div class="col-sm-7">
+							<h1>Our Work</h1>
+						</div>
+						
+						<div class="col-sm-7">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mi et orci efficitur pulvinar.</p>
+				
+						</div>
+						
+					</div>	
+	  			</div>
+			</div>
+	
+			
 
+<!--
 		<?php
 		if ( have_posts() ) : ?>
 
@@ -42,6 +65,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
+-->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

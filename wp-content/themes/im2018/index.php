@@ -16,41 +16,180 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			
+			<div class="jumbotron jumbo-short">
+					<div class="media-container">
+						<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+					</div>
+					
+					<div class="container-fluid">
+						<div class="row">
+							
+							<div class="col-sm-7">
+								<h1>Blog</h1>
+							</div>
+							
+												
+						</div>	
+		  			</div>
+			</div>
+			
+			<article id="cs-archive">
+				<section class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<ul class="filter-group filter-blue">
+								<li><a href="#">All Articles</a></li>
+								<li><a href="#">Behind the Scenes</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Tools &amp; Tech</a></li>	
+								<li><a href="#">Process</a></li>				
+							</ul>
+						</div>
+						
+					
+					<div class="col-sm-12">
+						<a class="feat-content-block-wide"  style="background: url('<?php printThemePath(); ?>/assets/featured-images/Fellowship_Project_Announcement-20.jpg'); background-size: cover;">
+							
+							<h5><span class="blog-cat">Behind the Scenes</span> / <span class="blog-date">July 2017</span></h5>
+							
+							<h3>Meet LaNeshe, Our New Marketing Manager</h3>
+							
+							
+							<p>LaNeshe recently joined our team as the Marketing Manager. Here are some fun facts about her and places in the city that bring her joy.</p>
+														
+														
+						</a>
+					</div>
+					
+								
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5><span class="blog-cat">Behind the Scenes</span> / <span class="blog-date">July 2017</span></h5>
+							
+							<h3>Meet LaNeshe, our New Marketing Manager</h3>
+							
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(219,178,103, 0.5), rgba(219,178,103, 0.5)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							
+							<h5><span class="blog-cat">Community</span> / <span class="blog-date">May 2017</span></h5>
+							
+							<h3>Fall Conferences: Better than Summer Conferences?</h3>
+							
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5><span class="blog-cat">Community</span> / <span class="blog-date">May 2017</span></h5>	
+							
+							<h3>Design Brew Meetup - What Games Can Teach Us About Design</h3>
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(227,146,96, 0.65), rgba(237,106,89, 0.65)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5>Interactive Exhibits</h5>
+							
+							<h3>Zhizua Temple Ceiling Interactive</h3>
+							
+							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 
-		<?php
-		if ( have_posts() ) :
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5>Interactive Exhibits</h5>
+							
+							<h3>Zhizua Temple Ceiling Interactive</h3>
+							
+							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(219,178,103, 0.5), rgba(219,178,103, 0.5)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5>Interactive Exhibits</h5>
+							
+							<h3>Zhizua Temple Ceiling Interactive</h3>
+							
+							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 
-			<?php
-			endif;
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5>Interactive Exhibits</h5>
+							
+							<h3>Zhizua Temple Ceiling Interactive</h3>
+							
+							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5>Interactive Exhibits</h5>
+							
+							<h3>Zhizua Temple Ceiling Interactive</h3>
+							
+							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+							
+						</a>
+					</div>
+					
+					<div class="col-sm-4">
+						
+						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(227,146,96, 0.65), rgba(237,106,89, 0.65)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							
+							<h5>Interactive Exhibits</h5>
+							
+							<h3>Zhizua Temple Ceiling Interactive</h3>
+							
+							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
+							
+						</a>
+					</div>
+					
+					
+				</div>
+			</section>
+	</article>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

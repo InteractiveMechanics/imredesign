@@ -60,7 +60,7 @@ h4>a {
 	
 	li {
 		display: inline-block;
-		margin-right: 10px;
+		margin-right: 35px;
 	}
 	
 	
@@ -95,4 +95,13 @@ h4>a {
 		}
 	}
 	
+}
+
+.filter-group.filter-blue>li>a {
+	&:after {
+		border-bottom: 1px solid $light_blue;
+	}
+	&:hover {
+		color: $light_blue;
+	}
 }

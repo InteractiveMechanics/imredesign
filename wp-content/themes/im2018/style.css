@@ -525,6 +525,10 @@ table {
   .feat-content-block-wide .filter-group > li > a {
     color: #ffffff;
     margin-top: 0px; }
+  .feat-content-block p,
+  .feat-content-block-wide p {
+    width: 75%;
+    margin-top: 10px; }
   .feat-content-block img,
   .feat-content-block-wide img {
     width: 50%;
@@ -772,7 +776,7 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   -webkit-padding-start: 0px; }
   .filter-group li {
     display: inline-block;
-    margin-right: 10px; }
+    margin-right: 35px; }
 
 .filter-group > li > a {
   position: relative; }
@@ -795,6 +799,11 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
       height: 2px;
       width: 100%;
       left: 0; }
+
+.filter-group.filter-blue > li > a:after {
+  border-bottom: 1px solid #478ebb; }
+.filter-group.filter-blue > li > a:hover {
+  color: #478ebb; }
 
 /*--------------------------------------------------------------
 ## Menus
