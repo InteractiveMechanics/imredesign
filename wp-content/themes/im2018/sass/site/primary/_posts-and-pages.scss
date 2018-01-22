@@ -13,10 +13,15 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	padding-top: 90px;
+	padding-bottom: 50px; //assumes last el is p w/padding-bottom: 40px;
+	border-bottom: 1px solid $light_grey;
+	
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+

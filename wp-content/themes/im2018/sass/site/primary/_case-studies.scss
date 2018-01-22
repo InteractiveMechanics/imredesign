@@ -25,9 +25,10 @@
 	padding-top: 90px;
 }
 
-#cs-project-details {
+#project-details {
 	border-bottom: 1px solid $light_grey;
 	padding-bottom: 65px;
+	padding-top: 45px;
 	
 	h3 {
 		margin-bottom: 0px;
@@ -46,6 +47,17 @@
 	
 	.col-sm-6 {
 		padding-left: 0px;
+	}
+	
+	.learn-more-wrapper {
+		margin-top: 40px;
+		h5 {
+			margin-top: initial;
+		}
+		
+		h4 {
+			margin-bottom: 10px;
+		}
 	}
 	
 }

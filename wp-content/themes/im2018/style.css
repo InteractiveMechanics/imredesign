@@ -1021,7 +1021,9 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0; }
+  padding-top: 90px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #e5e5e6; }
 
 .page-links {
   clear: both;
@@ -1095,20 +1097,27 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 #cs-main {
   padding-top: 90px; }
 
-#cs-project-details {
+#project-details {
   border-bottom: 1px solid #e5e5e6;
-  padding-bottom: 65px; }
-  #cs-project-details h3, #cs-project-details blockquote p, blockquote #cs-project-details p {
+  padding-bottom: 65px;
+  padding-top: 45px; }
+  #project-details h3, #project-details blockquote p, blockquote #project-details p {
     margin-bottom: 0px; }
-  #cs-project-details h5, #cs-project-details .filter-group > li > a {
+  #project-details h5, #project-details .filter-group > li > a {
     color: #cfa667;
     margin-top: 40px; }
-  #cs-project-details h4, #cs-project-details .feat-content-block-wide p, .feat-content-block-wide #cs-project-details p, #cs-project-details .jumbotron p, .jumbotron #cs-project-details p {
+  #project-details h4, #project-details .feat-content-block-wide p, .feat-content-block-wide #project-details p, #project-details .jumbotron p, .jumbotron #project-details p {
     font-size: 21px;
     line-height: 24px;
     margin-bottom: 20px; }
-  #cs-project-details .col-sm-6 {
+  #project-details .col-sm-6 {
     padding-left: 0px; }
+  #project-details .learn-more-wrapper {
+    margin-top: 40px; }
+    #project-details .learn-more-wrapper h5, #project-details .learn-more-wrapper .filter-group > li > a {
+      margin-top: initial; }
+    #project-details .learn-more-wrapper h4, #project-details .learn-more-wrapper .feat-content-block-wide p, .feat-content-block-wide #project-details .learn-more-wrapper p, #project-details .learn-more-wrapper .jumbotron p, .jumbotron #project-details .learn-more-wrapper p {
+      margin-bottom: 10px; }
 
 #cs-learn-more {
   padding-top: 65px;

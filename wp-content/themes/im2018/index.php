@@ -103,11 +103,11 @@ get_header(); ?>
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(227,146,96, 0.65), rgba(237,106,89, 0.65)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
 							
-							<h5>Interactive Exhibits</h5>
+							<h5><span class="blog-cat">Tools &amp; Tech</span> / <span class="blog-date">April 2017</span></h5>
 							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
+							<h3>Cool Blog Title</h3>
 							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+							
 
 							
 						</a>
@@ -117,12 +117,11 @@ get_header(); ?>
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
 							
-							<h5>Interactive Exhibits</h5>
+							<h5><span class="blog-cat">Tools &amp; Tech</span> / <span class="blog-date">March 2017</span></h5>
 							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
+							<h3>Another Cool Blog Title</h3>
 							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
+							
 							
 						</a>
 					</div>
@@ -131,11 +130,11 @@ get_header(); ?>
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(219,178,103, 0.5), rgba(219,178,103, 0.5)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
 							
-							<h5>Interactive Exhibits</h5>
+							<h5><span class="blog-cat">Tools &amp; Tech</span> / <span class="blog-date">March 2017</span></h5>
 							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
+							<h3>Doing Neat Things with Processing</h3>
 							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+							
 
 							
 						</a>
@@ -145,12 +144,9 @@ get_header(); ?>
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
 							
-							<h5>Interactive Exhibits</h5>
+							<h5><span class="blog-cat">Tools &amp; Tech</span> / <span class="blog-date">February 2017</span></h5>
 							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
+							<h3>Blog Post by a Fellow</h3>
 							
 						</a>
 					</div>
@@ -159,11 +155,11 @@ get_header(); ?>
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
 							
-							<h5>Interactive Exhibits</h5>
+							<h5><span class="blog-cat">Process</span> / <span class="blog-date">January 2017</span></h5>
 							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
+							<h3>Best Practices in Snack Ordering</h3>
 							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+							
 
 							
 						</a>
@@ -173,12 +169,10 @@ get_header(); ?>
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(227,146,96, 0.65), rgba(237,106,89, 0.65)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
 							
-							<h5>Interactive Exhibits</h5>
+							<h5><span class="blog-cat">Tools &amp; Tech</span> / <span class="blog-date">December 2016</span></h5>
 							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
+							<h3>CSS Houdini: Hacking the Browser is Okay Now</h3>
 							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
 							
 						</a>
 					</div>

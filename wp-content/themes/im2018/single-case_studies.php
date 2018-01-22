@@ -98,7 +98,7 @@
 		</section>
 	</article>
 	
-	<article id="cs-project-details">
+	<article id="project-details">
 		<section class="container-fluid">
 			<div class="row">
 				
