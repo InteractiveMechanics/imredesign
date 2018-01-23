@@ -24,6 +24,14 @@ a.btn {
 	}
 }
 
+p>a {
+	color: $light_blue;
+	text-decoration: underline;
+	
+	&:visited {
+		color: $light_blue;
+	}
+}
 
 
 a.list-group-item {

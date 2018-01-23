@@ -458,6 +458,12 @@ table {
 .center {
   text-align: center; }
 
+.careers-main {
+  position: relative;
+  padding-top: 90px;
+  border-top: 1px solid #e5e5e6;
+  border-bottom: 1px solid #e5e5e6; }
+
 /*--------------------------------------------------------------
 # Client Blocks
 --------------------------------------------------------------*/
@@ -753,6 +759,12 @@ a {
 
 a.btn:visited {
   color: #ffffff; }
+
+p > a {
+  color: #478ebb;
+  text-decoration: underline; }
+  p > a:visited {
+    color: #478ebb; }
 
 a.list-group-item .st0 {
   transition: all 0.5s ease-in-out; }
@@ -1136,6 +1148,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     margin-top: 0px; }
   .learn-more-wrapper h5, .learn-more-wrapper .filter-group > li > a {
     color: #cfa667; }
+  .learn-more-wrapper .btn-default {
+    margin-top: 30px; }
 
 #cs-archive {
   border-bottom: 1px solid #e5e5e6;
