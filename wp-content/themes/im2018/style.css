@@ -464,6 +464,19 @@ table {
   border-top: 1px solid #e5e5e6;
   border-bottom: 1px solid #e5e5e6; }
 
+.resources h5, .resources .filter-group > li > a {
+  color: #cfa667; }
+.resources div {
+  display: flex;
+  align-items: baseline; }
+  .resources div h4, .resources div .feat-content-block-wide p, .feat-content-block-wide .resources div p, .resources div .jumbotron p, .jumbotron .resources div p {
+    margin-right: 25px; }
+
+.registration {
+  background: #e5e5e6;
+  padding-top: 30px;
+  padding-bottom: 80px; }
+
 /*--------------------------------------------------------------
 # Client Blocks
 --------------------------------------------------------------*/

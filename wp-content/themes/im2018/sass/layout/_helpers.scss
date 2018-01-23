@@ -66,3 +66,23 @@
 	border-top: 1px solid $light_grey;
 	border-bottom: 1px solid $light_grey;
 }
+
+.resources {
+	h5 {
+		color: $gold;
+	}
+	
+	div {
+		display: flex;
+		align-items: baseline;
+		h4 {
+			margin-right: 25px;
+		}
+	}
+}
+
+.registration {
+	background: $light_grey;
+	padding-top: 30px;
+	padding-bottom: 80px;
+}
