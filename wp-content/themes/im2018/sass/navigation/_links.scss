@@ -35,9 +35,11 @@ p>a {
 
 
 a.list-group-item {
+	
 	.st0 {
 		transition: all 0.5s ease-in-out;
 	}
+	
 	&:hover {
 		background-color: transparent;
 		.st0 {
@@ -46,6 +48,8 @@ a.list-group-item {
 	}
 	
 }
+
+
 
 h4>a {
 	color: $light_blue;

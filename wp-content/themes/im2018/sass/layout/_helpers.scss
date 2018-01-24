@@ -4,6 +4,14 @@
 	margin: 0px;
 }
 
+.top-border {
+	border-top: 1px solid $light_grey;
+}
+
+.bottom-border {
+	border-bottom: 1px solid $light_grey;
+}
+
 .content-wrapper {
 	p {
 		margin-bottom: 40px;
@@ -124,4 +132,27 @@
 	h3 {
 		margin-bottom: 40px;
 	}
+}
+
+
+#bio-social {
+	position: absolute;
+	bottom: 20px;
+		
+	a.list-group-item {
+		
+		.st0 {
+			fill: $white;
+			transition: all 0.5s ease-in-out;
+		}
+	
+		&:hover {
+		
+			background-color: transparent;
+			
+			.st0 {
+				fill: $grey;
+			}
+		}
+	}	
 }
