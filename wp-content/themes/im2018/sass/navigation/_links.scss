@@ -113,3 +113,15 @@ h4>a {
 		color: $light_blue;
 	}
 }
+
+.read-more {
+	font-size: 17px;
+	color: $light_blue;
+	text-decoration: underline;
+	display: inline;
+	
+	&:visited {
+		color: $light_blue;
+	}
+	
+}

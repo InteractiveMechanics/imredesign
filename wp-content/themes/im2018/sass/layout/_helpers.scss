@@ -86,3 +86,42 @@
 	padding-top: 30px;
 	padding-bottom: 80px;
 }
+
+.webinars-wrapper {
+	margin-top: 0px;
+	margin-bottom: 60px;
+	overflow: auto;
+	
+	
+	img {
+		margin-bottom: 0px;
+	}
+	
+	h4 {
+		margin-top: 0px;
+		line-height: initial;
+	}
+	
+	p {
+		margin-bottom: initial;
+		display: inline;
+		margin-right: 7px;
+	}
+	
+	.col-sm-2 {
+		padding-left: 0px;
+		
+	}
+}
+
+.webinars-main {
+	position: relative;
+	padding-top: 90px;
+	padding-bottom: 60px;
+	border-top: 1px solid $light_grey;
+	border-bottom: 1px solid $light_grey;
+	
+	h3 {
+		margin-bottom: 40px;
+	}
+}

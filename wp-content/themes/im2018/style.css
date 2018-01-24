@@ -477,6 +477,31 @@ table {
   padding-top: 30px;
   padding-bottom: 80px; }
 
+.webinars-wrapper {
+  margin-top: 0px;
+  margin-bottom: 60px;
+  overflow: auto; }
+  .webinars-wrapper img {
+    margin-bottom: 0px; }
+  .webinars-wrapper h4, .webinars-wrapper .feat-content-block-wide p, .feat-content-block-wide .webinars-wrapper p, .webinars-wrapper .jumbotron p, .jumbotron .webinars-wrapper p {
+    margin-top: 0px;
+    line-height: initial; }
+  .webinars-wrapper p {
+    margin-bottom: initial;
+    display: inline;
+    margin-right: 7px; }
+  .webinars-wrapper .col-sm-2 {
+    padding-left: 0px; }
+
+.webinars-main {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  border-top: 1px solid #e5e5e6;
+  border-bottom: 1px solid #e5e5e6; }
+  .webinars-main h3, .webinars-main blockquote p, blockquote .webinars-main p {
+    margin-bottom: 40px; }
+
 /*--------------------------------------------------------------
 # Client Blocks
 --------------------------------------------------------------*/
@@ -829,6 +854,14 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   border-bottom: 1px solid #478ebb; }
 .filter-group.filter-blue > li > a:hover {
   color: #478ebb; }
+
+.read-more {
+  font-size: 17px;
+  color: #478ebb;
+  text-decoration: underline;
+  display: inline; }
+  .read-more:visited {
+    color: #478ebb; }
 
 /*--------------------------------------------------------------
 ## Menus
