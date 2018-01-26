@@ -88,11 +88,16 @@
 		</section>
 	</article>
 	
-	<article id="cs-gallery">
+	<article id="gallery" class="bottom-border">
 		<section class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12">
-					
+				<div class="col-sm-12 gallery-wrapper">
+					<img src="https://picsum.photos/200/300" alt="placeholder image"/>
+					<img src="https://picsum.photos/215/330" alt="placeholder image"/>
+					<img src="https://picsum.photos/275/300" alt="placeholder image"/>
+					<img src="https://picsum.photos/250" alt="placeholder image"/>
+					<img src="https://picsum.photos/300/330" alt="placeholder image"/>
+					<img src="https://picsum.photos/400/500" alt="placeholder image"/>
 				</div>
 			</div>
 		</section>

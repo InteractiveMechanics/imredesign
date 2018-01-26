@@ -469,9 +469,7 @@ table {
 
 .careers-main {
   position: relative;
-  padding-top: 90px;
-  border-top: 1px solid #e5e5e6;
-  border-bottom: 1px solid #e5e5e6; }
+  padding-top: 90px; }
 
 .resources h5, .resources .filter-group > li > a {
   color: #cfa667; }
@@ -1043,7 +1041,7 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   clear: both; }
 
 /*--------------------------------------------------------------
-# Clearings
+# Jumbotron
 --------------------------------------------------------------*/
 .jumbotron {
   padding-left: 65px;
@@ -1071,6 +1069,26 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 .jumbo-short {
   padding-bottom: 40px;
   margin-bottom: 0px; }
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+#gallery {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+
+.gallery-wrapper {
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 3;
+  -moz-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px; }
+  .gallery-wrapper img {
+    width: 100%;
+    height: auto; }
 
 /*--------------------------------------------------------------
 # Widgets
