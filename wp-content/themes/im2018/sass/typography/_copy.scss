@@ -44,6 +44,13 @@ blockquote {
 		top: -25px;
 	}
 	
+	@include screen-xs {
+		&:before {
+			left: -4px;
+			top: -2px; 
+		}
+	}
+	
 	
 }
 
@@ -80,7 +87,15 @@ big {
 }
 
 .lead {
+	
+	color: $black;
 	font-size: 27px;
 	line-height: 48px;
-	color: $black;
+	
+	
+	@include screen-xs {
+		font-size: 20px;
+		line-height: 34px;
+	}
+	
 }

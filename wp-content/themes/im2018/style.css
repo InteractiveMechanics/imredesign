@@ -301,6 +301,10 @@ blockquote {
     position: absolute;
     left: -47px;
     top: -25px; }
+  @media (max-width: 767px) {
+    blockquote:before {
+      left: -4px;
+      top: -2px; } }
 
 address {
   margin: 0 0 1.5em; }
@@ -330,9 +334,13 @@ big {
   font-size: 125%; }
 
 .lead {
+  color: #221f1f;
   font-size: 27px;
-  line-height: 48px;
-  color: #221f1f; }
+  line-height: 48px; }
+  @media (max-width: 767px) {
+    .lead {
+      font-size: 20px;
+      line-height: 34px; } }
 
 /*--------------------------------------------------------------
 # Elements
@@ -363,6 +371,10 @@ header {
 section {
   margin-left: 25px !important;
   margin-right: 25px !important; }
+  @media (max-width: 767px) {
+    section {
+      margin-left: 10px !important;
+      margin-right: 10px !important; } }
 
 address {
   margin-bottom: 0px; }
@@ -656,6 +668,9 @@ a.feat-content-block-wide:hover {
           font-size: 21px;
           letter-spacing: 1px;
           color: #ffffff !important; }
+    @media (max-width: 767px) {
+      .testimonial blockquote {
+        padding: 0px 40px; } }
 
 /*--------------------------------------------------------------
 # Forms
@@ -1051,10 +1066,17 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     margin: 0px;
     font-size: 54px;
     line-height: 62px; }
+    @media (max-width: 767px) {
+      .jumbotron h1 {
+        font-size: 38px;
+        line-height: 43px; } }
   .jumbotron p {
     margin-top: 15px; }
   .jumbotron .btn {
     margin-top: 60px; }
+  @media (max-width: 767px) {
+    .jumbotron {
+      padding: 30px 10px 35px; } }
 
 .media-container {
   position: absolute;
@@ -1140,12 +1162,20 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 #colophon input[type="email"] {
   width: 350px;
   margin-right: 30px; }
-#colophon .flex-container {
+#colophon .footer-wrapper {
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 767px) {
+    #colophon .footer-wrapper {
+      display: inherit;
+      text-align: center; } }
 #colophon section:first-of-type {
   margin-top: 30px;
   margin-bottom: 30px; }
+  @media (max-width: 767px) {
+    #colophon section:first-of-type {
+      margin-top: 15px;
+      margin-bottom: 5px; } }
 #colophon section:last-of-type {
   margin-top: 40px;
   margin-bottom: 45px; }
@@ -1154,16 +1184,29 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   text-align: right;
   color: #808084; }
   .site-info h3, .site-info blockquote p, blockquote .site-info p {
+    margin-top: 0px;
+    margin-bottom: 20px;
     color: #3a598d;
     font-size: 18px;
     font-style: italic;
-    line-height: initial;
-    margin-top: 0px;
-    margin-bottom: 20px; }
+    line-height: initial; }
+    @media (max-width: 767px) {
+      .site-info h3, .site-info blockquote p, blockquote .site-info p {
+        font-size: 16px; } }
   .site-info a {
     color: #808084; }
     .site-info a:visited {
       color: #808084; }
+  @media (max-width: 767px) {
+    .site-info {
+      margin-top: 30px;
+      text-align: center; } }
+
+@media (max-width: 767px) {
+  #footer-social {
+    display: flex;
+    justify-content: center;
+    width: 100%; } }
 
 #Footer_3_copy {
   transition: all 0.25s ease-in-out; }
@@ -1257,6 +1300,13 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   margin-bottom: 0px; }
 #about-main .content-wrapper:last-child {
   margin-bottom: 90px; }
+@media (max-width: 767px) {
+  #about-main .col-sm-12 {
+    padding-left: 0px;
+    padding-right: 0px; } }
+@media (max-width: 767px) {
+  #about-main .col-sm-12 .btn {
+    width: 100%; } }
 
 .values-wrapper {
   margin-top: 0px;

@@ -16,8 +16,8 @@
 	<footer id="colophon" class="site-footer">
 		<section class="container-fluid">
 			<div class="row">
-				<div class="col-sm-12 flex-container">
-					<form class="form-inline">
+				<div class="col-sm-12 footer-wrapper">
+					<form class="form-inline hidden-xs">
 						<label class="sr-only" for="email">Email</label>
 						<input type="email" name="email" placeholder="Sign Up for Our Email List">
 						
@@ -40,7 +40,7 @@
 		<section class="container-fluid">
 			
 			<div class="row">
-				<div class="col-sm-12 flex-container">
+				<div class="col-sm-12 footer-wrapper">
 					<a class="" href="#">
 						<?php include("assets/logos/logo-footer.svg"); ?>
 					</a>
@@ -50,7 +50,7 @@
 						<address>
 							<h5>219 Cuthbert Street Suite 210 Philadelphia, PA 19102</h5>
 						</address>
-						<h5><a href="">hello@interactivemechanics.com</a> &#47; <a href="#">Jobs</a></h5>
+						<h5><a href="">hello@interactivemechanics.com</a> <span class="hidden-xs">&#47; <a href="#">Jobs</a><span></h5>
 					</div>
 					
 				</div>

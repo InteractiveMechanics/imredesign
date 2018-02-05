@@ -4,14 +4,22 @@
 		margin-right: 30px;
 	}
 	
-	.flex-container {
+	.footer-wrapper {
 		display: flex;
 		justify-content: space-between;
+		@include screen-xs {
+			display: inherit;
+			text-align: center;
+		}
 	}
 	
 	section:first-of-type {
 		margin-top: 30px;
 		margin-bottom: 30px;
+		@include screen-xs {
+			margin-top: 15px;
+			margin-bottom: 5px; //visually centered 
+		}
 	}
 	
 	section:last-of-type {
@@ -23,15 +31,23 @@
 
 .site-info {
 	text-align: right;
+	
 	color: $grey;
 	
 	h3 {
+		margin-top: 0px;
+		margin-bottom: 20px;
+		
 		color: $royal_blue;
+		
 		font-size: 18px;
 		font-style: italic;
 		line-height: initial;
-		margin-top: 0px;
-		margin-bottom: 20px;
+		
+		@include screen-xs {
+			font-size: 16px;
+		}
+		
 	}
 	
 	a {
@@ -41,6 +57,20 @@
 		}
 	}
 	
+	
+	@include screen-xs {
+		margin-top: 30px;
+		
+		text-align: center;
+	}
+}
+
+#footer-social {
+	@include screen-xs {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
 }
 
 // footer logo

@@ -27,7 +27,7 @@ get_header(); ?>
 					<div class="col-sm-9">
 						<p>Interactive Mechanics is a digital design firm that partners with cultural and educational organizations on design, development, user experience, and digital strategy.</p>
 						
-						<a class="btn btn-default" href="#" role="button">Explore Our Work</a>
+						<a class="btn btn-default hidden-xs" href="#" role="button">Explore Our Work</a>
 					</div>
 					
 					
@@ -132,49 +132,49 @@ get_header(); ?>
 			<section class="container-fluid">
 				<div class="row">
 						
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>

@@ -9,6 +9,21 @@
 			margin-bottom: 90px;
 		}
 	}
+	
+	.col-sm-12 {
+		@include screen-xs {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		
+		.btn {
+			@include screen-xs {
+				width: 100%;
+			}
+		}
+	}
+	
+	
 }
 
 

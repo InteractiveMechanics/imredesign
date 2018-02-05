@@ -38,13 +38,13 @@ get_header(); ?>
 					
 					<div class="values-wrapper">
 					
-						<div class="col-sm-2">
+						<div class="col-sm-2 col-xs-4">
 						
 							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
 						
 						</div>
 						
-						<div class="col-sm-10">
+						<div class="col-sm-10 col-xs-8">
 							
 							<h5>Communication / Openness / Empathy</h5>
 							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
@@ -55,13 +55,13 @@ get_header(); ?>
 					
 					<div class="values-wrapper">
 					
-						<div class="col-sm-2">
+						<div class="col-sm-2 col-xs-4">
 						
 							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
 						
 						</div>
 						
-						<div class="col-sm-10">
+						<div class="col-sm-10 col-xs-8">
 							
 							<h5>Communication / Openness / Empathy</h5>
 							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
@@ -72,13 +72,13 @@ get_header(); ?>
 					
 					<div class="values-wrapper">
 					
-						<div class="col-sm-2">
+						<div class="col-sm-2 col-xs-4">
 						
 							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
 						
 						</div>
 						
-						<div class="col-sm-10">
+						<div class="col-sm-10 col-xs-8">
 							
 							<h5>Communication / Openness / Empathy</h5>
 							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
@@ -89,13 +89,13 @@ get_header(); ?>
 					
 					<div class="values-wrapper">
 					
-						<div class="col-sm-2">
+						<div class="col-sm-2 col-xs-4">
 						
 							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
 						
 						</div>
 						
-						<div class="col-sm-10">
+						<div class="col-sm-10 col-xs-8">
 							
 							<h5>Communication / Openness / Empathy</h5>
 							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
@@ -106,13 +106,13 @@ get_header(); ?>
 					
 					<div class="values-wrapper">
 					
-						<div class="col-sm-2">
+						<div class="col-sm-2 col-xs-4">
 						
 							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
 						
 						</div>
 						
-						<div class="col-sm-10">
+						<div class="col-sm-10 col-xs-8">
 							
 							<h5>Communication / Openness / Empathy</h5>
 							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
@@ -124,13 +124,13 @@ get_header(); ?>
 					
 					<div class="values-wrapper">
 					
-						<div class="col-sm-2">
+						<div class="col-sm-2 col-xs-4">
 						
 							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
 						
 						</div>
 						
-						<div class="col-sm-10">
+						<div class="col-sm-10 col-xs-8">
 							
 							<h5>Communication / Openness / Empathy</h5>
 							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
@@ -243,66 +243,66 @@ get_header(); ?>
 			<section class="container-fluid">
 				<div class="row">
 					
-					<div class="col-sm-12 related-content-heading">
+					<div class="col-sm-12 col-xs-12 related-content-heading">
 						<h3>Our Clients</h3>
 					</div>
 					
 						
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>	
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
 						</div>
@@ -334,42 +334,42 @@ get_header(); ?>
 			<section class="container-fluid">
 				<div class="row">
 					
-					<div class="col-sm-12 related-content-heading">
+					<div class="col-sm-12 col-xs-12 related-content-heading">
 						<h3>Our Partners</h3>
 					</div>
 					
 						
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
 						</div>
 					</div>
 					
-					<div class="col-sm-3">
+					<div class="col-sm-3 col-xs-6">
 						<div class="client-block">
 							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
 						</div>

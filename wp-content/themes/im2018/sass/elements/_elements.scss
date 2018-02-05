@@ -27,6 +27,10 @@ header {
 section {
 	margin-left: 25px !important;
 	margin-right: 25px !important;
+	@include screen-xs {
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
 }
 
 address {
