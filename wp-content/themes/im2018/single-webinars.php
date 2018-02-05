@@ -19,7 +19,7 @@
 						<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
 					</div>
 					
-			</div>
+		</div>
 	
 			
 		<article>

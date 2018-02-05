@@ -24,7 +24,7 @@
 				<div class="row">
 					
 					<div class="col-sm-12">
-						<div class="feat-content-block-wide"  style="background-image: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1));">
+						<div class="feat-content-block-wide"  style="background-image: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/featured-images/featured-image-01@1x.jpg');">
 							
 							<h5>Director of Strategic Initiatives</h5>
 							

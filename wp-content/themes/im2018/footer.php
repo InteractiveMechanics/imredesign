@@ -50,7 +50,7 @@
 						<address>
 							<h5>219 Cuthbert Street Suite 210 Philadelphia, PA 19102</h5>
 						</address>
-						<h5><a href="">hello@interactivemechanics.com</a> &#47; <a href="#">(267) 888-2483</a> &#47; <a href="#">Careers</a></h5>
+						<h5><a href="">hello@interactivemechanics.com</a> &#47; <a href="#">Jobs</a></h5>
 					</div>
 					
 				</div>

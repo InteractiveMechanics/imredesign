@@ -12,6 +12,13 @@
 <?php while ( have_posts() ) : the_post();
 ?>
 
+	<div class="jumbotron jumbo-short">
+			<div class="media-container">
+				<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+			</div>
+					
+	</div>
+	
 	<article id="cs-hero-container">
 		<section class="container-fluid">
 				<div class="row">

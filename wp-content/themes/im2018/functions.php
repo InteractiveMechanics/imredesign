@@ -117,7 +117,9 @@ add_action( 'after_setup_theme', 'im2018_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function im2018_widgets_init() {
+ 
+ 
+ function im2018_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'im2018' ),
 		'id'            => 'sidebar-1',
@@ -129,6 +131,56 @@ function im2018_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'im2018_widgets_init' );
+
+
+/**
+ * Register ACF options pages
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title' => 'Case Study Archive Settings',
+        'menu_title' => 'Case Study Archive',
+        'parent_slug' => 'theme-general-settings',
+    ));
+    
+     acf_add_options_sub_page(array(
+        'page_title' => 'Webinars Archive Settings',
+        'menu_title' => 'Webinars Archive',
+        'parent_slug' => 'theme-general-settings',
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Header Settings',
+        'menu_title' => 'Header',
+        'parent_slug' => 'theme-general-settings',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+    
+     acf_add_options_sub_page(array(
+        'page_title'    => '404 Page Settings',
+        'menu_title'    => '404 Page',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+
+    
+}
+
 
 
 
