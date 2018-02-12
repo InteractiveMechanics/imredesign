@@ -38,7 +38,7 @@ get_header(); ?>
 				<section class="container-fluid">
 					<div class="row">
 						<div class="col-sm-12">
-							<ul class="filter-group filter-blue">
+							<ul class="filter-group filter-blue hidden-xs">
 								<li><a href="#">All Articles</a></li>
 								<li><a href="#">Behind the Scenes</a></li>
 								<li><a href="#">Community</a></li>

@@ -17,6 +17,15 @@
 	   width: 100%;
 	   height: auto;
    }
+   @include screen-xs {
+	   -webkit-column-count: 1;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    1;
+   -moz-column-gap:      0px;
+   column-count:         1;
+   column-gap:           0px;
+	   
+   }
 }
 
 

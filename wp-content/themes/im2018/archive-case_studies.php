@@ -33,7 +33,7 @@ get_header(); ?>
 		<section class="container-fluid">
 				<div class="row">
 					<div class="col-sm-12">
-						<ul class="filter-group filter-blue">
+						<ul class="filter-group filter-blue hidden-xs">
 							<li><a href="#">All Work</a></li>
 							<li><a href="#">Interactive Exhibits</a></li>
 							<li><a href="#">Websites</a></li>			

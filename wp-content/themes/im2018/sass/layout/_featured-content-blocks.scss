@@ -77,12 +77,31 @@
 	img {
 		width: 20%;
 		bottom: 50px;
+		@include screen-xs {
+			width: 50%;
+		}
 	}
+	
+	//exists bc wp hates js
+	.resp-client-logo {
+		position: relative;
+		bottom: -275px;
+		
+		width: 45%;
+	}
+	
 	
 	.btn {
 		position: absolute;
 		bottom: 50px;
 		right: 40px;
+		@include screen-xs {
+			right: initial;
+			left: 0px;
+			bottom: 0px;
+			
+			width: 100%;
+		}
 	}
 	
 	&:hover {

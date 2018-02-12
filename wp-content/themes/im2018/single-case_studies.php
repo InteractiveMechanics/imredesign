@@ -30,7 +30,7 @@
 							
 							<h3>Muscle Hatchery Exhibits</h3>
 							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+							<img class="resp-client-logo" src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
 							
 							<button class="btn btn-default btn-gold" href="#" role="button">Watch the Video</button>
 														

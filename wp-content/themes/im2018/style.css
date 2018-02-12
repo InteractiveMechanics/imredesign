@@ -627,10 +627,23 @@ table {
 .feat-content-block-wide img {
   width: 20%;
   bottom: 50px; }
+  @media (max-width: 767px) {
+    .feat-content-block-wide img {
+      width: 50%; } }
+.feat-content-block-wide .resp-client-logo {
+  position: relative;
+  bottom: -275px;
+  width: 45%; }
 .feat-content-block-wide .btn {
   position: absolute;
   bottom: 50px;
   right: 40px; }
+  @media (max-width: 767px) {
+    .feat-content-block-wide .btn {
+      right: initial;
+      left: 0px;
+      bottom: 0px;
+      width: 100%; } }
 .feat-content-block-wide:hover {
   transform: scale(1, 1);
   box-shadow: none;
@@ -1111,6 +1124,14 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   .gallery-wrapper img {
     width: 100%;
     height: auto; }
+  @media (max-width: 767px) {
+    .gallery-wrapper {
+      -webkit-column-count: 1;
+      -webkit-column-gap: 0px;
+      -moz-column-count: 1;
+      -moz-column-gap: 0px;
+      column-count: 1;
+      column-gap: 0px; } }
 
 /*--------------------------------------------------------------
 # Widgets
@@ -1222,16 +1243,31 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 .awards-wrapper {
   display: flex;
   justify-content: center; }
+  @media (max-width: 767px) {
+    .awards-wrapper {
+      flex-direction: column;
+      align-items: center; } }
 
 .awards-wrapper > a {
   border-left: 1px solid #e5e5e6; }
   .awards-wrapper > a:last-of-type {
     border-right: 1px solid #e5e5e6; }
+  @media (max-width: 767px) {
+    .awards-wrapper > a {
+      border-left: none;
+      width: calc(100% + 60px);
+      text-align: center; }
+      .awards-wrapper > a:last-of-type {
+        border-right: none;
+        border-top: 1px solid #e5e5e6; } }
 
 .awards-block {
   display: block;
   height: 140px;
   width: 330px; }
+  @media (max-width: 767px) {
+    .awards-block img {
+      width: 330px; } }
 
 #cs-main {
   padding-top: 90px; }
@@ -1257,6 +1293,9 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
       margin-top: initial; }
     #project-details .learn-more-wrapper h4, #project-details .learn-more-wrapper .feat-content-block-wide p, .feat-content-block-wide #project-details .learn-more-wrapper p, #project-details .learn-more-wrapper .jumbotron p, .jumbotron #project-details .learn-more-wrapper p {
       margin-bottom: 10px; }
+  @media (max-width: 767px) {
+    #project-details .col-sm-7 h3, #project-details .col-sm-7 blockquote p, blockquote #project-details .col-sm-7 p {
+      margin-top: 60px; } }
 
 #cs-learn-more {
   padding-top: 65px;
@@ -1273,10 +1312,19 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   .learn-more-wrapper h4, .learn-more-wrapper .feat-content-block-wide p, .feat-content-block-wide .learn-more-wrapper p, .learn-more-wrapper .jumbotron p, .jumbotron .learn-more-wrapper p {
     line-height: initial;
     margin-top: 0px; }
+    @media (max-width: 767px) {
+      .learn-more-wrapper h4, .learn-more-wrapper .feat-content-block-wide p, .feat-content-block-wide .learn-more-wrapper p, .learn-more-wrapper .jumbotron p, .jumbotron .learn-more-wrapper p {
+        font-size: 18px; } }
   .learn-more-wrapper h5, .learn-more-wrapper .filter-group > li > a {
     color: #cfa667; }
   .learn-more-wrapper .btn-default {
     margin-top: 30px; }
+  @media (max-width: 767px) {
+    .learn-more-wrapper {
+      flex-wrap: wrap; } }
+  @media (max-width: 767px) {
+    .learn-more-wrapper div {
+      margin-top: 30px; } }
 
 #cs-archive {
   border-bottom: 1px solid #e5e5e6;
