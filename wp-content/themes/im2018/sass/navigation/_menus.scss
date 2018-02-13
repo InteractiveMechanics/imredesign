@@ -23,9 +23,28 @@
     
 }
 
+
+.navbar-collapse.collapse.in {
+	margin-left: -45px;
+    margin-right: -45px;
+    position: absolute;
+    top: -41px;
+    left: 0px;
+    right: 0px;
+}
+
 .nav-menu {
 	width: calc(100% - 315px); //315 = width of .navbar-right + width of logo-header.svg
 	height: 65px;
+	
+	@include screen-xs {
+		width: 100%;
+	    background-color: $royal_blue;
+	    height: auto;
+	    display: block;
+	    text-align: center;
+	    padding: 100px 25px;
+	}
 }
 
 .navbar-default .navbar-collapse, 
@@ -67,6 +86,27 @@
 		    left: 0;
 		}
 	}
+	
+	@include screen-xs {
+		display: inline-block;
+		margin-bottom: 20px;
+		
+		color: white;
+		font-family: $adelle;
+		text-transform: initial;
+		font-size: 28px;
+		
+		
+		&:after {
+			border-bottom: 2px solid white;
+			bottom: 0px;
+		}
+		
+		&:hover {
+			color: white;
+			
+		}
+	}
 }
 
 .navbar-right {
@@ -81,5 +121,110 @@
 	    font-family: $proxima_nova--semibold !important;
 	    
     }
+}
+
+.navbar-default .navbar-toggle {
+	@include screen-xs {
+		display: flex;
+		flex-direction: column;
+	}
+    
+    border-color: transparent;
+    
+    align-items: flex-end;
+  
+    transition: $transition;
+    
+    &:before {
+		background-image: linear-gradient(to right, transparent, transparent) !important;
+	}
+    
+    
+    &:hover {
+	    background: transparent;
+	    
+	    &:before {
+		    background-image: linear-gradient(to right, transparent, transparent) !important;
+	    }
+	    
+	    >span {
+		    		    
+		    &:nth-of-type(2) {
+			   	width: 5px;
+		    }
+		    
+		    &:nth-of-type(3) {
+			    width: 10px;
+		    }
+		    
+		    &:nth-of-type(4) {
+			    width: 15px;
+		    }
+		    
+	    }
+	    
+	}
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: $royal_blue;
+	height: 4px;
+	margin-top: 6px;
+}
+
+.navbar-default .navbar-toggle[aria-expanded="true"] .icon-bar {
+	background-color: white;
+}
+
+.navbar-toggle>span {
+	transition: $transition;
+	
+	&:nth-of-type(2) {
+		width: 22px;
+	}
+	
+	&:nth-of-type(3) {
+		width: 37px;
+	}
+	
+	&:nth-of-type(4) {
+		width: 30px;
+	}
+}
+
+
+.navbar-default .navbar-toggle[aria-expanded="true"]>span {
+		    
+		    &:nth-of-type(2) {
+			    position: relative;
+			    top: 10px;
+			    
+			    width: 25px;
+			    transform: rotate(-45deg);
+			    
+		    }
+		    
+		    &:nth-of-type(3) {
+			    width: 0px;
+		    }
+		    
+		    &:nth-of-type(4) {
+			    position: relative;
+			    top: -10px;
+			    
+			    width: 25px;
+			    transform: rotate(45deg);
+		    }
+		    	
+}
+
+
+
+
+
+
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:hover {
+	background: transparent;
 }
 

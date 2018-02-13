@@ -54,7 +54,7 @@
 				        
 			      	</ul>
 			     
-				  	<ul class="nav navbar-nav navbar-right">
+				  	<ul class="nav navbar-nav navbar-right hidden-xs">
 			        	
 			        	<li><a href="#">We're Hiring!</a></li>
 			        	 	      
