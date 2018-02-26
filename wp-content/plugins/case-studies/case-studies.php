@@ -33,7 +33,7 @@ function create_case_study() {
             'public' => true,
             'menu_position' => 15,
             'supports' => array( 'title', 'editor', 'comments', 'thumbnail', 'custom-fields' ),
-            'taxonomies' => array( 'services', 'technologies' ),
+            'taxonomies' => array( 'services', 'technologies', 'projectyear' ),
             'has_archive' => true
         )
     );

@@ -23,6 +23,7 @@
 	transition: $transition;
 	z-index: 1;
 	position: relative;
+	background-size: cover;
 	
 	h3 {
 		color: $white;
@@ -49,8 +50,8 @@
 	
 	&:hover {
 		// changing background size on hover looks janky -- to see this jankiness in action, change the inline css property from background to background-image
-		background-size: 125% 125%;
-		background-position: top left;
+		//background-size: 125% 125%;
+		//background-position: top left;
 		transform: scale(1.025, 1.025);
 		box-shadow: 0px 0px 5px rgba(0,0,0, 0.75);
 		z-index: 3;

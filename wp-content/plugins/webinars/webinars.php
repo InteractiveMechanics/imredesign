@@ -33,7 +33,7 @@ function create_webinar() {
             'public' => true,
             'menu_position' => 15,
             'supports' => array( 'title', 'editor', 'comments', 'thumbnail', 'custom-fields' ),
-            'taxonomies' => array( '' ),
+            'taxonomies' => array( 'projectyear' ),
             'has_archive' => true
         )
     );
