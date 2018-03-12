@@ -1157,7 +1157,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 .jumbotron {
   padding-left: 65px;
   padding-top: 65px;
-  padding-bottom: 75px; }
+  padding-bottom: 75px;
+  background-color: white; }
   .jumbotron h1 {
     margin: 0px;
     font-size: 54px;

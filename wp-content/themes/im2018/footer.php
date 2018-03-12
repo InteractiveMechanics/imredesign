@@ -25,10 +25,10 @@
 					</form>
 				
 					<div id="footer-social" class="social list-group">
-						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-facebook.svg"); ?></a>
-						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-twitter.svg"); ?></a>
-						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-instagram.svg"); ?></a>
-						<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-dribbble.svg"); ?></a>
+						<a href="<?php the_field('facebook_link', 'option'); ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-facebook.svg"); ?></a>
+						<a href="<?php the_field('twitter_link', 'option'); ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-twitter.svg"); ?></a>
+						<a href="<?php the_field('instagram_link', 'option'); ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-instagram.svg"); ?></a>
+						<a href="<?php the_field('dribble_link', 'option'); ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-dribbble.svg"); ?></a>
 					</div>
 					
 				</div>
@@ -46,11 +46,11 @@
 					</a>
 					
 					<div class="site-info">
-						<h3>Beautiful digital design for arts, culture, and education</h3>
+						<h3><?php the_field('footer_tagline', 'option'); ?></h3>
 						<address>
-							<h5>219 Cuthbert Street Suite 210 Philadelphia, PA 19102</h5>
+							<h5><?php the_field('footer_street_address', 'option'); ?> <?php the_field('footer_city', 'option'); ?>, <?php the_field('footer_state', 'option'); ?> <?php the_field('footer_zip', 'option'); ?></h5>
 						</address>
-						<h5><a href="">hello@interactivemechanics.com</a> <span class="hidden-xs">&#47; <a href="#">Jobs</a><span></h5>
+						<h5><a href="emailto:<?php the_field('footer_email_address', 'option'); ?>"><?php the_field('footer_email_address', 'option'); ?></a> <span class="hidden-xs">&#47; <a href="<?php the_field('footers_careers_page_url', 'option'); ?>"><?php the_field('footer_careers_page_link', 'option'); ?></a><span></h5>
 					</div>
 					
 				</div>
