@@ -9,6 +9,14 @@
 
 <?php get_header(); ?>
 
+<?php 
+	$name = get_field('name');
+	$title = get_field('title');
+	$bio_copy = get_field('bio_copy');
+	
+?>
+
+
 <?php while ( have_posts() ) : the_post();
 ?>
 
@@ -26,9 +34,9 @@
 					<div class="col-sm-12">
 						<div class="feat-content-block-wide"  style="background-image: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/featured-images/featured-image-01@1x.jpg');">
 							
-							<h5>Director of Strategic Initiatives</h5>
+							<h5><?php echo $name; ?></h5>
 							
-							<h3>Amelia Longo</h3>
+							<h3><?php echo $title; ?></h3>
 							
 							
 							<div id="bio-social" class="social list-group">
@@ -49,7 +57,7 @@
 				<div class="col-sm-8 col-sm-offset-2 content-wrapper">
 					<h5>Biography</h5>
 					
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula dui sed risus bibendum tempor in eget velit. Integer sit amet porttitor nibh. Duis dictum justo a neque facilisis, a ullamcorper augue fermentum. Etiam consectetur magna ut metus lobortis malesuada. Nulla varius suscipit nisi non tincidunt. Etiam vitae lobortis tellus. Fusce tellus massa, aliquam at finibus vel, bibendum ac nunc. Nullam ornare, sem quis scelerisque dapibus, diam erat dignissim urna, at efficitur nunc nisi vitae dolor. Proin sit amet dolor mi. Maecenas commodo nulla tellus, vel vestibulum dui vestibulum ut. Sed id fringilla urna. In eros eros, mattis in mattis quis, molestie ac sapien. Curabitur maximus leo a placerat lobortis. Nullam venenatis, neque eget mollis elementum, neque purus dapibus quam, sed facilisis neque leo id justo.</p>
+					<?php echo $bio_copy; ?>
 					
 					
 				</div><!-- /.content-wrapper -->

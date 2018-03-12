@@ -7,20 +7,56 @@
  */
 get_header(); ?>
 
+<?php 
+	
+	
+?>
+
 <main>
 	<div class="jumbotron">
 			<div class="media-container">
-				<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+				<?php
+
+				// check if the flexible content field has rows of data
+				if( have_rows('background') ):
+				
+				     // loop through the rows of data
+				    while ( have_rows('background') ) : the_row();
+				
+				        if( get_row_layout() == 'background_video' ):
+				
+				        	$video_file = the_sub_field('video_file');
+				        	
+				        	echo '<video><source src="' . $video_file . '" type="video/mp4"></video>';
+				
+				        elseif( get_row_layout() == 'background_image' ): 
+				
+				        	$img_file = get_sub_field('img_file');
+				        	
+				        	echo '<img src="' . $img_file . '"/>';
+				
+				        endif;
+				
+				    endwhile;
+				
+				else :
+					
+				    // no layouts found
+				
+				endif;
+				
+				?>
+				
 			</div>
 			
 			<div class="container-fluid">
 				<div class="row">
 					
 					<div class="col-sm-7">
-						<h1>Beautiful digital experiences for museums and archives</h1>
+						<h1><?php the_field('page_title'); ?></h1>
 					</div>
 					<div class="col-sm-7">
-						<p>We work on projects that empower and educate, and always bring honesty and authenticity to our projects.</p>
+						<p><?php the_field('page_intro'); ?></p>
 						
 					</div>
 					
@@ -32,113 +68,38 @@ get_header(); ?>
 		<section class="container-fluid">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 content-wrapper">
-					<p class="lead">As part of the re-installation of "Drawing Room from a Town House: 901 Fifth Aveue, New York City," the Philadelphia Museum of Art reached out to us to create  a pair of high-resolution digital interactives to allow visitors to take a closer look at 66 of the room's objects.</p>
+					<p class="lead"><?php the_field('lead_paragraph'); ?></p>
 					
 					<h3>Our Values</h3>
 					
+					<!-- ACF repeater starts -->
+					<?php if( have_rows('values') ): 
+
+					while ( have_rows('values') ) : the_row();
+					
+					?>
 					<div class="values-wrapper">
 					
 						<div class="col-sm-2 col-xs-4">
 						
-							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
+							<img src="<?php the_sub_field('values_img'); ?>" />
 						
 						</div>
 						
 						<div class="col-sm-10 col-xs-8">
 							
-							<h5>Communication / Openness / Empathy</h5>
-							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
+							<h5><?php the_sub_field('values_heading'); ?></h5>
+							<p><?php the_sub_field('values_description'); ?></p>
 						
 						</div>
 				
 					</div>
 					
-					<div class="values-wrapper">
+					<?php endwhile; ?>
 					
-						<div class="col-sm-2 col-xs-4">
-						
-							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
-						
-						</div>
-						
-						<div class="col-sm-10 col-xs-8">
-							
-							<h5>Communication / Openness / Empathy</h5>
-							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
-						
-						</div>
-				
-					</div>
-					
-					<div class="values-wrapper">
-					
-						<div class="col-sm-2 col-xs-4">
-						
-							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
-						
-						</div>
-						
-						<div class="col-sm-10 col-xs-8">
-							
-							<h5>Communication / Openness / Empathy</h5>
-							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
-						
-						</div>
-				
-					</div>
-					
-					<div class="values-wrapper">
-					
-						<div class="col-sm-2 col-xs-4">
-						
-							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
-						
-						</div>
-						
-						<div class="col-sm-10 col-xs-8">
-							
-							<h5>Communication / Openness / Empathy</h5>
-							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
-						
-						</div>
-				
-					</div>
-					
-					<div class="values-wrapper">
-					
-						<div class="col-sm-2 col-xs-4">
-						
-							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
-						
-						</div>
-						
-						<div class="col-sm-10 col-xs-8">
-							
-							<h5>Communication / Openness / Empathy</h5>
-							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
-						
-						</div>
-				
-					</div>
-					
-					
-					<div class="values-wrapper">
-					
-						<div class="col-sm-2 col-xs-4">
-						
-							<img src="<?php printThemePath(); ?>/assets/value-icons/value-icon-01@1x.png" />
-						
-						</div>
-						
-						<div class="col-sm-10 col-xs-8">
-							
-							<h5>Communication / Openness / Empathy</h5>
-							<p>We've worked with clients from around the corner to across the country, and we've learned that open, ongoing communication is key. We've been commended for our ability to identify relevant stakeholders, to listen, to facilitate collaboration, and to explain our recommendations.</p>
-						
-						</div>
-				
-					</div>
-					
+					<?php endif; ?>
+					<!-- ACF repeater ends -->
+										
 					<div class="col-sm-12 center">
 					<a class="btn btn-default" href="#" role="button">Explore Our Work</a>
 					</div>
@@ -177,62 +138,36 @@ get_header(); ?>
 					<div class="col-sm-12 related-content-heading">
 						<h3>Our Team</h3>
 					</div>
-				
-			
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Director of Strategic Initiatives</h5>
-							
-							<h3>Amelia Longo</h3>
-							
-						</a>
-					</div>
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Chief Communications Officer</h5>
-							
-							<h3>Nyota Uhura</h3>
-							
-						</a>
-					</div>
+					<?php $args = array( 'post_type' => 'team_bios', 'posts_per_page' => 10 );
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Designer</h5>
-							
-							<h3>Tara Espenshade</h3>
-							
-						</a>
-					</div>
+						$loop = new WP_Query( $args );
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Marketing Manager</h5>
-							
-							<h3>LaNeshe Miller-White</h3>
-							
-						</a>
-					</div>
+					while ( $loop->have_posts() ) : $loop->the_post(); 
+					 
+						$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+						$team_bio_permalink = get_post_permalink(get_the_ID());
 					
-					<div class="col-sm-4">
+					
+					?>
+						<!-- if the team member is a current employee -->
+						<?php if( get_field('employment_status') ): ?>
 						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							<div class="col-sm-4">
+						
+								<a href="<?php echo $team_bio_permalink; ?>" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
 							
-							<h5>Defense Against The Dark Arts</h5>
+									<h5><?php the_field('name'); ?></h5>
 							
-							<h3>Severus Snape</h3>
+									<h3><?php the_field('title'); ?></h3>
 							
-						</a>
-					</div>		
+								</a>
+							</div>
+					
+						<?php endif; ?>
+						
+					<?php endwhile; ?>
+
 									
 			</div>
 		</section>
@@ -243,70 +178,24 @@ get_header(); ?>
 			<section class="container-fluid">
 				<div class="row">
 					
+					
 					<div class="col-sm-12 col-xs-12 related-content-heading">
 						<h3>Our Clients</h3>
 					</div>
 					
+					<?php $args = array( 'post_type' => 'im_clients', 'posts_per_page' => 10 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 						
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>	
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-philamuseum.png" /></a>
-						</div>
-					</div>														
+						<div class="col-sm-3 col-xs-6">
+							<div class="client-block">
+								<a href="<?php the_field('website'); ?>"><img src="<?php the_field('logo'); ?>" /></a>
+							</div>
+						</div> 
+						
+					<?php endwhile; ?>
+
+													
 						
 				</div>
 			</section>
@@ -338,42 +227,19 @@ get_header(); ?>
 						<h3>Our Partners</h3>
 					</div>
 					
+					<?php $args = array( 'post_type' => 'partners', 'posts_per_page' => 10 );
+					$loop = new WP_Query( $args );
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 						
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
-						</div>
-					</div>
-					
-					<div class="col-sm-3 col-xs-6">
-						<div class="client-block">
-							<a href="#"><img src="<?php printThemePath(); ?>/assets/clients-partners-logos/partner-logo-metcalfe.png" /></a>
-						</div>
-					</div>											
+						<div class="col-sm-3 col-xs-6">
+							<div class="client-block">
+								<a href="<?php the_field('partner_url'); ?>"><img src="<?php the_field('logo'); ?>" /></a>
+							</div>
+						</div> 
+						
+					<?php endwhile; ?>
+
+													
 						
 				</div>
 			</section>

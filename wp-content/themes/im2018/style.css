@@ -587,7 +587,7 @@ table {
   transition: all 0.25s ease-in-out;
   z-index: 1;
   position: relative;
-  background-size: cover; }
+  background-size: cover !important; }
   .feat-content-block h3, .feat-content-block blockquote p, blockquote .feat-content-block p,
   .feat-content-block-wide h3,
   .feat-content-block-wide blockquote p,

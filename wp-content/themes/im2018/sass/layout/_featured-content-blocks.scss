@@ -23,7 +23,7 @@
 	transition: $transition;
 	z-index: 1;
 	position: relative;
-	background-size: cover;
+	background-size: cover !important;  //because need to override the inline styles that are necessary because PHP is inserted
 	
 	h3 {
 		color: $white;
