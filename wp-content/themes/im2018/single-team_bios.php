@@ -10,6 +10,7 @@
 <?php get_header(); ?>
 
 <?php 
+	$banner_img = get_field('banner_img');
 	$name = get_field('name');
 	$title = get_field('title');
 	$bio_copy = get_field('bio_copy');
@@ -32,7 +33,7 @@
 				<div class="row">
 					
 					<div class="col-sm-12">
-						<div class="feat-content-block-wide"  style="background-image: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/featured-images/featured-image-01@1x.jpg');">
+						<div class="feat-content-block-wide"  style="background-image: linear-gradient(to left bottom, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php echo $banner_img; ?>');">
 							
 							<h5><?php echo $name; ?></h5>
 							
@@ -40,9 +41,49 @@
 							
 							
 							<div id="bio-social" class="social list-group">
-								<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-twitter.svg"); ?></a>
-								<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-linkedin.svg"); ?></a>
-								<a href="#" target="_blank" class="list-group-item"><?php include("assets/icons/icon-email.svg"); ?></a>
+								<?php 
+									$facebook = get_field('facebook');
+									$twitter = get_field('twitter');
+									$linkedin = get_field('linkedin');
+									$instagram = get_field('instagram');
+									$dribble = get_field('dribble');
+									$personal_website = get_field('personal_website');
+									$team_bio_email = get_field('team_bio_email');	
+								?>
+								
+								<?php if ($facebook): ?>
+									<a href="<?php echo $facebook; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-facebook.svg"); ?></a>
+								<?php endif; ?>
+
+								
+								<?php if ($twitter): ?>
+									<a href="<?php echo $twitter; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-twitter.svg"); ?></a>
+								<?php endif; ?>
+								
+								
+								<?php if ($linkedin): ?>
+									<a href="<?php echo $linkedin; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-linkedin.svg"); ?></a>
+								<?php endif; ?>
+								
+								<?php if ($instagram): ?>
+									<a href="<?php echo $instagram; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-instagram.svg"); ?></a>
+								<?php endif; ?>
+								
+								<?php if ($dribble): ?>
+									<a href="<?php echo $dribble; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-dribble.svg"); ?></a>
+								<?php endif; ?>
+								
+								<?php if ($personal_website): ?>
+									<a href="<?php echo $personal_website; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-email.svg"); ?></a>
+								<?php endif; ?>
+								
+								
+								<?php if ($team_bio_email): ?>
+									<a href="<?php echo $team_bio_email; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-email.svg"); ?></a
+								<?php endif; ?>
+								
+								
+								
 							</div>
 														
 						</div>
@@ -75,60 +116,40 @@
 					</div>
 				
 			
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Director of Strategic Initiatives</h5>
-							
-							<h3>Amelia Longo</h3>
-							
-						</a>
-					</div>
+					<?php $args = array( 
+						'post_type' => 'team_bios', 
+						'posts_per_page' => 10,
+						'post__not_in' => array( $post->ID )
 					
-					<div class="col-sm-4">
+					 );
 						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Chief Communications Officer</h5>
-							
-							<h3>Nyota Uhura</h3>
-							
-						</a>
-					</div>
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Designer</h5>
-							
-							<h3>Tara Espenshade</h3>
-							
-						</a>
-					</div>
+						$loop = new WP_Query( $args );
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Marketing Manager</h5>
-							
-							<h3>LaNeshe Miller-White</h3>
-							
-						</a>
-					</div>
+					while ( $loop->have_posts() ) : $loop->the_post(); 
+					 
+						$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+						$team_bio_permalink = get_post_permalink(get_the_ID());
 					
-					<div class="col-sm-4">
+					
+					?>
+						<!-- if the team member is a current employee -->
+						<?php if( get_field('employment_status') ): ?>
 						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+							<div class="col-sm-4">
+						
+								<a href="<?php echo $team_bio_permalink; ?>" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
 							
-							<h5>Defense Against The Dark Arts</h5>
+									<h5><?php the_field('name'); ?></h5>
 							
-							<h3>Severus Snape</h3>
+									<h3><?php the_field('title'); ?></h3>
 							
-						</a>
-					</div>		
+								</a>
+							</div>
+					
+						<?php endif; ?>
+						
+					<?php endwhile; ?>
 									
 			</div>
 		</section>

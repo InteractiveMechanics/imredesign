@@ -13,6 +13,7 @@
 	$banner_img = get_field('banner_img');
 	$case_study_body = get_field('case_study_body');
 	$learn_more_heading = get_field('learn_more_heading');
+	$project_video = get_field('project_video');
 	
 		
 	
@@ -49,9 +50,22 @@
 							<h3><?php the_title(); ?></h3>
 							
 							
-							<img class="resp-client-logo" src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+							<?php 
+
+								$posts = get_field('case_study_client');
+								
+								if( $posts ): ?>
+									
+									<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+									   <img class="resp-client-logo" src="<?php the_field('logo_inverted', $p->ID); ?>" />
+									<?php endforeach; ?>
+									
+							<?php endif; ?>
 							
-							<button class="btn btn-default btn-gold" href="#" role="button">Watch the Video</button>
+							
+							<?php if ($project_video): ?>
+								<button class="btn btn-default btn-gold" href="<?php echo $project_video; ?>" role="button">Watch the Video</button>
+							<?php endif; ?>
 														
 						</div>
 					</div>

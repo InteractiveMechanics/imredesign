@@ -110,26 +110,48 @@ get_header(); ?>
 		
 		</section>
 	</article>
-
-		
-	<article class="testimonial" style="background: url('<?php printThemePath(); ?>/assets/testimonial-backgrounds/testimonial-background-01@1x.jpg');">
-		<section class="container-fluid">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 content-wrapper">
-					<blockquote class="blockquote">
-						<p>I've worked with dozens of developers and Interactive Mechanics was as friendly, reliable, and on-point as they come. They hit every project deadline and delivered an end product that exceeded our expectations.</p>
-						<footer class="blockquote-footer">
-							<h5 class="blockquote-name">Owen Henkel</h5>
-							<h5 class="blockquote-title">Director of Fund Development</h5>
-							<h5 class="blockquote-affiliation">Social Venture Fund</h5>  
-						</footer>
-					</blockquote>
-				
-				</div>
-			</div>
-		</section>
-	</article>
 	
+	<?php 
+
+	$posts = get_field('testimonial_1');
+	
+	if( $posts ): ?>
+	    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+	        <?php setup_postdata($post); ?>
+	        
+	        	<article class="testimonial" style="background: url('<?php printThemePath(); ?>/assets/testimonial-backgrounds/testimonial-background-01@1x.jpg');">
+					<section class="container-fluid">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 content-wrapper">
+								<blockquote class="blockquote">
+									<p><?php the_field('testimonial_body', $post->ID); ?></p>
+									<footer class="blockquote-footer">
+										<h5 class="blockquote-name"><?php the_field('author', $post->ID); ?></h5>
+										<h5 class="blockquote-title"><?php the_field('title', $post->ID); ?></h5>
+										<h5 class="blockquote-affiliation">Social Venture Fund</h5>  
+									</footer>
+								</blockquote>
+							
+							</div>
+						</div>
+					</section>
+				</article>
+
+	        
+	        
+	        
+	    	<?php endforeach; ?>
+	    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+	<?php endif; ?>
+	
+	
+	
+	
+	
+	
+	
+	
+		
 	
 	<article id="related-content" class="team">
 		<section class="container-fluid">
@@ -201,23 +223,46 @@ get_header(); ?>
 			</section>
 	</article>
 	
-	<article class="testimonial" style="background: url('<?php printThemePath(); ?>/assets/testimonial-backgrounds/testimonial-background-01@1x.jpg');">
-		<section class="container-fluid">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 content-wrapper">
-					<blockquote class="blockquote">
-						<p>I've worked with dozens of developers and Interactive Mechanics was as friendly, reliable, and on-point as they come. They hit every project deadline and delivered an end product that exceeded our expectations.</p>
-						<footer class="blockquote-footer">
-							<h5 class="blockquote-name">Owen Henkel</h5>
-							<h5 class="blockquote-title">Director of Fund Development</h5>
-							<h5 class="blockquote-affiliation">Social Venture Fund</h5>  
-						</footer>
-					</blockquote>
-				
-				</div>
-			</div>
-		</section>
-	</article>
+	<?php 
+
+	$posts2 = get_field('testing_testimonial');
+	
+	if( $posts2 ): ?>
+	    <?php foreach( $posts2 as $post): // variable must be called $post (IMPORTANT) ?>
+	        <?php setup_postdata($post); ?>
+	        
+	        	<article class="testimonial" style="background: url('<?php printThemePath(); ?>/assets/testimonial-backgrounds/testimonial-background-01@1x.jpg');">
+					<section class="container-fluid">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 content-wrapper">
+								<blockquote class="blockquote">
+									<p><?php the_field('testimonial_body', $post->ID); ?></p>
+									<footer class="blockquote-footer">
+										<h5 class="blockquote-name"><?php the_field('author', $post->ID); ?></h5>
+										<h5 class="blockquote-title"><?php the_field('title', $post->ID); ?></h5>
+										<h5 class="blockquote-affiliation">Social Venture Fund</h5>  
+									</footer>
+								</blockquote>
+							
+							</div>
+						</div>
+					</section>
+				</article>
+
+	        
+	        
+	        
+	    	<?php endforeach; ?>
+	    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+	    <?php else: ?>
+	    <h1>Testing This</h1>
+	<?php endif; ?>
+
+	
+	
+		
+	
+	
 	
 	<article id="partners-blocks-container">
 			<section class="container-fluid">

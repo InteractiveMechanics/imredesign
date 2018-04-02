@@ -7,14 +7,22 @@
  * @package im2018
  */
 
-get_header(); ?>
+get_header();
+
+$post_category = get_the_category();
+$first_category = $post_category[0]->cat_name; 
+$post_date = get_the_date('F Y');
+$post_year = get_the_date('Y');
+
+
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			
 		<div class="jumbotron jumbo-short">
 					<div class="media-container">
-						<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+						<img src="" />
 					</div>
 					
 			</div>
@@ -25,11 +33,11 @@ get_header(); ?>
 				<div class="row">
 					
 					<div class="col-sm-12">
-						<div class="feat-content-block-wide"  style="background: url('<?php printThemePath(); ?>/assets/featured-images/Fellowship_Project_Announcement-20.jpg'); background-size: cover;">
+						<div class="feat-content-block-wide"  style="background: url('<?php the_field("banner_img"); ?>'); background-size: cover;">
 							
-							<h5><span class="blog-cat">Behind the Scenes</span> / <span class="blog-date">July 2017</span></h5>
+							<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
 							
-							<h3>Meet LaNeshe, Our New Marketing Manager</h3>
+							<h3><?php the_title(); ?></h3>
 								
 							
 														
@@ -43,29 +51,7 @@ get_header(); ?>
 			<section class="container-fluid">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2 content-wrapper">
-						<h5>1. What did you do before joining Interactive Mechanics?</h5>
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula dui sed risus bibendum tempor in eget velit. Integer sit amet porttitor nibh. Duis dictum justo a neque facilisis, a ullamcorper augue fermentum. Etiam consectetur magna ut metus lobortis malesuada. Nulla varius suscipit nisi non tincidunt. Etiam vitae lobortis tellus. Fusce tellus massa, aliquam at finibus vel, bibendum ac nunc. Nullam ornare, sem quis scelerisque dapibus, diam erat dignissim urna, at efficitur nunc nisi vitae dolor. Proin sit amet dolor mi. Maecenas commodo nulla tellus, vel vestibulum dui vestibulum ut. Sed id fringilla urna. In eros eros, mattis in mattis quis, molestie ac sapien. Curabitur maximus leo a placerat lobortis. Nullam venenatis, neque eget mollis elementum, neque purus dapibus quam, sed facilisis neque leo id justo.</p>
-						<h5>2. How did you get into Marketing?</h5>
-						
-						<p>Etiam consectetur magna ut metus lobortis malesuada. Nulla varius suscipit nisi non tincidunt. Etiam vitae lobortis tellus. Fusce tellus massa, aliquam at finibus vel, bibendum ac nunc. Nullam ornare, sem quis scelerisque dapibus, diam erat dignissim urna, at efficitur nunc nisi vitae dolor. Proin sit amet dolor mi. Maecenas commodo nulla tellus, vel vestibulum dui vestibulum ut.</p>
-						
-						<h5>3. What's your go-to place to spark your creativity?</h5>
-						
-						<p>Nullam ornare, sem quis scelerisque dapibus, diam erat dignissim urna, at efficitur nunc nisi vitae dolor. Proin sit amet dolor mi. Maecenas commodo nulla tellus, vel vestibulum dui vestibulum ut. Sed id fringilla urna. In eros eros, mattis in mattis quis, molestie ac sapien. Curabitur maximus leo a placerat lobortis. Nullam venenatis, neque eget mollis elementum, neque purus dapibus quam, sed facilisis. </p>
-						
-						<h5>4. What did you love about the last museum you visited></h5>
-						
-						<p>Ornare, sem quis scelerisque dapibus, diam erat dignissim urna, at efficitur nunc nisi vitae dolor. Proin sit amet dolor mi. Maecenas commodo nulla tellus, vel vestibulum dui vestibulum ut.</p>
-						
-						<h5>5. What's your favorite spot in Philadelphia?</h5>
-						
-						<p>Aliquam iaculis viverra porta. Sed magna lorem, pharetra sed leo sed, semper sodales nulla. Curabitur vitae mattis enim. Maecenas eget elit sem. Curabitur porta condimentum fringilla. Praesent eget aliquam ipsum, quis euismod arcu. Praesent vehicula vehicula sem a luctus. In posuere congue arcu ut accumsan. Vestibulum porttitor neque et ante molestie, vitae elementum magna dignissim. Curabitur a nisi nec lectus interdum vehicula eget nec lorem. Pellentesque tincidunt elit accumsan, ultrices velit vel, condimentum lectus.</p>
-						
-						
-
-
-						
+						<?php the_content(); ?>						
 						
 					</div>
 				</div>
@@ -81,10 +67,10 @@ get_header(); ?>
 						<div class="col-sm-5">
 							<h3>Post Details</h3>
 							<h5>Year</h5>
-							<button class="btn-pill">2015</button>
+							<button class="btn-pill"><?php echo $post_year; ?></button>
 							
 							<h5>Category</h5>
-							<button class="btn-pill">Behind the Scenes</button>
+							<button class="btn-pill"><?php echo $first_category; ?></button>
 							
 						
 						</div>
@@ -92,13 +78,33 @@ get_header(); ?>
 						<div class="col-sm-7">
 							<h3>About the Author</h3>
 							<div class="learn-more-wrapper">
-								<img class="staff-thumb-sm"src="<?php printThemePath(); ?>/assets/staff-thumbnails/staff-thumbnail-longo@1x.jpg" />
+								
+								<?php 
+
+								$posts = get_field('post_author');
+								 
+								
+								if( $posts ): ?>
+								
+									<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) 
+										$featured_img_url = get_the_post_thumbnail_url($p->ID,'full'); 
+										
+									?>
+									    
+									   									
+								
+								<img class="staff-thumb-sm"src="<?php echo $featured_img_url; ?>" />
 						
 								<div>
-									<h4>Amelia Longo</h4>
-									<h5>Director of Strategic Initiatives</h5>
-									<h4><a href="mailto:someone@example.com">amelia@interactivemechanics.com</a></h4>
+									<h4><?php the_field('name', $p->ID); ?></h4>
+									<h5><?php the_field('title', $p->ID); ?></h5>
+									<h4><a href="mailto:<?php the_field('team_bio_email', $p->ID); ?>"><?php the_field('team_bio_email', $p->ID); ?></a></h4>
 								</div>
+								
+									   
+									<?php endforeach; ?>
+								<?php endif; ?>
+							
 							</div>
 						</div>
 						
@@ -115,40 +121,57 @@ get_header(); ?>
 					<div class="col-sm-12 related-content-heading">
 						<h3>Browse Related</h3>
 					</div>
+					
+					<!-- ACF repeater starts -->
+					<?php if( have_rows('blog_post_related_content') ): ?>
+					<?php while ( have_rows('blog_post_related_content') ) : the_row(); ?>
+					
+					
+					<!-- ACF repeater subfields -->
+					<?php 
+						$relationship_queries = get_sub_field('related_content_blog_post');
+						$background_color = get_sub_field('related_content_background_color');  	
+					?>
+					
+					<!-- ACF relationship inside repeater starts -->
+					<?php if ($relationship_queries): ?>
+					<?php foreach( $relationship_queries as $relationship_query ) :
+						
+						$featured_img_url = get_the_post_thumbnail_url($relationship_query->ID,'full'); 
+						$my_title = get_the_title($relationship_query->ID);
+						$post_category = get_the_category($relationship_query->ID);
+						$first_category = $post_category[0]->cat_name;
+						$my_post_date = get_the_date('F Y', $relationship_query->ID);
+					
+					?>
+					
 				
-			
 					<div class="col-sm-4">
 						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+						
+						<a href="#" class="feat-content-block" style="background: <?php echo $background_color; ?>, url('<?php echo $featured_img_url; ?>');">
+						
+											
+							<h5>
+							<?php if ($first_category):	?>
+								<span class="featured-block-cat"><?php echo $first_category; ?></span>
+							<?php endif; ?> 
 							
-							<h5><span class="featured-block-cat">Behind the Scenes</span> / <span class="featured-block-date">July 2017</span></h5>
+							/ <span class="featured-block-date"><?php echo $my_post_date; ?></span></h5>
 							
-							<h3>Meet LaNeshe, our new Marketing Manager</h3>
+							<h3><?php echo $my_title; ?></h3>
 							
 						</a>
 					</div>
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5><span class="featured-block-cat">Behind the Scenes</span> / <span class="featured-block-date">July 2017</span></h5>
-							
-							<h3>Meet LaNeshe, our new Marketing Manager</h3>
-							
-						</a>
-					</div>
+					<?php endforeach; ?>
+					<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+					<!-- end ACF relationship -->
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(45deg, rgba(219,178,103, 0.5), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5><span class="featured-block-cat">Behind the Scenes</span> / <span class="featured-block-date">July 2017</span></h5>
-							
-							<h3>Meet LaNeshe, our new Marketing Manager</h3>
-							
-						</a>
-					</div>		
+					<?php endwhile; ?>
+					<?php endif; ?>	
+					<!-- end ACF repeater -->	
 									
 			</div>
 		</section>
