@@ -35,7 +35,28 @@ section {
 
 address {
 	margin-bottom: 0px;
+	h5 {
+		font-size: 12px;
+		color: $grey;
+		@include screen-xs {
+			line-height: 1.6;
+		}
+	}
 }
+
+::placeholder {
+	color: $grey;
+}
+
+
+input {
+	&:focus {
+		border: 1px solid $royal_blue !important;
+		outline-color: $royal_blue;
+		outline-width: 3px;
+	}    
+}
+
 
 
 @import "lists";
@@ -50,3 +71,5 @@ figure {
 }
 
 @import "tables";
+
+@import "animations";

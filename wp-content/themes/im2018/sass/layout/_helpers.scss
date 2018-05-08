@@ -15,6 +15,9 @@
 .content-wrapper {
 	p {
 		margin-bottom: 40px;
+		&:last-of-type {
+			margin-bottom: 10px;
+		}
 	}
 	
 	h5 {
@@ -27,7 +30,8 @@
 	}
 }
 
-.staff-thumb-sm {
+.staff-thumb-sm,
+.nonstaff-thumb-sm {
 	width: 125px;
 	height: 125px;
 }
@@ -56,11 +60,29 @@
 	display: flex;
 	align-items: baseline;
 	padding-bottom: 20px;
+	h3 {
+		@include screen-xs {
+			font-size: 24px;
+		}
+		@include screen-xxs {
+			font-size: 20px;
+		}
+	}
+	
+	
 	h5 {
 		margin-left: 20px;
 		a {
 			color: $grey;
 		}
+		
+		@include screen-xs {
+			margin-left: 15px;
+		}
+		
+	}
+	@include screen-xs {
+		justify-content: left;
 	}
 }
 
@@ -70,7 +92,8 @@
 
 .careers-main {
 	position: relative;
-	padding-top: 90px;
+	padding-top: 53px;
+	border-top: 1px solid $light_grey;
 }
 
 .resources {
@@ -81,10 +104,17 @@
 	div {
 		display: flex;
 		align-items: baseline;
+		
 		h4 {
 			margin-right: 25px;
 		}
 	}
+	
+	a {
+		margin-top: 20px;
+	}
+	
+	
 }
 
 .registration {
@@ -94,6 +124,7 @@
 }
 
 .webinars-wrapper {
+	display: flex;
 	margin-top: 0px;
 	margin-bottom: 60px;
 	overflow: auto;
@@ -108,14 +139,96 @@
 		line-height: initial;
 	}
 	
+	h5 {
+		margin-top: 0px;
+		//margin-bottom: 25px;
+	}
+	
 	p {
 		margin-bottom: initial;
 		display: inline;
-		margin-right: 7px;
 	}
 	
 	.col-sm-2 {
 		padding-left: 0px;
+	
+	}
+	
+	.col-sm-10 {
+		@include screen-xs {
+			padding: 15px;
+		}
+		@include screen-sm {
+			padding: 0px;
+		}
+	}
+	
+	@include screen-sm {
+		display: initial;
+		overflow: initial;
+	}
+	
+	@include screen-xs {
+		display: initial;
+	}
+}
+
+.webinar-img-wrapper {
+	display: inline-block;
+	width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-right: 20px;
+    @include screen-sm {
+	    width: 100%;
+	    height: 400px;
+	    margin-bottom: 20px;
+    }
+    
+    @include screen-xs {
+	    width: initial;
+	    height: 250px;
+	    margin-bottom: 20px;
+    }
+}
+
+.webinar-img-wrapper.values {
+	@include screen-sm {
+		width: 83.88%;
+	    height: auto;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	@include screen-xs {
+		width: 100%;
+		height: auto;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	
+	img {
+		@include screen-sm {
+			width: 50%;
+			height: auto;
+			min-width: initial;
+		}
+		
+		@include screen-xs {
+			width: 50%;
+			height: auto;
+			min-width: initial;
+		}
+		
+		@include screen-xxs {
+			width: 100%;
+			height: auto;
+			min-width: initial;
+		}
+		
 		
 	}
 }
@@ -130,6 +243,10 @@
 	h3 {
 		margin-bottom: 40px;
 	}
+}
+
+.no-webinars {
+	padding-left: 40px !important;
 }
 
 
@@ -149,8 +266,13 @@
 			background-color: transparent;
 			
 			.st0 {
-				fill: $grey;
+				fill: $gold;
 			}
 		}
 	}	
+}
+
+.acf-inverted-logo-background {
+	background-color: black;
+	color: white;
 }

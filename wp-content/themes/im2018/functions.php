@@ -61,6 +61,7 @@ if ( ! function_exists( 'im2018_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'im2018' ),
+			'secondary' => esc_html__( 'Secondary', 'im2018')
 		) );
 
 
@@ -87,6 +88,17 @@ if ( ! function_exists( 'im2018_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'im2018_setup' );
+
+
+/** 
+* Add Bootstrap Nav Walker
+*/
+
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+
+
+
 
 
 /** 
@@ -182,6 +194,50 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
+/* add filetype json to media library */
+function my_myme_types($mime_types){
+$mime_types['json'] = 'json'; //Adding json extension
+$mime_types['js'] = 'js'; //Adding js extension
+return $mime_types;
+}
+add_filter('upload_mimes', 'my_myme_types', 1, 1);
+
+
+/* 
+ * Customize Menu Item Classes
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/customize-which-menu-item-is-marked-active/
+ *
+ * @param array $classes, current menu classes
+ * @param object $item, current menu item
+ * @param object $args, menu arguments
+ * @return array $classes
+ */
+function be_menu_item_classes( $classes, $item, $args ) {
+
+	
+
+	if( ( is_singular( 'post' ) || is_category() ) && 'Blog' == $item->title )
+		$classes[] = 'current-menu-item active';
+		
+	if( ( is_singular( 'case_studies' ) || is_tax( 'services') || is_tax( 'technologies' )  || is_tax( 'projectyear' )  ) && 'Our Work' == $item->title )
+		$classes[] = 'current-menu-item active';
+		
+	if( ( is_singular( 'webinars' )  ) && 'Webinars' == $item->title )
+		$classes[] = 'current-menu-item active';
+		
+	if( ( is_singular( 'team_bios' )  ) && 'About Us' == $item->title )
+		$classes[] = 'current-menu-item active';
+		
+	
+	
+		
+	return array_unique( $classes );
+}
+add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
+
+
+
 
 
 
@@ -192,16 +248,24 @@ if( function_exists('acf_add_options_page') ) {
 function im2018_scripts() {
 	wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 	
+	wp_enqueue_style('animate-css', 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
+	
 	wp_enqueue_style( 'im2018-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',  array('jquery'), '3.3.7', true);
+	
 
 	wp_enqueue_script( 'im2018-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'im2018-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
-	wp_enqueue_script('im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'), true);
+	wp_enqueue_script( 'lottie', get_template_directory_uri() . '/js/lottie.js', array()); 
+	
+	wp_enqueue_script('im2018-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), true);
 
+	wp_enqueue_script('im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'), true);
+	
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -1,12 +1,17 @@
 #colophon{
 	input[type="email"] {
 		width: 350px;
+		height: 60px;
 		margin-right: 30px;
 	}
 	
 	.footer-wrapper {
 		display: flex;
 		justify-content: space-between;
+		@include screen-sm {
+			display: inherit;
+			text-align: center;
+		}
 		@include screen-xs {
 			display: inherit;
 			text-align: center;
@@ -40,8 +45,8 @@
 		
 		color: $royal_blue;
 		
+		font-family: $adelle--italic;
 		font-size: 18px;
-		font-style: italic;
 		line-height: initial;
 		
 		@include screen-xs {
@@ -50,11 +55,24 @@
 		
 	}
 	
+	h5 {
+		font-size: 12px;
+		
+		@include screen-xxs {
+			font-size: 10px;
+		}
+	}
+	
 	a {
 		color: $grey;
 		&:visited {
 			color: $grey;
 		}
+	}
+	
+	@include screen-sm {
+		margin-top: 30px;
+		text-align: center;
 	}
 	
 	
@@ -66,6 +84,13 @@
 }
 
 #footer-social {
+	@include screen-sm {
+		display: flex;
+	    justify-content: center;
+	    width: 100%;
+	    margin-top: 16px;
+	    margin-bottom: -23px;	
+	}
 	@include screen-xs {
 		display: flex;
 		justify-content: center;

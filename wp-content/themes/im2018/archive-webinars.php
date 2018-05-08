@@ -11,18 +11,49 @@ get_header(); ?>
 <main>
 	<div class="jumbotron jumbo-short">
 			<div class="media-container">
-				<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+				<?php
+
+				// check if the flexible content field has rows of data
+				if( have_rows('background', 'option') ):
+				
+				     // loop through the rows of data
+				    while ( have_rows('background', 'option') ) : the_row();
+				
+				        if( get_row_layout() == 'background_video' ):
+				
+				        	$video_file = the_sub_field('video_file');
+				        	
+				        	echo '<video><source src="' . $video_file . '" type="video/mp4"></video>';
+				
+				        elseif( get_row_layout() == 'background_image' ): 
+				
+				        	$img_file = get_sub_field('img_file');
+				        	
+				        	echo '<img src="' . $img_file['url'] . '" alt="' . $img_file['alt']  . '"/>';
+				
+				        endif;
+				
+				    endwhile;
+				
+				else :
+					
+				    // no layouts found
+				
+				endif;
+				
+				?>
+
 			</div>
 			
 			<div class="container-fluid">
 				<div class="row">
 					
 					<div class="col-sm-7">
-						<h1>Webinars</h1>
+						<h1><?php the_field('webinars_archive_page_heading', 'option'); ?></h1>
 					</div>
 					
 					<div class="col-sm-7">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mi et orci efficitur pulvinar.</p>
+						<p><?php the_field('webinars_archive_page_subtitle', 'option'); ?></p>
 			
 					</div>
 					
@@ -34,19 +65,57 @@ get_header(); ?>
 		<section class="container-fluid">
 				<div class="row">
 										
+					<?php
+					// find date time now
+					$date_now = date('Y-m-d H:i:s');
+					
+					$posts = get_posts(array(
+						//'posts_per_page'	=> -1,
+						'post_type'			=> 'webinars',
+						'meta_query' 		=> array(
+							'relation' 			=> 'AND',
+							array(
+						        'key'			=> 'webinar_date',
+						        'compare'		=> '>=',
+						        'value'			=> $date_now,
+						        'type'			=> 'DATETIME'
+						    )
+			
+					    ),
+						'order'				=> 'ASC',
+						'orderby'			=> 'meta_value',
+						'meta_key'			=> 'webinar_date',
+						'meta_type'			=> 'DATE'
+					));
+					
+					if( $posts ): ?>
+					<?php foreach( $posts as $p ): 
+						$thumbnail_img_url = get_the_post_thumbnail_url($p->ID,'full');
+						$webinar_date = get_field('webinar_date', $p->ID);
+						$webinar_link = get_the_permalink($p->ID);
+						
+					?>
 					
 								
 					<div class="col-sm-4">
 						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
+						<a href="<?php echo $webinar_link; ?>" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $thumbnail_img_url; ?>');">
 							
-							<h5><span>2:00 PM</span> / <span>May 22, 2017</span></h5>
+							<h5><?php echo $webinar_date; ?></h5>
 							
-							<h3>Lorem ipsum dolor sit amet</h3>
+							<h3><?php echo $p->post_title; ?></h3>
 							
 						</a>
 					</div>
 					
+					<?php endforeach; ?>
+					<?php else: ?>
+					
+					<?php endif; ?>
+					
+					
+					
+<!--
 					<div class="col-sm-4">
 						
 						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
@@ -56,7 +125,8 @@ get_header(); ?>
 							<h3>Lorem ipsum dolor sit amet</h3>
 							
 						</a>
-					</div>					
+					</div>	
+-->				
 					
 					
 				</div>
@@ -72,114 +142,73 @@ get_header(); ?>
 						<h3>Past Webinars</h3>
 					</div>
 										
+					<?php
+					// find date time now
+					$date_now = date('Y-m-d H:i:s');
 					
-					<div class="webinars-wrapper col-sm-12">
+					?>		
 					
-						<div class="col-sm-2">
+						<?php $args = array(
+							'post_type' => "webinars",
+							'order' => 'DESC',
+							'offset' => 1,
+							'meta_query' 		=> array(
+								'relation' 			=> 'AND',
+								array(
+							        'key'			=> 'webinar_date',
+							        'compare'		=> '<=',
+							        'value'			=> $date_now,
+							        'type'			=> 'DATETIME'
+							    )
+			
+							),
+							'order'				=> 'ASC',
+							'orderby'			=> 'meta_value',
+							'meta_key'			=> 'webinar_date',
+							'meta_type'			=> 'DATE'
+								
+							
+							
+						);
+						$loop = new WP_Query( $args );
+					?>
+					
+						<?php while ( $loop->have_posts() ) : $loop->the_post(); 
+								$thumbnail_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+								$thumbnail_caption = get_the_post_thumbnail_caption(get_the_ID());
+								$webinar_date = get_field('webinar_date', get_the_ID());
+								$webinar_short_description = get_field('short_description', get_the_ID());
+								$webinar_link = get_the_permalink();
+					?>
+			
+							<div class="webinars-wrapper col-sm-12">
+					
+						<div class="webinar-img-wrapper">
 						
-							<img src="<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg" />
+							
+							<?php echo get_the_post_thumbnail(get_the_ID(), 'full'); ?>
 						
 						</div>
 						
 						<div class="col-sm-10">
 							
-							<h4>Unlimited Paid Time Off</h4>
-							<p>We belief in healthy work-life balance, so we suggest that employees take a minimum of two weeks off to relax and recharge. In addition to seven paid holidays, we also take off the entire week between Christmas and New Years and have flexible work hours.</p><a href="" class="read-more">Learn More</a>
+							<h4><?php the_title(); ?></h4>
+							<p><?php echo $webinar_short_description; ?></p><a href="<?php echo $webinar_link; ?>" class="read-more">Learn More</a>
 						
 						</div>
-				
+						
 					</div>
+					<?php endwhile; ?>			
 					
-					<div class="webinars-wrapper col-sm-12">
-					
-						<div class="col-sm-2">
-						
-							<img src="<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg" />
-						
-						</div>
-						
-						<div class="col-sm-10">
-							
-							<h4>Unlimited Paid Time Off</h4>
-							<p>We belief in healthy work-life balance, so we suggest that employees take a minimum of two weeks off to relax and recharge. In addition to seven paid holidays, we also take off the entire week between Christmas and New Years and have flexible work hours.</p><a href="" class="read-more">Learn More</a>
-
-						
-						</div>
-				
-					</div>
-					
-					<div class="webinars-wrapper col-sm-12">
-					
-						<div class="col-sm-2">
-						
-							<img src="<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg" />
-						
-						</div>
-						
-						<div class="col-sm-10">
-							
-							<h4>Unlimited Paid Time Off</h4>
-							<p>We belief in healthy work-life balance, so we suggest that employees take a minimum of two weeks off to relax and recharge. In addition to seven paid holidays, we also take off the entire week between Christmas and New Years and have flexible work hours.</p><a href="" class="read-more">Learn More</a>
-
-						
-						</div>
-				
-					</div>
-					
-					<div class="webinars-wrapper col-sm-12">
-					
-						<div class="col-sm-2">
-						
-							<img src="<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg" />
-						
-						</div>
-						
-						<div class="col-sm-10">
-							
-							<h4>Unlimited Paid Time Off</h4>
-							<p>We belief in healthy work-life balance, so we suggest that employees take a minimum of two weeks off to relax and recharge. In addition to seven paid holidays, we also take off the entire week between Christmas and New Years and have flexible work hours.</p><a href="" class="read-more">Learn More</a>
-						
-						</div>
-				
-					</div>
-					
-					<div class="webinars-wrapper col-sm-12">
-					
-						<div class="col-sm-2">
-						
-							<img src="<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg" />
-						
-						</div>
-						
-						<div class="col-sm-10">
-							
-							<h4>Unlimited Paid Time Off</h4>
-							<p>We belief in healthy work-life balance, so we suggest that employees take a minimum of two weeks off to relax and recharge. In addition to seven paid holidays, we also take off the entire week between Christmas and New Years and have flexible work hours.</p><a href="" class="read-more">Learn More</a>
-
-						
-						</div>
-				
-					</div>
-					
-					
-					<div class="webinars-wrapper col-sm-12">
-					
-						<div class="col-sm-2">
-						
-							<img src="<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg" />
-						
-						</div>
-						
-						<div class="col-sm-10">
-							
-							<h4>Unlimited Paid Time Off</h4>
-							<p>We belief in healthy work-life balance, so we suggest that employees take a minimum of two weeks off to relax and recharge. In addition to seven paid holidays, we also take off the entire week between Christmas and New Years and have flexible work hours.</p><a href="" class="read-more">Learn More</a>
-
-							
-						</div>
-				
-					</div>
 										
+					<!--<?php echo do_shortcode('[ajax_load_more container_type="div" repeater="template_7" post_type="webinars" meta_key="webinar_date" meta_value="'. $date_now . '" meta_compare="<=" meta_type="DATE" offset="1"]'); ?> -->
+										
+
+
+									
+					
+					
+														
 				
 				</div>
 			</div>
@@ -193,18 +222,45 @@ get_header(); ?>
 				
 				<div class="col-sm-8 col-sm-offset-2">
 					
-					<h3>Have a webinar topic or idea?</h3>
+					<h3><?php the_field('learn_more_heading', 'option'); ?></h3>
 					
 					
-					<div class="learn-more-wrapper">
-						<img class="staff-thumb-sm"src="<?php printThemePath(); ?>/assets/staff-thumbnails/staff-thumbnail-longo@1x.jpg" />
+						<div class="learn-more-wrapper">
+						<?php 
+
+						$posts = get_field('learn_more_contact', 'option');
 						
-					<div>
 						
-						<h4>LaNeshe Miller-White</h4>
-						<h5>Marketing Manager</h5>
-						<h4><a href="mailto:someone@example.com">laneshe@interactivemechanics.com</a></h4>
+						
+						if( $posts ): ?>
+								
+						
+								<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT)
+								
+									$featured_img_url = get_the_post_thumbnail_url($p->ID,'full'); 
+								
+								?>
+								
+								<a href="<?php the_permalink($p->ID); ?>"><img class="staff-thumb-sm" src="<?php echo $featured_img_url; ?>" alt="photo of <?php the_field('name', $p->ID); ?>"/></a>
+								
+								<div>
+									<a href="<?php the_permalink($p->ID); ?>"><h4><?php the_field('name', $p->ID); ?></h4></a>
+									<h5><?php the_field('title', $p->ID); ?></h5>
+									<h4><a href="mailto:<?php the_field('team_bio_email', $p->ID); ?>"><?php the_field('team_bio_email', $p->ID); ?></a></h4>
+								</div>
+
+							
+							<?php endforeach; ?>
+							
+						<?php endif; ?>
+
+
+						
+						
+						
+				
 					</div>
+
 												
 				</div>
 				

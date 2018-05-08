@@ -17,6 +17,12 @@
 	padding-bottom: 50px; //assumes last el is p w/padding-bottom: 40px;
 	border-bottom: 1px solid $light_grey;
 	
+	@include screen-xs {
+		padding-top: 50px;
+	}
+	@include screen-xxs {
+		padding-top: 25px;
+	}
 }
 
 .page-links {

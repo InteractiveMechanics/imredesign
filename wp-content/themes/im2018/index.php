@@ -25,8 +25,12 @@ get_header(); ?>
 					<div class="container-fluid">
 						<div class="row">
 							
-							<div class="col-sm-7">
+							<div class="col-md-7 col-sm-10">
 								<h1>Blog</h1>
+							</div>
+							
+							<div class="col-md-7 col-sm-10">
+								<p></p>
 							</div>
 							
 												
@@ -39,11 +43,26 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-sm-12">
 							<ul class="filter-group filter-blue hidden-xs">
-								<li><a href="#">All Articles</a></li>
-								<li><a href="#">Behind the Scenes</a></li>
-								<li><a href="#">Community</a></li>
-								<li><a href="#">Tools &amp; Tech</a></li>	
-								<li><a href="#">Process</a></li>				
+								<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="active">All Articles</a></li>
+								
+								<?php 
+									
+									$categories = get_categories(array(
+								    	'orderby' => 'name',
+										'order'   => 'ASC',
+										'exclude' => 1  //exclude uncategorized
+									) );
+								
+									foreach ($categories as $category): 
+										$cat_name = $category->name;
+										$cat_link = get_category_link( $category->term_id );
+									
+									
+								?>
+								
+									<li><a href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
+								
+								<?php endforeach; ?>		
 							</ul>
 						</div>
 						
@@ -60,12 +79,13 @@ get_header(); ?>
 					if( $posts ): ?>
 					    <div class="col-sm-12">
 						    <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) 
-							    	$post_category = get_the_category();
+							    	$post_category = get_the_category($p->ID);
 									$first_category = $post_category[0]->cat_name;
-									$post_date = get_the_date('F Y');
+									$post_date = get_the_date('F Y', $p->ID);
+									$overlay_color = get_field('overlay_color', $p->ID);
 
 						    ?>
-					   			<a href="<?php echo get_permalink( $p->ID ); ?>" class="feat-content-block-wide"  style="background: url('<?php the_field("banner_img"); ?>'); background-size: cover;">
+					   			<a href="<?php echo get_permalink( $p->ID ); ?>" class="feat-content-block-wide"  style="background: <?php echo $overlay_color; ?>, url('<?php the_field("banner_img", $p->ID); ?>'); background-size: cover;">
 							
 								<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
 								
@@ -86,38 +106,10 @@ get_header(); ?>
 									
 					
 					
-					<?php $args = array( 'post_type' => 'post');
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); 
-					
-						$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-						$post_permalink = get_post_permalink(get_the_ID());
-						$post_category = get_the_category();
-						$first_category = $post_category[0]->cat_name;
-						$post_date = get_the_date('F Y');
-
-					
-					?>
-						
-						<div class="col-sm-4">
-							
-							<a href="<?php echo $post_permalink; ?>" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
-								
-								<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
-								
-								<h3><?php the_title(); ?></h3>
-								
-								
-								
-							</a>
-						</div>
-						
-						
-					<?php endwhile; ?>
+										
+					<?php echo do_shortcode('[ajax_load_more container_type="div" post_type="post" posts_per_page="3"]'); ?> 
 					
 				
-					
-					
 				</div>
 			</section>
 	</article>

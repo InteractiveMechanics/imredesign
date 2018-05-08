@@ -3,7 +3,7 @@
 button,
 input[type="button"],
 input[type="reset"] {
-	border: 1px solid;
+	border: none;
 	border-color: transparent;
 	border-radius: 0px;
 	@include special_el_text;
@@ -34,6 +34,7 @@ input[type="reset"] {
 
 	&:hover {
 		border-color: transparent;
+		color: white;
 		&:before {
 			opacity: 1.0;
 		}
@@ -50,6 +51,7 @@ input[type="submit"] {
 	border: 1px solid;
 	border-color: $grey;
 	@include special_el_text;
+	font-family: $proxima-nova--light;
 	border-radius: 0px;
 	background: $grey;
 	color: $white;

@@ -9,6 +9,9 @@
 
 get_header(); ?>
 
+<?php $archive_year = get_the_time('Y'); ?>
+	
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<div class="jumbotron jumbo-short">
@@ -19,57 +22,122 @@ get_header(); ?>
 				<div class="container-fluid">
 					<div class="row">
 						
-						<div class="col-sm-7">
-							<h1>Our Work</h1>
+						<div class="col-md-7 col-sm-10">
+							<h1>Blog: <?php echo $archive_year; ?></h1>
+							<h5 class="visible-xs"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">View All Posts</a></h5>
 						</div>
 						
-						<div class="col-sm-7">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mi et orci efficitur pulvinar.</p>
-				
-						</div>
+						
 						
 					</div>	
 	  			</div>
 			</div>
-	
+			
+				
+	<article id="cs-archive">
+		<section class="container-fluid">
+			<div class="row">
+			<div class="col-sm-12">
+							<ul class="filter-group filter-blue hidden-xs">
+								<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">All Articles</a></li>
+								
+								<?php 
+									
+									$categories = get_categories(array(
+								    	'orderby' => 'name',
+										'order'   => 'ASC',
+										'exclude' => 1  //exclude uncategorized
+									) );
+								
+									foreach ($categories as $category): 
+										$cat_name = $category->name;
+										$cat_link = get_category_link( $category->term_id );
+									
+									
+								?>
+								
+									<li><a href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
+								
+								<?php endforeach; ?>		
+							</ul>
+						</div>
+						
+
+
 			
 
-<!--
+
 		<?php
 		if ( have_posts() ) : ?>
+		
+		<?php 
+			$args = array(
+	
+				'numberposts' => '1',
+				'orderby' => 'post_date'
+							
+			);
+			
+			$recent_posts = wp_get_recent_posts($args);
+		
+		?>
+		
+		<?php foreach ($recent_posts as $recent): 
+						$featured_link = get_the_permalink($recent->ID);
+						$featured_banner_img = get_field('banner_img', $recent->ID); 
+						$featured_title = get_the_title($recent->ID);
+						$post_category = get_the_category();
+						$first_category = $post_category[0]->cat_name;
+						$post_date = get_the_date('F Y');
+						$overlay_color = get_field('overlay_color', $recent->ID);
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+						
+						
+					?>
+						<div class="col-sm-12">
+							<a href="<?php echo $featured_link; ?>" class="feat-content-block-wide"  style="background: <?php echo $overlay_color; ?>, url('<?php echo $featured_banner_img; ?>');">
+								
+							
+								
+								<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
+								<h3><?php the_title(); ?></h3>
+								
+								<p><?php echo get_the_excerpt(); ?></p>								
+							
+	
+													
+							</a>
+						</div>
+			<?php endforeach; ?> 
 
+		
+
+			
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+				$args = array(
+					'offset' => 1,
+					'year' => $archive_year
+				);
+				
+				//$loop = new WP_Query( $args ); 
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+			
+			echo do_shortcode('[ajax_load_more container_type="div" year="'. $archive_year .'" repeater="template_6" posts_per_page="3" post_type="post" offset="1"]');
+			
+			
 
-			endwhile;
-
-			the_posts_navigation();
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
--->
+			</div>
+		</section>
+	</article>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

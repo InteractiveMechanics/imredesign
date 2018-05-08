@@ -24,21 +24,40 @@
 	z-index: 1;
 	position: relative;
 	background-size: cover !important;  //because need to override the inline styles that are necessary because PHP is inserted
+	background-position: center;
 	
 	h3 {
 		color: $white;
 		padding: 0px;
 		margin: 0px;
+		@include screen-sm {
+			font-size: 20px;
+			line-height: 30px;
+		}
+		@include screen-xs {
+			font-size: 20px;
+			line-height: 30px;
+		}
 	}
 	
 	h5 {
+		font-size: 12px;
 		color: $white;
-		margin-top: 0px;	
+		margin-top: 0px;
+		@include screen-ltlg {
+			line-height: 1.6
+		}	
 	}
 	
 	p {
 		width: 75%;
 		margin-top: 10px;
+		@include screen-sm {
+			display: none;
+		}
+		@include screen-xs {
+			display: none;
+		}
 	}
 	
 	
@@ -46,12 +65,18 @@
 		width: 50%;
 		position: absolute;
 		bottom: 45px;
+		@include screen-sm {
+			bottom: 30px;
+		}
+		@include screen-xs {
+			width: 25%;
+		}
+		@include screen-xxs {
+			width: 34%;
+		}
 	}
 	
 	&:hover {
-		// changing background size on hover looks janky -- to see this jankiness in action, change the inline css property from background to background-image
-		//background-size: 125% 125%;
-		//background-position: top left;
 		transform: scale(1.025, 1.025);
 		box-shadow: 0px 0px 5px rgba(0,0,0, 0.75);
 		z-index: 3;
@@ -63,11 +88,25 @@
 		text-decoration: none;
 	}
 	
+	@include screen-sm {
+		height: 325px;
+		padding: 30px;
+	}
+	
+	
+	@include screen-xs {
+		height: 300px;
+		padding: 30px;
+	}
+	
 }
 
 .feat-content-block-wide {
 	h3 {
 		margin: 20px 0px 0px;
+		@include screen-xs {
+			margin: 0px;
+		}
 	}
 	
 	p {
@@ -86,9 +125,14 @@
 	//exists bc wp hates js
 	.resp-client-logo {
 		position: relative;
-		bottom: -275px;
+		bottom: -300px;
 		
-		width: 45%;
+		width: 25%;
+		@include screen-xs {
+			bottom: -66px;
+			width: 43%;
+			
+		}
 	}
 	
 	
@@ -110,6 +154,10 @@
 		box-shadow: none;
 		z-index: initial;
 	}
+}
+
+.feat-content-block-wide.staff-bios {
+	background-position: right;
 }
 
 a.feat-content-block-wide {

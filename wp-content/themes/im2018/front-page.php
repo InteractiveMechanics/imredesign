@@ -35,7 +35,7 @@ get_header(); ?>
 				
 				        	$img_file = get_sub_field('img_file');
 				        	
-				        	echo '<img src="' . $img_file . '"/>';
+				        	echo '<img src="' . $img_file['url'] . '" alt="' . $img_file['alt']  . '"/>';
 				
 				        endif;
 				
@@ -51,13 +51,12 @@ get_header(); ?>
 			</div>
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-sm-8">
+					<div class="col-lg-8 col-md-9 col-sm-10">
 						<h1><?php the_field('home_hero_title'); ?></h1>
 					</div>
-					<div class="col-sm-9">
-						<p><?php the_field('home_hero_intro'); ?></p>
+					<div class="col-lg-9 col-md-10 col-sm-11">
+						<p class="home-subtitle"><?php the_field('home_hero_intro'); ?></p>
 						
-						<a class="btn btn-default hidden-xs" href="#" role="button">Explore Our Work</a>
 					</div>
 					
 					
@@ -69,99 +68,97 @@ get_header(); ?>
 			<section class="container-fluid">
 				<div class="row">
 					
-						<?php 
-							
-							$posts = get_field('home_featured_content');
-							
-							if( $posts ): ?>
-								
-								<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) 
-									$featured_img_url = get_the_post_thumbnail_url($p->ID,'full');
-									$feat_content_title = get_the_title( $p-> ID);
-									$feat_content_date = get_the_date('F Y', $p->ID);
-									$feat_content_type = get_post_type($p->ID);
-									$feat_content_cat = get_the_category($p ->ID);
-									
-									 
-									
-									
-								?>
-										<div class="col-sm-4">
+					<!-- ACF repeater starts -->
+					<?php if( have_rows('home_featured_content') ): ?>
+					<?php while ( have_rows('home_featured_content') ) : the_row(); ?>
+					
+					
+					<!-- ACF repeater subfields -->
+					<?php 
+						$relationship_queries = get_sub_field('featured_content_home');
+						$background_color = get_sub_field('featured_content_background_color');  	
+					?>
+					
+					<!-- ACF relationship inside repeater starts -->
+					<?php if ($relationship_queries): ?>
+					<?php foreach( $relationship_queries as $relationship_query ) :
+
+						$featured_img_url = get_the_post_thumbnail_url($relationship_query->ID,'full'); 
+						$my_title = get_the_title($relationship_query->ID);
+						$post_category = get_the_category($relationship_query->ID);
+						$feat_content_type = get_post_type($relationship_query->ID);
+						$my_post_date = get_the_date('F Y', $relationship_query->ID);
+						$overlay_color = get_field('overlay_color', $relationship_query->ID);
+					?>
+					
+					
+					<div class="col-sm-4">
 						
-											<a href="<?php echo get_permalink( $p->ID ); ?>" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
-												
-												
-												<h5>
-													
-												<?php if ($feat_content_type == 'case_studies'): ?>
-									   				<span class="featured-block-cat">
-									   					<?php 
-										   					$terms = get_the_terms( $p->ID , 'services' );
+						
+						<a href="<?php the_permalink($relationship_query->ID); ?>" class="feat-content-block" style="background: <?php echo $overlay_color; ?>, url('<?php echo $featured_img_url; ?>');">
+						
+							<h5>
+							<?php if ($feat_content_type == 'case_studies'): ?>	
+							<span class="featured-block-cat">
+								<?php 
+									$terms = get_the_terms( $relationship_query->ID , 'services' );
 
-										   						foreach ( $terms as $term ) {
+										foreach ( $terms as $term ) {
 
-										   							echo $term->name;
+										   	echo $term->name;
 
-																}		
+										}		
 									   				
-														?>
+								?>
 									   				
-									   				</span>
-									   			<?php elseif ($feat_content_type == 'post' && !empty( $feat_content_cat )):  ?>
-									   				<span class="featured-block-cat"><?php echo $feat_content_cat[0]->name; ?><span>
-									   				<span class="featured-block-date"> / <?php echo $feat_content_date; ?></span>
-									   				
-									   			
-									   			<?php elseif ($feat_content_type == 'webinars'): ?>
-									   				<span class="featured-block-cat">Webinar<span>
-									   				<span class="featured-block-date"> / <?php echo $feat_content_date; ?></span>
-									   			
-									   												   				
-									   												   				 
-										   		<?php endif; ?>
-										   			
-										   		
-										   		<?php if ($feat_content_type == 'post'): ?> 
-										   		
-											   		<!--<span class="featured-block-date"> / <?php echo $feat_content_date; ?></span>-->
-											   	
-											   	<?php endif; ?>
-    										   		
-										   		</h5>
+							</span>
 							
-									   			<h3><?php echo $feat_content_title; ?></h3>
+							<?php elseif ($feat_content_type == 'post'):  ?> 
+								<span class="featured-block-cat"><?php echo $post_category[0]->cat_name; ?></span>
+								/ <span class="featured-block-date"><?php echo $my_post_date; ?></span>	   			
+										
 							
-											</a>
-											
-										</div>
-
-								    
-								<?php endforeach; ?>
-								
+							<?php elseif ($feat_content_type == 'webinars'): ?>
+								<span class="featured-block-cat">Webinar<span>
+								<span class="featured-block-date"> / <?php echo $my_post_date; ?></span>
+														
+							</h5>
 							<?php endif; ?>
-					
-					
-					
-					
-					
-					
-					
-				
-					
-										
-					
+							
+							<h3><?php echo $my_title; ?></h3>
+							
+							<?php if ($feat_content_type == 'case_studies'): ?>
+								
+								<!-- start ACF relationship field inside ACF relationship field inside ACF repeater -->
+								<?php $posts = get_field('case_study_client', $relationship_query->ID);
+							
+									if( $posts ): ?>
 									
+									<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+									   <?php $client_logo_inverted = get_field('logo_inverted', $p->ID); ?>
+									
+									   <img src="<?php echo $client_logo_inverted['url']; ?>" alt="<?php echo $client_logo_inverted['alt']; ?>"/>
+									<?php endforeach; ?>
+									
+								<?php endif; ?>
+								<!-- end ACF nested relationship field inside ACF repeater -->
+						
+							<?php endif; ?>	
+
+							
+							
+						</a>
+					</div>
 					
-					
-					
-					
-										
-					
-					
-					
-					
-					
-				
+					<?php endforeach; ?>
+					<?php wp_reset_postdata(); ?>
+					<?php endif; ?>
+					<!-- end ACF relationship -->
+
+					<?php endwhile; ?>
+					<?php endif; ?>	
+					<!-- end ACF repeater -->	
+									
 				</div>
 			</section>
 		</article>
@@ -169,19 +166,45 @@ get_header(); ?>
 		<article id="client-blocks-container">
 			<section class="container-fluid">
 				<div class="row">
-						
 					
-					<?php $args = array( 'post_type' => 'im_clients', 'posts_per_page' => 10 );
+					
+					<? 
+						$posts = get_field('home_featured_clients');
+
+						if( $posts ): ?>
+						   
+						    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+						        <?php setup_postdata($post); ?>
+						      
+									<div class="col-sm-3 col-xs-6">
+										<div class="client-block">
+											<?php $client_logo = get_field('logo'); ?>
+											
+											<a href="<?php the_field('website'); ?>" target="_blank"><img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/></a>
+											
+										</div>
+									</div> 
+						      
+						            
+						         
+						    <?php endforeach; ?>
+						    
+						    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+					<?php endif; ?>
+					
+<!--
+					<?php $args = array( 'post_type' => 'im_clients');
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 						
 						<div class="col-sm-3 col-xs-6">
 							<div class="client-block">
-								<a href="<?php the_field('website'); ?>"><img src="<?php the_field('logo'); ?>" /></a>
+								<a href="<?php the_field('website'); ?>" target="_blank"><img src="<?php the_field('logo'); ?>" /></a>
 							</div>
 						</div> 
 						
 					<?php endwhile; ?>
+-->
 
 									
 						

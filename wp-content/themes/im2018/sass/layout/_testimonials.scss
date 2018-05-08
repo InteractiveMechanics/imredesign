@@ -10,10 +10,15 @@
 		
 		
 		p {
+			font-family: $adelle--light;
 			color: $white;
 			line-height: 66px;
 			letter-spacing: 0.5px;
 			margin-bottom: 0px;
+			@include screen-xs {
+				line-height: 35px;
+				font-size: 20px;
+			}
 		}
 		
 		footer {
@@ -26,6 +31,10 @@
 					letter-spacing: 1px;
 					color: $white !important;
 					
+					@include screen-xs {
+						font-size: 18px;
+					}
+					
 				}
 				
 				font-size: 16px;
@@ -36,11 +45,16 @@
 		
 		
 		@include screen-xs {
-			padding: 0px 40px;
+			padding: 0px 20px 0px 10px;
 		}
 		
 		
 			
+	}
+	
+	@include screen-xs {
+		padding-top: 80px;
+		padding-bottom: 40px;
 	}
 	
 }

@@ -10,19 +10,52 @@
 get_header();
 
 $post_category = get_the_category();
-$first_category = $post_category[0]->cat_name; 
+$first_category = $post_category[0]->cat_name;
+$cat_id = get_cat_ID( $first_category ); 
+$cat_link = get_category_link( $cat_id );
 $post_date = get_the_date('F Y');
 $post_year = get_the_date('Y');
-
+$year_link = get_year_link( $post_year );
 
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="post-<?php the_ID(); ?>" class="content-area">
 		<main id="main" class="site-main">
 			
 		<div class="jumbotron jumbo-short">
 					<div class="media-container">
-						<img src="" />
+						<?php
+
+				// check if the flexible content field has rows of data
+				if( have_rows('single_blog_post_background', 'option') ):
+				
+				     // loop through the rows of data
+				    while ( have_rows('single_blog_post_background', 'option') ) : the_row();
+				
+				        if( get_row_layout() == 'background_video' ):
+				
+				        	$video_file = the_sub_field('video_file');
+				        	
+				        	echo '<video><source src="' . $video_file . '" type="video/mp4"></video>';
+				
+				        elseif( get_row_layout() == 'background_image' ): 
+				
+				        	$img_file = get_sub_field('img_file');
+				        	
+				        	echo '<img src="' . $img_file . '"/>';
+				
+				        endif;
+				
+				    endwhile;
+				
+				else :
+					
+				    // no layouts found
+				
+				endif;
+				
+				?>
+
 					</div>
 					
 			</div>
@@ -33,7 +66,7 @@ $post_year = get_the_date('Y');
 				<div class="row">
 					
 					<div class="col-sm-12">
-						<div class="feat-content-block-wide"  style="background: url('<?php the_field("banner_img"); ?>'); background-size: cover;">
+						<div class="feat-content-block-wide"  style="background: <?php the_field('overlay_color'); ?>, url('<?php the_field("banner_img"); ?>'); background-size: cover;">
 							
 							<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
 							
@@ -67,10 +100,10 @@ $post_year = get_the_date('Y');
 						<div class="col-sm-5">
 							<h3>Post Details</h3>
 							<h5>Year</h5>
-							<button class="btn-pill"><?php echo $post_year; ?></button>
+							<a href="<?php echo $year_link; ?>" class="btn btn-pill"><?php echo $post_year; ?></a>
 							
 							<h5>Category</h5>
-							<button class="btn-pill"><?php echo $first_category; ?></button>
+							<a href="<?php echo $cat_link; ?>" class="btn btn-pill" role="button"><?php echo $first_category; ?></a>
 							
 						
 						</div>
@@ -88,18 +121,30 @@ $post_year = get_the_date('Y');
 								
 									<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) 
 										$featured_img_url = get_the_post_thumbnail_url($p->ID,'full'); 
+										$employee_status = get_field('employment_status', $p->ID);
 										
 									?>
 									    
 									   									
+								<?php if ($employee_status): ?>	
+									<a href="<?php the_permalink($p->ID); ?>"><img class="staff-thumb-sm" src="<?php echo $featured_img_url; ?>" alt="photo of <?php the_field('name', $p->ID); ?>"/></a>
+								<?php elseif ($featured_img_url): ?>
+									<img class="nonstaff-thumb-sm" src="<?php echo $featured_img_url; ?>" alt="photo of <?php the_field('name', $p->ID); ?>"/>
+								<?php endif; ?>
 								
-								<img class="staff-thumb-sm"src="<?php echo $featured_img_url; ?>" />
-						
+								
 								<div>
+									
+									<?php if ($employee_status): ?>
+									<a href="<?php the_permalink($p->ID); ?>"><h4><?php the_field('name', $p->ID); ?></h4></a>
+									<?php else: ?>
 									<h4><?php the_field('name', $p->ID); ?></h4>
+									<?php endif; ?>
+									
 									<h5><?php the_field('title', $p->ID); ?></h5>
 									<h4><a href="mailto:<?php the_field('team_bio_email', $p->ID); ?>"><?php the_field('team_bio_email', $p->ID); ?></a></h4>
 								</div>
+
 								
 									   
 									<?php endforeach; ?>
@@ -113,17 +158,20 @@ $post_year = get_the_date('Y');
 				</div>
 			</section>
 		</article>
-
+		
+		
+		<!-- ACF repeater starts -->
+		<?php if( have_rows('blog_post_related_content') ): ?>
 		<article id="related-content">
 		<section class="container-fluid">
 			<div class="row">
 				
 					<div class="col-sm-12 related-content-heading">
 						<h3>Browse Related</h3>
+						<h5><a href="<?php echo get_post_type_archive_link( 'post' ); ?>">All Posts</a></h5>
 					</div>
 					
-					<!-- ACF repeater starts -->
-					<?php if( have_rows('blog_post_related_content') ): ?>
+					<!-- ACF repeater runs -->
 					<?php while ( have_rows('blog_post_related_content') ) : the_row(); ?>
 					
 					
@@ -143,13 +191,15 @@ $post_year = get_the_date('Y');
 						$first_category = $post_category[0]->cat_name;
 						$my_post_date = get_the_date('F Y', $relationship_query->ID);
 					
+						
+					
 					?>
 					
 				
 					<div class="col-sm-4">
 						
 						
-						<a href="#" class="feat-content-block" style="background: <?php echo $background_color; ?>, url('<?php echo $featured_img_url; ?>');">
+						<a href="<?php the_permalink($relationship_query->ID); ?>" class="feat-content-block" style="background: <?php echo $background_color; ?>, url('<?php echo $featured_img_url; ?>');">
 						
 											
 							<h5>
@@ -170,12 +220,14 @@ $post_year = get_the_date('Y');
 					<!-- end ACF relationship -->
 					
 					<?php endwhile; ?>
-					<?php endif; ?>	
-					<!-- end ACF repeater -->	
+	
+					
 									
 			</div>
 		</section>
 	</article>
+	<?php endif; ?>
+	<!-- end ACF repeater -->	
 
 
 	

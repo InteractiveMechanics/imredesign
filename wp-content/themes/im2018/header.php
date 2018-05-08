@@ -15,6 +15,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><?php wp_title(''); ?></title>
+
+
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -38,27 +41,42 @@
 				        <span class="icon-bar"></span>
 					</button>
 					
-					<a href="#" class="navbar-brand">
+					<a href="<?php echo home_url(); ?>" class="navbar-brand">
 						<?php include("assets/logos/logo-header.svg"); ?>
 					</a>
 	    		</div>
 	
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      	<ul class="nav navbar-nav">
-				      	
-				       <li><a href="#" class="active">About Us</a></li>
-				       <li><a href="#">Our Work</a></li>
-				       <li><a href="#">Education</a></li>
-				       <li><a href="#">Blog</a></li>
-				        
-			      	</ul>
 			     
-				  	<ul class="nav navbar-nav navbar-right hidden-xs">
-			        	
-			        	<li><a href="#">We're Hiring!</a></li>
-			        	 	      
-			      	</ul>
+					<?php
+						wp_nav_menu( array(
+						    'theme_location'	=> 'primary',
+						    'depth'				=> 0, // 1 = with dropdowns, 0 = no dropdowns.
+							'container'			=> '',
+							'container_class'	=> '',
+							'container_id'		=> 'bs-example-navbar-collapse-1',
+							'menu_class'		=> 'nav navbar-nav',
+						    'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
+						    'walker'			=> new WP_Bootstrap_Navwalker()
+						) );
+					?>			     
+			     
+			     
+					<?php
+			            wp_nav_menu( array(
+			                'menu'              => 'secondary',
+			                'theme_location'    => 'secondary',
+			                'depth'             =>  0,
+			                'container'         => '',
+			                'container_class'   => '',
+							'container_id'      => '',
+			                'menu_class'        => 'nav navbar-nav navbar-right',
+			                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			                'walker'            => new wp_bootstrap_navwalker())
+			            );
+			        ?>
+			     
 			      	
 			    </div><!-- /.navbar-collapse -->
 	  		</div><!-- /.container-fluid -->

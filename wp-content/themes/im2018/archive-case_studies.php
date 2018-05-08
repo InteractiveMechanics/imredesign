@@ -10,18 +10,18 @@ get_header(); ?>
 <main>
 	<div class="jumbotron jumbo-short">
 			<div class="media-container">
-				<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+				<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" alt="people looking at touch screen" />
 			</div>
 			
 			<div class="container-fluid">
 				<div class="row">
 					
-					<div class="col-sm-7">
-						<h1>Our Work</h1>
+					<div class="col-md-7 col-sm-10">
+						<h1><?php the_field('case_study_archive_page_heading', 'option'); ?></h1>
 					</div>
 					
-					<div class="col-sm-7">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mi et orci efficitur pulvinar.</p>
+					<div class="col-md-7 col-sm-10">
+						<p><?php the_field('case_study_archive_page_subtitle', 'option'); ?></p>
 			
 					</div>
 					
@@ -34,158 +34,100 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-sm-12">
 						<ul class="filter-group filter-blue hidden-xs">
-							<li><a href="#">All Work</a></li>
-							<li><a href="#">Interactive Exhibits</a></li>
-							<li><a href="#">Websites</a></li>			
+							<li><a href="<?php echo get_post_type_archive_link('case_studies'); ?>" class="active">All Work</a></li>
+							
+							<?php
+								$terms = get_terms( array(
+								    'taxonomy' => 'services',
+								    'orderby' => 'name',
+									'order'   => 'ASC'
+								) ); 
+							
+							?>
+							
+							<?php foreach ($terms as $term):
+								$term_name = $term->name;
+								$term_link = get_term_link( $term->term_id );
+							?>
+							
+							
+							<li><a href="<?php echo $term_link; ?>"><?php echo $term_name; ?></a></li>
+							<?php endforeach; ?>			
 						</ul>
 					</div>
 					
 					
-					<div class="col-sm-12">
-						<a class="feat-content-block-wide"  style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/featured-images/featured-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Muscle Hatchery Exhibits</h3>
-							
-							<p>The Mussel Hatchery hopes to change freshwater mussels' endangered status by breeding mussels and educating the public on how these creatures can improve the health of drinking water.</p>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-							
-														
-						</a>
-					</div>
+					<?php
 					
+						$args = array(
+							'post_type' => "case_studies",
+							'numberposts' => '1',
+							'orderby' => 'post_date'
+							
+						);
+						$recent_posts = wp_get_recent_posts($args);
+					?>
+					
+					<?php foreach ($recent_posts as $recent): 
+						$featured_link = get_the_permalink($recent->ID);
+						$featured_banner_img = get_field('banner_img', $recent->ID); 
+						$featured_title = get_the_title($recent->ID);
+						$featured_short_description = get_field('short_description', $recent->ID);
+						$featured_client = get_field('case_study_client', $recent->ID);
+						$overlay_color = get_field('overlay_color', $recent->ID);
+						
+					?>
+						<div class="col-sm-12">
+							<a href="<?php echo $featured_link; ?>" class="feat-content-block-wide"  style="background: <?php echo $overlay_color; ?>, url('<?php echo $featured_banner_img; ?>');">
 								
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+								<?php
 
-							
-						</a>
-					</div>
-					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
+									$terms = get_the_terms( $post->ID , 'services' );
+	
+									foreach ( $terms as $term ) {
+	
+										echo '<h5>' . $term->name . '</h5>';
+	
+									}				
 
+								?>
+								
+								<h3><?php echo $featured_title; ?></h3>
+								
+								<?php if ($featured_short_description): ?>
+								
+									<p><?php echo $featured_short_description; ?></p>
+			
+								<?php endif; ?>
+								
+								
+								
 							
-						</a>
-					</div>
+								<? if( $featured_client ): ?>
+									
+									<?php foreach( $featured_client as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+										<?php $client_logo_inverted = get_field('logo_inverted', $p->ID); ?>
+									
+									   <img src="<?php echo $client_logo_inverted['url']; ?>" alt="<?php echo $client_logo_inverted['alt']; ?>"/>
+									<?php endforeach; ?>
+									
+								<?php endif; ?>
+	
+													
+							</a>
+						</div>
+					<?php endforeach; ?> 
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
+									
+					<?php echo do_shortcode('[ajax_load_more container_type="div" repeater="template_1" post_type="case_studies" posts_per_page="3" offset="1"]'); ?>
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
+					<?php wp_reset_postdata(); // reset the query ?>
 					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
-					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
-					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
-					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
-					
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(45,49,66, 0.75), rgba(45,49,66, 0.75)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5>Interactive Exhibits</h5>
-							
-							<h3>Zhizua Temple Ceiling Interactive</h3>
-							
-							<img src="<?php printThemePath(); ?>/assets/clients-partners-logos/client-logo-white-philamuseum.png" />
-
-							
-						</a>
-					</div>
-					
+										
 					
 				</div>
-			</section>
+						
+		</section>
 	</article>
 
 	

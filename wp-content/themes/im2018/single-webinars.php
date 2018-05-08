@@ -85,13 +85,17 @@
 						<?php endwhile; ?>
 						<?php endif; ?>
 						<!-- end acf repeater -->
+						
+						<a class="btn btn-default" href="#" role="button">Register</a>
+						
 					
 					</div>
 				</div>
 			</section>
+			
 		</article>
 		
-		
+		<!--
 		<article class="registration">
 			<section class="container-fluid">
 				<div class="row">
@@ -105,6 +109,7 @@
 				</div>
 			</section>
 		</article>
+		-->
 
 
 

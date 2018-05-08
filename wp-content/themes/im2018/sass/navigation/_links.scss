@@ -37,6 +37,7 @@ p>a {
 a.list-group-item {
 	
 	.st0 {
+		fill: $grey;
 		transition: all 0.5s ease-in-out;
 	}
 	
@@ -53,16 +54,18 @@ a.list-group-item {
 
 h4>a {
 	color: $light_blue;
-	border-bottom: 1px solid $royal_blue_2;
+	border-bottom: 1px solid $light_blue;
 	transition: $transition;
 		
 	&:hover {
 		text-decoration: none;
 		color: $royal_blue_2;
+		border-bottom: 1px solid $royal_blue_2;
 	}
 		
 	&:visited {
-		color: $light_blue
+		color: $light_blue;
+		border-bottom: 1px solid $light_blue;
 	}
 }
 
@@ -73,6 +76,9 @@ h4>a {
 	li {
 		display: inline-block;
 		margin-right: 35px;
+		@include screen-sm {
+			margin-bottom: 20px;
+		}
 	}
 	
 	
@@ -80,6 +86,7 @@ h4>a {
 
 .filter-group>li>a {
 	@extend h5;
+	font-size: 14px;
 	position: relative;
 	
 	&:after {
@@ -101,9 +108,9 @@ h4>a {
 		
 		&:after {
 			right: 0;
-			  height: 2px;
-			    width: 100%;
-			    left: 0;
+			height: 2px;
+			width: 100%;
+			left: 0;
 		}
 	}
 	
@@ -118,11 +125,26 @@ h4>a {
 	}
 }
 
+.filter-group.filter-blue>li>a.active {
+	color: $light_blue;
+	
+	&:after {
+		right: 0;
+		left: 0;
+		width: 100%;
+		border-bottom: 1px solid $light_blue;
+	}
+	
+	
+}
+
 .read-more {
+	font-family: $proxima_nova;
 	font-size: 17px;
 	color: $light_blue;
 	text-decoration: underline;
 	display: inline;
+	margin-left: 7px;
 	
 	&:visited {
 		color: $light_blue;

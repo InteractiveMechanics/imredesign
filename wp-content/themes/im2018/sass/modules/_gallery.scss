@@ -16,9 +16,17 @@
    img {
 	   width: 100%;
 	   height: auto;
+	   vertical-align: top;
+	   //@include screen-sm {
+		  // width: 49%;
+	   //}
+	   //@include screen-xs {
+		  // width: 100%;
+	   //}
+	   
    }
    @include screen-xs {
-	   -webkit-column-count: 1;
+   -webkit-column-count: 1;
    -webkit-column-gap:   0px;
    -moz-column-count:    1;
    -moz-column-gap:      0px;

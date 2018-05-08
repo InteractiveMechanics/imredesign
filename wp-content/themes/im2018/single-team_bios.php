@@ -23,7 +23,37 @@
 
 <div class="jumbotron jumbo-short">
 	<div class="media-container">
-		<img src="<?php printThemePath(); ?>/assets/backgrounds/background-01@1x.jpg" />
+		<?php
+		// check if the flexible content field has rows of data
+				if( have_rows('single_team_bio_background', 'option') ):
+				
+				     // loop through the rows of data
+				    while ( have_rows('single_team_bio_background', 'option') ) : the_row();
+				
+				        if( get_row_layout() == 'background_video' ):
+				
+				        	$video_file = the_sub_field('video_file');
+				        	
+				        	echo '<video><source src="' . $video_file . '" type="video/mp4"></video>';
+				
+				        elseif( get_row_layout() == 'background_image' ): 
+				
+				        	$img_file = get_sub_field('img_file');
+				        	
+				        	echo '<img src="' . $img_file["url"] . '" alt="' . $img_file["alt"]  . ' "/>';
+				
+				        endif;
+				
+				    endwhile;
+				
+				else :
+					
+				    // no layouts found
+				
+				endif;
+				
+				?>
+
 	</div>				
 </div>
 
@@ -33,11 +63,11 @@
 				<div class="row">
 					
 					<div class="col-sm-12">
-						<div class="feat-content-block-wide"  style="background-image: linear-gradient(to left bottom, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php echo $banner_img; ?>');">
+						<div class="feat-content-block-wide staff-bios"  style="background-image: linear-gradient(to left bottom, rgba(71,142,187, 1.0), rgba(58,89,141, 0.1)), url('<?php echo $banner_img; ?>');">
 							
-							<h5><?php echo $name; ?></h5>
+							<h5><?php echo $title; ?></h5>
 							
-							<h3><?php echo $title; ?></h3>
+							<h3><?php echo $name; ?></h3>
 							
 							
 							<div id="bio-social" class="social list-group">
@@ -79,7 +109,7 @@
 								
 								
 								<?php if ($team_bio_email): ?>
-									<a href="<?php echo $team_bio_email; ?>" target="_blank" class="list-group-item"><?php include("assets/icons/icon-email.svg"); ?></a
+									<a href="mailto:<?php echo $team_bio_email; ?>" target="_top" class="list-group-item"><?php include("assets/icons/icon-email.svg"); ?></a
 								<?php endif; ?>
 								
 								
@@ -140,9 +170,9 @@
 						
 								<a href="<?php echo $team_bio_permalink; ?>" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
 							
-									<h5><?php the_field('name'); ?></h5>
+									<h5><?php the_field('title'); ?></h5>
 							
-									<h3><?php the_field('title'); ?></h3>
+									<h3><?php the_field('name'); ?></h3>
 							
 								</a>
 							</div>

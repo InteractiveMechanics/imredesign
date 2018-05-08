@@ -1,3 +1,45 @@
+@media (max-width: 991px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
+
+
+
+
+
+
 .navbar-brand {
 	height: 65px;
 	margin-left: 0px !important;
@@ -13,13 +55,16 @@
 	border-color: transparent;
 	margin: 40px -15px;
 	z-index: 2;
+	@include screen-xs {
+		margin: 30px -15px 10px;
+	}
 }
 
 .navbar-nav {
 	margin: 0;
     display: inline-flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     
 }
 
@@ -31,19 +76,28 @@
     top: -41px;
     left: 0px;
     right: 0px;
+    background-color: rgba(58,89,141, 0.95); //$royal_blue
+   
+    
 }
 
 .nav-menu {
 	width: calc(100% - 315px); //315 = width of .navbar-right + width of logo-header.svg
 	height: 65px;
 	
-	@include screen-xs {
+	@include screen-ltmd {
+
 		width: 100%;
-	    background-color: $royal_blue;
-	    height: auto;
+	    height: 100%;
 	    display: block;
 	    text-align: center;
-	    padding: 100px 25px;
+	    padding: 80px 25px 0px;
+	    
+	}
+	
+	@include screen-xxs {
+		height: 100vh;
+		padding: 80px 25px 0px;
 	}
 }
 
@@ -55,7 +109,18 @@
 
 
 .nav-menu>li {
-	padding: 0px 15px;
+	padding: 0px 22px;
+	@include screen-sm {
+		padding: 10px 15px;
+	
+	}
+	@include screen-xs {
+		padding: 10px 15px;
+	}
+	
+	@include screen-xxs {
+		padding: 0px 15px;
+	}
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -87,7 +152,7 @@
 		}
 	}
 	
-	@include screen-xs {
+	@include screen-ltmd {
 		display: inline-block;
 		margin-bottom: 20px;
 		
@@ -95,7 +160,7 @@
 		font-family: $adelle;
 		text-transform: initial;
 		font-size: 28px;
-		
+		z-index: 2;
 		
 		&:after {
 			border-bottom: 2px solid white;
@@ -120,13 +185,117 @@
 	    color: $royal_blue !important;
 	    font-family: $proxima_nova--semibold !important;
 	    
+	    @include screen-ltmd {
+	    	color: transparent !important;
+	    	height: 100%;
+	    	width: 100%;
+    	}   
     }
+    
+    @include screen-sm {
+	    margin-right: initial;
+	    width: 100%;
+	    height: 99px;
+	    display: flex;
+		justify-content: space-around;
+
+	
+    }
+    
+    @include screen-xs {
+	    margin-right: initial;
+	    width: 100%;
+	    height: 75px;
+	    display: flex;
+		justify-content: space-around;
+		position: absolute;
+		bottom: 75px;
+    }
+    
+    @include screen-xxs {
+		position: absolute;
+		bottom: 54px;
+		width: 100%;
+	    height: 75px;
+	    	  
+	    display: flex;
+		justify-content: space-around;
+		margin-left: -15px;
+	    margin-right: initial;
+		
+	
+    }
+    
 }
 
+.mobile-menu {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 25px;
+}
+
+
+.mobile-menu-twitter {
+	&:after {
+		content: url('assets/icons/icon-twitter-white.svg');
+		position: relative;
+		top: -100%;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.mobile-menu-dribble {
+	&:after {
+		content: url('assets/icons/icon-dribble-white.svg');
+		position: relative;
+		top: -100%;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.mobile-menu-fb {
+	&:after {
+		content: url('assets/icons/icon-facebook-white.svg');
+		position: relative;
+		top: -100%;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+.mobile-menu-instagram {
+	&:after {
+		content: url('assets/icons/icon-instagram-white.svg');
+		position: relative;
+		top: -100%;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+
+
+
+
+
+
 .navbar-default .navbar-toggle {
-	@include screen-xs {
+	@include screen-ltmd {
 		display: flex;
 		flex-direction: column;
+		margin-right: -15px;
 	}
     
     border-color: transparent;
@@ -147,21 +316,7 @@
 		    background-image: linear-gradient(to right, transparent, transparent) !important;
 	    }
 	    
-	    >span {
-		    		    
-		    &:nth-of-type(2) {
-			   	width: 5px;
-		    }
-		    
-		    &:nth-of-type(3) {
-			    width: 10px;
-		    }
-		    
-		    &:nth-of-type(4) {
-			    width: 15px;
-		    }
-		    
-	    }
+	    
 	    
 	}
 }
@@ -226,5 +381,35 @@
 .navbar-default .navbar-toggle:focus, 
 .navbar-default .navbar-toggle:hover {
 	background: transparent;
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover {
+	background: transparent;
+	color: $royal_blue;
+	&:after {
+		content: "";
+		border-bottom: 1px solid $royal_blue;
+		position: absolute;
+	    margin-right: 0px;
+	    left: 0;
+	    right: 0;
+	    bottom: 8px;
+	    height: 2px;
+	    width: 100%;
+	    background: transparent;
+	    transition: width 0.5s ease, left 0.5s ease;
+	    
+	    @include screen-ltmd {
+		    border-color: white;
+	    }
+
+	}
+	
+	@include screen-ltmd {
+		color: white;
+	}
+	
 }
 

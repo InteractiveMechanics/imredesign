@@ -9,48 +9,28 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+						
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php im2018_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
 
-	<?php im2018_post_thumbnail(); ?>
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'im2018' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'im2018' ),
-				'after'  => '</div>',
-			) );
+		<?php 	$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+				$post_category = get_the_category();
+				$first_category = $post_category[0]->cat_name;
+				$post_date = get_the_date('F Y');
 		?>
-	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php im2018_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+		
+		<div class="col-sm-4">
+								
+			<a href="<?php echo the_permalink(); ?>"  id="post-<?php the_ID(); ?>" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
+									
+				<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
+									
+				<h3><?php the_title(); ?></h3>
+									
+									
+									
+			</a>
+		</div>
+	
+	

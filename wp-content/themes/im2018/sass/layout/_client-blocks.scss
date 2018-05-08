@@ -6,7 +6,7 @@
 		margin-left: -5px;
 		margin-right: -5px;
 		display: flex;
-	    justify-content: center;
+	    justify-content: left;
 	    flex-direction: row;
 	    flex-wrap: wrap;
 		.col-sm-3 {
@@ -14,7 +14,19 @@
 			padding-right: 5px;
 		}
 		
+		@include screen-ltlg {
+			&:before {
+				width: 0;
+				display: none;
+			}
+			&:after {
+				width: 0;
+				display: none;
+			}
+		}
+		
 	}
+	
 }
 
 #partners-blocks-container {
@@ -25,6 +37,7 @@
 	.client-block {
 		background: $light_grey;
 	}
+	
 	
 }
 

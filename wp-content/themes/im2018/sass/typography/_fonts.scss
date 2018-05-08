@@ -1,4 +1,11 @@
 @font-face {
+	font-family: 'proxima-nova--light';
+	src: url('fonts/proximanova/ProximaNova-Light.otf'); 
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: 'proxima-nova';
 	src: url('fonts/proximanova/ProximaNova-Regular.otf'); 
 	font-weight: normal;
@@ -21,7 +28,14 @@
 
 @font-face {
 	font-family: 'adelle--italic';
-	src: url('fonts/adelle/Adelle.otf'); 
+	src: url('fonts/adelle/Adelle-Italic.woff2'); 
+	font-weight: normal;
+	font-style: normal;	
+}
+
+@font-face {
+	font-family: 'adelle--light';
+	src: url('fonts/adelle/adelle_light-webfont.woff2'); 
 	font-weight: normal;
 	font-style: normal;	
 }

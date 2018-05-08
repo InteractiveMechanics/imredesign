@@ -34,6 +34,7 @@ function create_case_study() {
             'menu_position' => 15,
             'supports' => array( 'title', 'editor', 'comments', 'thumbnail', 'custom-fields' ),
             'taxonomies' => array( 'services', 'technologies', 'projectyear' ),
+            'rewrite'     => array( 'slug' => 'case-studies' ), // my custom slug
             'has_archive' => true
         )
     );

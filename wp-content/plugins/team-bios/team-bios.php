@@ -33,6 +33,7 @@ function create_team_bio() {
             'public' => true,
             'rewrite' => array( 'slug' => 'team_bios' ),
             'menu_position' => 15,
+            'rewrite'     => array( 'slug' => 'team-bios' ), // my custom slug
             'supports' => array( 'title', 'editor', 'comments', 'thumbnail', 'custom-fields' ),
             'taxonomies' => array( '' ),
             'has_archive' => true

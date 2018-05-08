@@ -9,23 +9,59 @@
 		margin: 0px;
 		font-size: 54px;
 		line-height: 62px;
+		color: $black;
+		@include screen-sm {
+			font-size: 48px;
+			line-height: 58px;
+		}
 		@include screen-xs {
-			font-size: 38px;
-			line-height: 43px;
+			font-size: 30px;
+			line-height: 40px;
+		}
+	}
+	
+	h5 {
+		position: relative;
+		left: 4px;
+		a {
+			color: $grey;
+			transition: $transition;
+			&:hover {
+				border-color: $grey;
+			}
 		}
 	}
 	
 	p {
 		margin-top: 15px;
 		@extend h4;
+		@include screen-xs {
+			font-size: 20px !important;
+			line-height: 28px !important;
+		}
+	}
+	
+	p.home-subtitle {
+		@include screen-xxs {
+			margin-bottom: 30px;
+		}
 	}
 	
 	.btn {
 		margin-top: 60px;
+		@include screen-xxs {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
 	}
 	
 	@include screen-xs {
 		padding: 30px 10px 35px;
+	}
+	
+	@include screen-xxs {
+		padding: 30px 10px 0px;
+		margin-bottom: 0px;
 	}
 }
 
@@ -40,11 +76,16 @@
     
     img {
 	    height: initial;
-	    max-width: initial;
+	    width: 100%;
+	    //max-width: initial;
     }
 }
 
 .jumbo-short {
 	padding-bottom: 40px;
 	margin-bottom: 0px;
+	@include screen-xxs {
+		padding-bottom: 0px;
+	}
 }
+

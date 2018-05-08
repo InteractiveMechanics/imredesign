@@ -33,7 +33,7 @@ get_header(); ?>
 				
 				        	$img_file = get_sub_field('img_file');
 				        	
-				        	echo '<img src="' . $img_file . '"/>';
+				        	echo '<img src="' . $img_file['url'] . '" alt="' . $img_file['alt']  . '"/>';
 				
 				        endif;
 				
@@ -52,10 +52,10 @@ get_header(); ?>
 			<div class="container-fluid">
 				<div class="row">
 					
-					<div class="col-sm-7">
+					<div class="col-md-7 col-sm-10">
 						<h1><?php the_field('page_title'); ?></h1>
 					</div>
-					<div class="col-sm-7">
+					<div class="col-md-7 col-sm-10">
 						<p><?php the_field('page_intro'); ?></p>
 						
 					</div>
@@ -68,8 +68,8 @@ get_header(); ?>
 		<section class="container-fluid">
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 content-wrapper">
-					<p class="lead"><?php the_field('lead_paragraph'); ?></p>
-					
+					<?php the_field('lead_paragraph'); ?>
+										
 					<h3>Our Values</h3>
 					
 					<!-- ACF repeater starts -->
@@ -78,15 +78,16 @@ get_header(); ?>
 					while ( have_rows('values') ) : the_row();
 					
 					?>
-					<div class="values-wrapper">
+					<div class="webinars-wrapper col-sm-12">
 					
-						<div class="col-sm-2 col-xs-4">
+						<div class="webinar-img-wrapper values">
+							<?php $values_img = get_sub_field('values_img'); ?>
 						
-							<img src="<?php the_sub_field('values_img'); ?>" />
+							<img src="<?php echo $values_img['url']; ?>" alt="<?php echo $values_img['alt']; ?>"/>
 						
 						</div>
 						
-						<div class="col-sm-10 col-xs-8">
+						<div class="col-sm-10">
 							
 							<h5><?php the_sub_field('values_heading'); ?></h5>
 							<p><?php the_sub_field('values_description'); ?></p>
@@ -101,7 +102,7 @@ get_header(); ?>
 					<!-- ACF repeater ends -->
 										
 					<div class="col-sm-12 center">
-					<a class="btn btn-default" href="#" role="button">Explore Our Work</a>
+					<a class="btn btn-default" href="<?php echo get_post_type_archive_link( 'case_studies' ); ?>" role="button">Explore Our Work</a>
 					</div>
 					
 				
@@ -111,24 +112,31 @@ get_header(); ?>
 		</section>
 	</article>
 	
-	<?php 
-
-	$posts = get_field('testimonial_1');
+	<?php
+		
+	$testimonials = get_field('testimonial_1');
 	
-	if( $posts ): ?>
-	    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-	        <?php setup_postdata($post); ?>
-	        
-	        	<article class="testimonial" style="background: url('<?php printThemePath(); ?>/assets/testimonial-backgrounds/testimonial-background-01@1x.jpg');">
+	if ($testimonials): 
+	
+	foreach ($testimonials as $testimonial):
+		$background_img = get_field('background_img', $testimonial->ID);
+		$testimonial_id = $testimonial->ID; 
+	?>
+	
+	
+	<article class="testimonial" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $background_img; ?>'); background-size: cover; background-position: center;">
 					<section class="container-fluid">
 						<div class="row">
 							<div class="col-sm-8 col-sm-offset-2 content-wrapper">
 								<blockquote class="blockquote">
-									<p><?php the_field('testimonial_body', $post->ID); ?></p>
+									<p><?php the_field('testimonial_body', $testimonial->ID); ?></p>
 									<footer class="blockquote-footer">
-										<h5 class="blockquote-name"><?php the_field('author', $post->ID); ?></h5>
-										<h5 class="blockquote-title"><?php the_field('title', $post->ID); ?></h5>
-										<h5 class="blockquote-affiliation">Social Venture Fund</h5>  
+										<h5 class="blockquote-name"><?php the_field('author', $testimonial->ID); ?></h5>
+										<h5 class="blockquote-title"><?php the_field('title', $testimonial->ID); ?></h5>
+										<h5 class="blockquote-affiliation"><?php echo get_the_title($testimonial->ID); ?></h5>
+										
+																	
+											 
 									</footer>
 								</blockquote>
 							
@@ -141,17 +149,8 @@ get_header(); ?>
 	        
 	        
 	    	<?php endforeach; ?>
-	    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 	<?php endif; ?>
-	
-	
-	
-	
-	
-	
-	
-	
-		
+
 	
 	<article id="related-content" class="team">
 		<section class="container-fluid">
@@ -179,9 +178,9 @@ get_header(); ?>
 						
 								<a href="<?php echo $team_bio_permalink; ?>" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
 							
-									<h5><?php the_field('name'); ?></h5>
+									<h5><?php the_field('title'); ?></h5>
 							
-									<h3><?php the_field('title'); ?></h3>
+									<h3><?php the_field('name'); ?></h3>
 							
 								</a>
 							</div>
@@ -205,18 +204,20 @@ get_header(); ?>
 						<h3>Our Clients</h3>
 					</div>
 					
-					<?php $args = array( 'post_type' => 'im_clients', 'posts_per_page' => 10 );
+					<?php $args = array( 'post_type' => 'im_clients' );
 					$loop = new WP_Query( $args );
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 						
 						<div class="col-sm-3 col-xs-6">
 							<div class="client-block">
-								<a href="<?php the_field('website'); ?>"><img src="<?php the_field('logo'); ?>" /></a>
+								<?php $client_logo = get_field('logo'); ?>
+								
+								<a href="<?php the_field('website'); ?>"><img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/></a>
 							</div>
 						</div> 
 						
 					<?php endwhile; ?>
-
+					<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 													
 						
 				</div>
@@ -225,13 +226,18 @@ get_header(); ?>
 	
 	<?php 
 
+	
 	$posts2 = get_field('testing_testimonial');
 	
+	
 	if( $posts2 ): ?>
-	    <?php foreach( $posts2 as $post): // variable must be called $post (IMPORTANT) ?>
+	    <?php foreach( $posts2 as $post): // variable must be called $post (IMPORTANT) 
+		    $background_img = get_field('background_img', $post->ID);
+		    
+	    ?>
 	        <?php setup_postdata($post); ?>
 	        
-	        	<article class="testimonial" style="background: url('<?php printThemePath(); ?>/assets/testimonial-backgrounds/testimonial-background-01@1x.jpg');">
+	        	<article class="testimonial" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $background_img; ?>'); background-size: cover; background-position: center;">
 					<section class="container-fluid">
 						<div class="row">
 							<div class="col-sm-8 col-sm-offset-2 content-wrapper">
@@ -240,7 +246,19 @@ get_header(); ?>
 									<footer class="blockquote-footer">
 										<h5 class="blockquote-name"><?php the_field('author', $post->ID); ?></h5>
 										<h5 class="blockquote-title"><?php the_field('title', $post->ID); ?></h5>
-										<h5 class="blockquote-affiliation">Social Venture Fund</h5>  
+										
+										
+										<?php $affiliations = get_field('affiliation', $post->ID); ?>
+										<?php if ($affiliations): ?>
+										
+										<?php foreach($affiliations as $affiliation) : ?>
+
+										<h5 class="blockquote-affiliation"><?php the_field('name', $affiliation->ID); ?></h5>
+										
+										<?php endforeach; ?>
+										<?php else: ?>
+										<h5>boogers</h5>
+										<?php endif; ?>  
 									</footer>
 								</blockquote>
 							
@@ -278,7 +296,10 @@ get_header(); ?>
 						
 						<div class="col-sm-3 col-xs-6">
 							<div class="client-block">
-								<a href="<?php the_field('partner_url'); ?>"><img src="<?php the_field('logo'); ?>" /></a>
+								<?php $partner_logo = get_field('logo'); ?>
+								
+								
+								<a href="<?php the_field('partner_url'); ?>" target="_blank"><img src="<?php echo $partner_logo['url']; ?>"  alt="<?php echo $partner_logo['alt']; ?>"/></a>
 							</div>
 						</div> 
 						
