@@ -649,9 +649,16 @@ table {
   border-bottom: 1px solid #e5e5e6; }
   .webinars-main h3, .webinars-main blockquote p, blockquote .webinars-main p {
     margin-bottom: 40px; }
+  @media (max-width: 767px) {
+    .webinars-main {
+      padding-top: 45px; } }
+  @media (max-width: 480px) {
+    .webinars-main {
+      padding-top: 30px; } }
 
-.no-webinars {
-  padding-left: 40px !important; }
+@media (max-width: 767px) {
+  .no-webinars {
+    height: 40px !important; } }
 
 #bio-social {
   position: absolute;
@@ -731,14 +738,16 @@ table {
   z-index: 1;
   position: relative;
   background-size: cover !important;
-  background-position: center; }
+  background-position: center;
+  will-change: transform; }
   .feat-content-block h3, .feat-content-block blockquote p, blockquote .feat-content-block p,
   .feat-content-block-wide h3,
   .feat-content-block-wide blockquote p,
   blockquote .feat-content-block-wide p {
     color: #ffffff;
     padding: 0px;
-    margin: 0px; }
+    margin: 0px;
+    -webkit-font-smoothing: antialiased; }
     @media (min-width: 768px) and (max-width: 991px) {
       .feat-content-block h3, .feat-content-block blockquote p, blockquote .feat-content-block p,
       .feat-content-block-wide h3,
@@ -767,7 +776,9 @@ table {
   .feat-content-block p,
   .feat-content-block-wide p {
     width: 75%;
-    margin-top: 10px; }
+    margin-top: 10px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
     @media (min-width: 768px) and (max-width: 991px) {
       .feat-content-block p,
       .feat-content-block-wide p {
@@ -795,7 +806,7 @@ table {
         width: 34%; } }
   .feat-content-block:hover,
   .feat-content-block-wide:hover {
-    transform: scale(1.025, 1.025);
+    transform: scale(1.025, 1.025) translateZ(0);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
     z-index: 3;
     text-decoration: none; }
@@ -850,7 +861,7 @@ table {
   z-index: initial; }
 
 .feat-content-block-wide.staff-bios {
-  background-position: right; }
+  background-position: right !important; }
 
 a.feat-content-block-wide:hover {
   transform: scale(1.025, 1.025);
@@ -1222,10 +1233,13 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
       display: block;
       text-align: center;
       padding: 80px 25px 0px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .nav-menu {
+      height: calc(100vh - 125px); } }
   @media (max-width: 480px) {
     .nav-menu {
       height: 100vh;
-      padding: 60px 25px 0px; } }
+      padding: 80px 25px 0px; } }
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
@@ -1569,7 +1583,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     .jumbotron p.home-subtitle {
       margin-bottom: 30px; } }
   .jumbotron .btn {
-    margin-top: 60px; }
+    margin-top: 60px;
+    z-index: initial !important; }
     @media (max-width: 480px) {
       .jumbotron .btn {
         margin-top: 40px;

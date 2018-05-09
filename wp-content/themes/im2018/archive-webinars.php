@@ -61,10 +61,7 @@ get_header(); ?>
   			</div>
 	</div>
 	
-	<article id="cs-archive">
-		<section class="container-fluid">
-				<div class="row">
-										
+		
 					<?php
 					// find date time now
 					$date_now = date('Y-m-d H:i:s');
@@ -89,6 +86,10 @@ get_header(); ?>
 					));
 					
 					if( $posts ): ?>
+					
+					<article id="cs-archive">
+						<section class="container-fluid">
+							<div class="row">
 					<?php foreach( $posts as $p ): 
 						$thumbnail_img_url = get_the_post_thumbnail_url($p->ID,'full');
 						$webinar_date = get_field('webinar_date', $p->ID);
@@ -109,24 +110,18 @@ get_header(); ?>
 					</div>
 					
 					<?php endforeach; ?>
+					</div>
+					</section>
+					</article>
+
 					<?php else: ?>
+					<div class="no-webinars"></div>
 					
 					<?php endif; ?>
 					
 					
 					
-<!--
-					<div class="col-sm-4">
-						
-						<a href="#" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php printThemePath(); ?>/assets/thumbnail-images/thumbnail-image-01@1x.jpg');">
-							
-							<h5><span>2:00 PM</span> / <span>May 22, 2017</span></h5>
-							
-							<h3>Lorem ipsum dolor sit amet</h3>
-							
-						</a>
-					</div>	
--->				
+		
 					
 					
 				</div>

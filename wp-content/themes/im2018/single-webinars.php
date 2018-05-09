@@ -10,6 +10,7 @@
 
 <?php while ( have_posts() ) : the_post();
 	$banner_img = get_field('banner_img');
+	$registration_link = get_field('registration_link');
 ?>
 
 <div id="primary" class="content-area">
@@ -86,7 +87,10 @@
 						<?php endif; ?>
 						<!-- end acf repeater -->
 						
-						<a class="btn btn-default" href="#" role="button">Register</a>
+						
+						<?php if($registration_link): ?>
+						<a class="btn btn-default" href="<?php echo $registration_link; ?>" role="button" target="_blank">Register</a>
+						<?php endif; ?>
 						
 					
 					</div>

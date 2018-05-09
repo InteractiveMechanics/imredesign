@@ -95,6 +95,10 @@
 	    
 	}
 	
+	@include screen-sm {
+		height: calc(100vh - 125px)
+	}
+	
 	@include screen-xxs {
 		height: 100vh;
 		padding: 80px 25px 0px;

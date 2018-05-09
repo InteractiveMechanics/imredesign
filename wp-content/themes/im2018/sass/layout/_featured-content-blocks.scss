@@ -25,11 +25,14 @@
 	position: relative;
 	background-size: cover !important;  //because need to override the inline styles that are necessary because PHP is inserted
 	background-position: center;
-	
+	will-change: transform; 
+			
 	h3 {
 		color: $white;
 		padding: 0px;
 		margin: 0px;
+		-webkit-font-smoothing: antialiased;
+	
 		@include screen-sm {
 			font-size: 20px;
 			line-height: 30px;
@@ -52,6 +55,8 @@
 	p {
 		width: 75%;
 		margin-top: 10px;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 		@include screen-sm {
 			display: none;
 		}
@@ -77,10 +82,12 @@
 	}
 	
 	&:hover {
-		transform: scale(1.025, 1.025);
+		transform: scale(1.025, 1.025)  translateZ(0);
 		box-shadow: 0px 0px 5px rgba(0,0,0, 0.75);
 		z-index: 3;
 		text-decoration: none;
+		
+		
 	
 	}
 	
@@ -157,7 +164,7 @@
 }
 
 .feat-content-block-wide.staff-bios {
-	background-position: right;
+	background-position: right !important;
 }
 
 a.feat-content-block-wide {

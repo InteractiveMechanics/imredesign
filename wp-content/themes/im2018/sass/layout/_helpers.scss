@@ -243,10 +243,20 @@
 	h3 {
 		margin-bottom: 40px;
 	}
+	
+	@include screen-xs {
+		padding-top: 45px;
+	}
+	
+	@include screen-xxs {
+		padding-top: 30px;
+	}
 }
 
 .no-webinars {
-	padding-left: 40px !important;
+	@include screen-xs {
+		height: 40px !important;
+	}
 }
 
 

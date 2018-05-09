@@ -84,4 +84,6 @@ document.addEventListener('DOMContentLoaded', init, false);
 	});
 
 
+	$('body').bind('touchstart', function() {});
+
 } )(jQuery);
