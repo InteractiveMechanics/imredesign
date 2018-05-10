@@ -1,0 +1,39 @@
+#gallery {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.gallery-wrapper{
+	 /* Prevent vertical gaps */
+   line-height: 0;
+   
+   -webkit-column-count: 3;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    3;
+   -moz-column-gap:      0px;
+   column-count:         3;
+   column-gap:           0px;
+   img {
+	   width: 100%;
+	   height: auto;
+	   vertical-align: top;
+	   //@include screen-sm {
+		  // width: 49%;
+	   //}
+	   //@include screen-xs {
+		  // width: 100%;
+	   //}
+	   
+   }
+   @include screen-xs {
+   -webkit-column-count: 1;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    1;
+   -moz-column-gap:      0px;
+   column-count:         1;
+   column-gap:           0px;
+	   
+   }
+}
+
+

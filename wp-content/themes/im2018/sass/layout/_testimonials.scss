@@ -1,0 +1,60 @@
+.testimonial {
+	background-size: cover;
+	padding-top: 130px;
+	padding-bottom: 90px;
+	
+	blockquote {
+		border-bottom: none;
+		margin: 0px;
+		padding: 0px;
+		
+		
+		p {
+			font-family: $adelle--light;
+			color: $white;
+			line-height: 66px;
+			letter-spacing: 0.5px;
+			margin-bottom: 0px;
+			@include screen-xs {
+				line-height: 35px;
+				font-size: 20px;
+			}
+		}
+		
+		footer {
+			margin-top: 30px;
+			margin-bottom: 55px;
+			
+			h5 {
+				&:first-of-type {
+					font-size: 21px;
+					letter-spacing: 1px;
+					color: $white !important;
+					
+					@include screen-xs {
+						font-size: 18px;
+					}
+					
+				}
+				
+				font-size: 16px;
+				letter-spacing: 1px;
+				color: rgba(250, 250, 250, 0.65) !important;
+			}
+		}
+		
+		
+		@include screen-xs {
+			padding: 0px 20px 0px 10px;
+		}
+		
+		
+			
+	}
+	
+	@include screen-xs {
+		padding-top: 80px;
+		padding-bottom: 40px;
+	}
+	
+}

@@ -1,0 +1,45 @@
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+// https://getbootstrap.com/docs/3.3/components/#list-group-linked
+.list-group {
+	margin-bottom: 0px;
+}
+
+.list-group-item {
+	background-color: transparent;
+	display: inline-block;
+    padding: 15px 20px;
+    border: none;
+    margin-bottom: 0px;
+    &:first-child {
+	    padding-left: 0px;
+    }
+    &:last-child {
+	    padding-right: 0px;
+    }	
+}
+

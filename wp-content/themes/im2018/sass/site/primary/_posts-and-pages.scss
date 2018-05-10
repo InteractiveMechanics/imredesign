@@ -1,0 +1,39 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+#page {
+	@include screen-ltmd {
+		overflow-x: hidden;
+	}
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	padding-top: 90px;
+	padding-bottom: 50px; //assumes last el is p w/padding-bottom: 40px;
+	border-bottom: 1px solid $light_grey;
+	
+	@include screen-xs {
+		padding-top: 50px;
+	}
+	@include screen-xxs {
+		padding-top: 25px;
+	}
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+

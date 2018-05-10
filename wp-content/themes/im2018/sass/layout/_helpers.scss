@@ -1,0 +1,288 @@
+.full-width-border {
+	border-bottom: 1px solid $light_grey;
+	padding: 0px;
+	margin: 0px;
+}
+
+.top-border {
+	border-top: 1px solid $light_grey;
+}
+
+.bottom-border {
+	border-bottom: 1px solid $light_grey;
+}
+
+.content-wrapper {
+	p {
+		margin-bottom: 40px;
+		&:last-of-type {
+			margin-bottom: 10px;
+		}
+	}
+	
+	h5 {
+		color: $gold;
+	}
+	
+	img {
+		min-width: 100%;
+		margin-bottom: 40px;
+	}
+}
+
+.staff-thumb-sm,
+.nonstaff-thumb-sm {
+	width: 125px;
+	height: 125px;
+}
+
+
+#related-content {
+	background: $light_grey;
+	padding-top: 30px;
+	padding-bottom: 80px;
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+		.col-sm-12 {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.col-sm-4 {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		
+	}
+}
+
+.related-content-heading {
+	display: flex;
+	align-items: baseline;
+	padding-bottom: 20px;
+	h3 {
+		@include screen-xs {
+			font-size: 24px;
+		}
+		@include screen-xxs {
+			font-size: 20px;
+		}
+	}
+	
+	
+	h5 {
+		margin-left: 20px;
+		a {
+			color: $grey;
+		}
+		
+		@include screen-xs {
+			margin-left: 15px;
+		}
+		
+	}
+	@include screen-xs {
+		justify-content: left;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+.careers-main {
+	position: relative;
+	padding-top: 53px;
+	border-top: 1px solid $light_grey;
+}
+
+.resources {
+	h5 {
+		color: $gold;
+	}
+	
+	div {
+		display: flex;
+		align-items: baseline;
+		
+		h4 {
+			margin-right: 25px;
+		}
+	}
+	
+	a {
+		margin-top: 20px;
+	}
+	
+	
+}
+
+.registration {
+	background: $light_grey;
+	padding-top: 30px;
+	padding-bottom: 80px;
+}
+
+.webinars-wrapper {
+	display: flex;
+	margin-top: 0px;
+	margin-bottom: 60px;
+	overflow: auto;
+	
+	
+	img {
+		margin-bottom: 0px;
+	}
+	
+	h4 {
+		margin-top: 0px;
+		line-height: initial;
+	}
+	
+	h5 {
+		margin-top: 0px;
+		//margin-bottom: 25px;
+	}
+	
+	p {
+		margin-bottom: initial;
+		display: inline;
+	}
+	
+	.col-sm-2 {
+		padding-left: 0px;
+	
+	}
+	
+	.col-sm-10 {
+		@include screen-xs {
+			padding: 15px;
+		}
+		@include screen-sm {
+			padding: 0px;
+		}
+	}
+	
+	@include screen-sm {
+		display: initial;
+		overflow: initial;
+	}
+	
+	@include screen-xs {
+		display: initial;
+	}
+}
+
+.webinar-img-wrapper {
+	display: inline-block;
+	width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin-right: 20px;
+    @include screen-sm {
+	    width: 100%;
+	    height: 400px;
+	    margin-bottom: 20px;
+    }
+    
+    @include screen-xs {
+	    width: initial;
+	    height: 250px;
+	    margin-bottom: 20px;
+    }
+}
+
+.webinar-img-wrapper.values {
+	@include screen-sm {
+		width: 83.88%;
+	    height: auto;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	@include screen-xs {
+		width: 100%;
+		height: auto;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	
+	img {
+		@include screen-sm {
+			width: 50%;
+			height: auto;
+			min-width: initial;
+		}
+		
+		@include screen-xs {
+			width: 50%;
+			height: auto;
+			min-width: initial;
+		}
+		
+		@include screen-xxs {
+			width: 100%;
+			height: auto;
+			min-width: initial;
+		}
+		
+		
+	}
+}
+
+.webinars-main {
+	position: relative;
+	padding-top: 90px;
+	padding-bottom: 60px;
+	border-top: 1px solid $light_grey;
+	border-bottom: 1px solid $light_grey;
+	
+	h3 {
+		margin-bottom: 40px;
+	}
+	
+	@include screen-xs {
+		padding-top: 45px;
+	}
+	
+	@include screen-xxs {
+		padding-top: 30px;
+	}
+}
+
+.no-webinars {
+	@include screen-xs {
+		height: 40px !important;
+	}
+}
+
+
+#bio-social {
+	position: absolute;
+	bottom: 20px;
+		
+	a.list-group-item {
+		
+		.st0 {
+			fill: $white;
+			transition: all 0.5s ease-in-out;
+		}
+	
+		&:hover {
+		
+			background-color: transparent;
+			
+			.st0 {
+				fill: $gold;
+			}
+		}
+	}	
+}
+
+.acf-inverted-logo-background {
+	background-color: black;
+	color: white;
+}

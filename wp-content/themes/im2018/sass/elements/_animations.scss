@@ -1,0 +1,20 @@
+#myAnimation {	
+	height: 500px;
+	width: 700px;
+	margin-top: -75px;
+	@include screen-xs {
+		margin-top: -175px;
+	}
+}
+
+.animation-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+
+#animation-container {
+	padding-bottom: 60px;
+	border-bottom: 1px solid $light_grey;
+	
+}

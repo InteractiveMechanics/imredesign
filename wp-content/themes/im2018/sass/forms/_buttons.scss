@@ -1,0 +1,99 @@
+.btn,
+.btn-default,
+button,
+input[type="button"],
+input[type="reset"] {
+	border: none;
+	border-color: transparent;
+	border-radius: 0px;
+	@include special_el_text;
+	
+	background: linear-gradient(to right, $light_blue, $royal_blue);
+	color: $white;
+	padding: 20px 30px;
+	
+	font-size: 14px;
+	
+	 position: relative;
+	 //z-index: 100; 
+	
+	&:before {
+	    border-radius: inherit;
+	    background-image: linear-gradient(to right, $royal_blue, $royal_blue);
+	    content: '';    
+	    display: block;
+	    height: 100%;
+	    position: absolute;
+	    top: 0; left: 0;
+	    opacity: 0;
+	    width: 100%;
+	    z-index: -100;
+	    transition: opacity 0.25s linear;
+  	}
+
+
+	&:hover {
+		border-color: transparent;
+		color: white;
+		&:before {
+			opacity: 1.0;
+		}
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+	
+}
+
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $grey;
+	@include special_el_text;
+	font-family: $proxima-nova--light;
+	border-radius: 0px;
+	background: $grey;
+	color: $white;
+	padding: 20px 30px;
+	transition: $transition;
+	z-index: initial;
+	
+	&:hover {
+		border-color: $royal_blue;
+		background: $royal_blue;
+		color: $white;
+		
+	}
+
+	&:active,
+	&:focus {
+		border-color: $grey;
+	}
+	
+	@include screen-xs {
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	
+}
+
+
+.btn-gold {
+	background: linear-gradient(to right, $light_gold, $dark_gold);
+	
+	&:before {
+	    background-image: linear-gradient(to right, $dark_gold, $dark_gold);
+	}
+
+}
+
+.btn-pill {
+	background: $light_blue;
+	border-radius: 99px;
+	padding: 10px 15px;
+	margin: 0px 10px 10px 0px;
+	
+}

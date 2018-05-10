@@ -1,0 +1,75 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+header {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+section {
+	margin-left: 25px !important;
+	margin-right: 25px !important;
+	@include screen-xs {
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
+}
+
+address {
+	margin-bottom: 0px;
+	h5 {
+		font-size: 12px;
+		color: $grey;
+		@include screen-xs {
+			line-height: 1.6;
+		}
+	}
+}
+
+::placeholder {
+	color: $grey;
+}
+
+
+input {
+	&:focus {
+		border: 1px solid $royal_blue !important;
+		outline-color: $royal_blue;
+		outline-width: 3px;
+	}    
+}
+
+
+
+@import "lists";
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+@import "tables";
+
+@import "animations";

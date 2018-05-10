@@ -1,0 +1,187 @@
+#feat-content-container {
+	background: $white;
+	padding-top: 0px;
+	padding-bottom: 45px;
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+		.col-sm-4 {
+			padding-left: 0px;
+			padding-right: 0px;
+					}
+		
+	}
+}
+
+
+.feat-content-block,
+.feat-content-block-wide {
+	display: block;
+	height: 550px;
+	margin: 0px;
+	padding: 45px 40px;
+	transition: $transition;
+	z-index: 1;
+	position: relative;
+	background-size: cover !important;  //because need to override the inline styles that are necessary because PHP is inserted
+	background-position: center;
+	will-change: transform; 
+			
+	h3 {
+		color: $white;
+		padding: 0px;
+		margin: 0px;
+		-webkit-font-smoothing: antialiased;
+	
+		@include screen-sm {
+			font-size: 20px;
+			line-height: 30px;
+		}
+		@include screen-xs {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+	
+	h5 {
+		font-size: 12px;
+		color: $white;
+		margin-top: 0px;
+		@include screen-ltlg {
+			line-height: 1.6
+		}	
+	}
+	
+	p {
+		width: 75%;
+		margin-top: 10px;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		@include screen-sm {
+			display: none;
+		}
+		@include screen-xs {
+			display: none;
+		}
+	}
+	
+	
+	img {
+		width: 50%;
+		position: absolute;
+		bottom: 45px;
+		@include screen-sm {
+			bottom: 30px;
+		}
+		@include screen-xs {
+			width: 25%;
+		}
+		@include screen-xxs {
+			width: 34%;
+		}
+	}
+	
+	&:hover {
+		transform: scale(1.025, 1.025)  translateZ(0);
+		box-shadow: 0px 0px 5px rgba(0,0,0, 0.75);
+		z-index: 3;
+		text-decoration: none;
+		
+		
+	
+	}
+	
+	&:focus {
+		text-decoration: none;
+	}
+	
+	@include screen-sm {
+		height: 325px;
+		padding: 30px;
+	}
+	
+	
+	@include screen-xs {
+		height: 300px;
+		padding: 30px;
+	}
+	
+
+	
+}
+
+.feat-content-block.staff-bios {
+	@include screen-landscape-xs {
+		height: 400px;
+	}
+
+}
+
+
+
+.feat-content-block-wide {
+	h3 {
+		margin: 20px 0px 0px;
+		@include screen-xs {
+			margin: 0px;
+		}
+	}
+	
+	p {
+		color: $white;
+		@extend h4;
+	}
+	
+	img {
+		width: 20%;
+		bottom: 50px;
+		@include screen-xs {
+			width: 50%;
+		}
+	}
+	
+	//exists bc wp hates js
+	.resp-client-logo {
+		position: relative;
+		bottom: -300px;
+		
+		width: 25%;
+		@include screen-xs {
+			bottom: -66px;
+			width: 43%;
+			
+		}
+	}
+	
+	
+	.btn {
+		position: absolute;
+		bottom: 50px;
+		right: 40px;
+		@include screen-xs {
+			right: initial;
+			left: 0px;
+			bottom: 0px;
+			
+			width: 100%;
+		}
+	}
+	
+	&:hover {
+		transform: scale(1, 1);
+		box-shadow: none;
+		z-index: initial;
+	}
+}
+
+.feat-content-block-wide.staff-bios {
+	background-position: right !important;
+}
+
+a.feat-content-block-wide {
+	&:hover {
+		transform: scale(1.025, 1.025);
+		box-shadow: 0px 0px 5px rgba(0,0,0, 0.75);
+		z-index: 3;
+	}
+}
