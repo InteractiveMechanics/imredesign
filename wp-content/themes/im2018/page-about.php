@@ -176,7 +176,7 @@ get_header(); ?>
 						
 							<div class="col-sm-4">
 						
-								<a href="<?php echo $team_bio_permalink; ?>" class="feat-content-block" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
+								<a href="<?php echo $team_bio_permalink; ?>" class="feat-content-block staff-bios" style="background: linear-gradient(45deg, rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $featured_img_url; ?>');">
 							
 									<h5><?php the_field('title'); ?></h5>
 							

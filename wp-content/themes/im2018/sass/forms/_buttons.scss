@@ -15,7 +15,7 @@ input[type="reset"] {
 	font-size: 14px;
 	
 	 position: relative;
-	 z-index: 100; 
+	 //z-index: 100; 
 	
 	&:before {
 	    border-radius: inherit;
@@ -57,6 +57,7 @@ input[type="submit"] {
 	color: $white;
 	padding: 20px 30px;
 	transition: $transition;
+	z-index: initial;
 	
 	&:hover {
 		border-color: $royal_blue;

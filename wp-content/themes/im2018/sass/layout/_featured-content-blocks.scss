@@ -106,7 +106,18 @@
 		padding: 30px;
 	}
 	
+
+	
 }
+
+.feat-content-block.staff-bios {
+	@include screen-landscape-xs {
+		height: 400px;
+	}
+
+}
+
+
 
 .feat-content-block-wide {
 	h3 {

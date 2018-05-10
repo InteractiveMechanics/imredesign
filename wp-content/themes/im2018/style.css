@@ -824,6 +824,10 @@ table {
       height: 300px;
       padding: 30px; } }
 
+@media (max-width: 767px) and (orientation: landscape) {
+  .feat-content-block.staff-bios {
+    height: 400px; } }
+
 .feat-content-block-wide h3, .feat-content-block-wide blockquote p, blockquote .feat-content-block-wide p {
   margin: 20px 0px 0px; }
   @media (max-width: 767px) {
@@ -930,8 +934,7 @@ input[type="reset"] {
   color: #ffffff;
   padding: 20px 30px;
   font-size: 14px;
-  position: relative;
-  z-index: 100; }
+  position: relative; }
   .btn:before,
   .btn-default:before,
   button:before,
@@ -985,7 +988,8 @@ input[type="submit"] {
   background: #808084;
   color: #ffffff;
   padding: 20px 30px;
-  transition: all 0.25s ease-in-out; }
+  transition: all 0.25s ease-in-out;
+  z-index: initial; }
   input[type="submit"]:hover {
     border-color: #3a598d;
     background: #3a598d;
@@ -1402,6 +1406,7 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 
 .navbar-default .navbar-toggle {
   border-color: transparent;
+  z-index: 100;
   align-items: flex-end;
   transition: all 0.25s ease-in-out; }
   @media (max-width: 991px) {
