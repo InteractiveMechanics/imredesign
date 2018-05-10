@@ -10,6 +10,12 @@
 	display: none;
 }
 
+#page {
+	@include screen-ltmd {
+		overflow-x: hidden;
+	}
+}
+
 .page-content,
 .entry-content,
 .entry-summary {

@@ -73,13 +73,19 @@
 }
 
 @mixin screen-landscape {
-  @media (#{$landscape}) {
+  @media (#{$screen-landscape}) {
     @content;
   }
 }
 
 @mixin screen-portrait {
-	@media (#{$portrait}) {
+	@media (#{$screen-portrait}) {
+		@content;
+	}
+}
+
+@mixin screen-landscape-xs {
+	@media  (#{$screen-xs}) and (#{$screen-landscape}) {
 		@content;
 	}
 }
