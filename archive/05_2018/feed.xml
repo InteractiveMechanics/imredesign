@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interactive Mechanics</title>
+    <description>Interactive user experience design &amp; development building beautiful digital projects</description>
+    <link>http://interactivemechanics.com/</link>
+    <atom:link href="http://interactivemechanics.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 07 Dec 2015 16:49:52 -0500</pubDate>
+    <lastBuildDate>Mon, 07 Dec 2015 16:49:52 -0500</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Highlights from the MCN &amp; IMLS Focus Conferences</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/uploads/highlights-mcn-david-mckenzie.jpg&quot; alt=&quot;David McKenzie of Ford&#39;s Theatre talking about Remembering Lincoln&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;talking-about-remembering-lincoln&quot;&gt;1. Talking about Remembering Lincoln&lt;/h3&gt;
+&lt;p&gt;Ford’s Theatre’s David McKenzie (&lt;a href=&quot;https://twitter.com/dpmckenzie&quot;&gt;@dpmckenzie&lt;/a&gt;) gave a talk at MCN on &lt;em&gt;&lt;a href=&quot;http://rememberinglincoln.fords.org/&quot;&gt;Remembering Lincoln&lt;/a&gt;&lt;/em&gt;, the online archive and exhibit around Abraham Lincoln’s assassination. He spoke about early user research conducted with teachers and museum visitors and the advantages of having a detailed project plan in the form of a Product Definition Document, outlining use cases, features, and audiences. See his blog post on &lt;a href=&quot;http://blog.fords.org/2014/07/11/user-experience/&quot;&gt;blog.fords.org&lt;/a&gt;. At IMLS Focus, I gave a project showcase on &lt;em&gt;Remembering Lincoln&lt;/em&gt;, where I presented alongside a dozen other IMLS funded projects about our approach to building an online-only exhibit, archive, and educational resource (including some of the Praline Company’s finest candy). We even had the opportunity to meet some of the institutions that contributed to the collection!&lt;/p&gt;
+
+&lt;h3 id=&quot;introduction-to-omeka-s&quot;&gt;2. Introduction to Omeka S&lt;/h3&gt;
+&lt;p&gt;At the IMLS Focus Conference, Sheila Brennan gave a talk on the development of &lt;a href=&quot;https://github.com/omeka/omeka-s&quot;&gt;Omeka S&lt;/a&gt;, the next generation of Omeka. The new version is a complete revamp of the interface and also provides several great new features. The addition of multisite allows for institutions that deploy many Omeka sites to use a single installation of the system. Improved interoperability with other systems, like Fedora and other collection management systems, makes the process of integrating external databases easier. It also showcases some new ways of thinking about data, including Item Sets instead of Collections (for more flexibility) and Vocabularies (for extending the way that you can describe and categorize metadata). The open source framework is in open development, with an alpha version currently available via GitHub.&lt;/p&gt;
+
+&lt;h3 id=&quot;deploying-web-based-kiosks-with-stele&quot;&gt;3. Deploying web-based kiosks with Stele&lt;/h3&gt;
+&lt;p&gt;Bryan Kennedy (&lt;a href=&quot;https://twitter.com/xbryanx&quot;&gt;@xbryanx&lt;/a&gt;), Director of Exhibit Media at the Science Museum of Minnesota, shared an open source project produced by the museum called &lt;a href=&quot;https://github.com/scimusmn/stele&quot;&gt;Stele&lt;/a&gt;, a control system for web-based kiosks that runs on Chrome. This is an open source alternative to several other full-screen kiosk browsers, and we’re excited to give it a try on a future project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/uploads/highlights-mcn-artstories.jpg&quot; alt=&quot;Minneapolis Institute of Art&#39;s ArtStories iPad application&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;exploring-local-museums&quot;&gt;4. Exploring local museums&lt;/h3&gt;
+&lt;p&gt;While attending both conferences, I had the chance to explore several local museums, including the Minneapolis Institute of Art (MIA) and Mill City Museum in the Twin Cities, and the WWII Museum in New Orleans. The opening reception for MCN was held at MIA, where they’ve created a series of iPad applications called ArtStories throughout the museum to allow for individual reflection of spotlight objects in the collection. The WWII Museum had a number of digital experiences that helped tell the stories of real individuals involved in the war.&lt;/p&gt;
+
+&lt;p&gt;MCN and IMLS Focus were both incredible experiences to learn, share, and meet like-minded people. I’m excited to attend again next year, and I’m looking forward to other great events coming up in the spring—I’ll be presenting on &lt;a href=&quot;http://mw2016.museumsandtheweb.com/proposal/user-experience-for-museum-professionals/&quot;&gt;User Experience for Museum Professionals&lt;/a&gt; at Museums and the Web in Los Angeles.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Dec 2015 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2015/12/highlights-from-mcn-imls-focus-conferences/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2015/12/highlights-from-mcn-imls-focus-conferences/</guid>
+        
+        
+        <category>Community</category>
+        
+      </item>
+    
+      <item>
+        <title>Custom Bootstrap Menus with Omeka</title>
+        <description>&lt;p&gt;Omeka uses the &lt;code&gt;public_nav_main&lt;/code&gt; function &lt;a href=&quot;https://omeka.readthedocs.org/en/latest/Reference/libraries/globals/public_nav_main.html&quot;&gt;here it is in the documentation&lt;/a&gt; to control the output. Since Omeka is built using the Zend framework, you get access to all the helpers that you would get with Zend’s &lt;a href=&quot;http://framework.zend.com/manual/1.12/en/zend.view.helpers.html#zend.view.helpers.initial.navigation.menu&quot;&gt;navigation menu&lt;/a&gt;. Since you’ll need to add classes on more than what they give you, you’ll need to use the &lt;code&gt;setPartial&lt;/code&gt; function to build your own HTML output.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$partial&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;menu.phtml&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$nav&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;public_nav_main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// this looks like $this-&amp;gt;navigation()-&amp;gt;menu() from Zend&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$nav&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setUlClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;nav navbar-nav&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setPartial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$partial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$nav&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We added that to a function in the starter theme’s &lt;code&gt;functions.php&lt;/code&gt; file to make life easier (so now you can just call &lt;code&gt;public_nav_menu_bootstrap()&lt;/code&gt; to get a jumpstart). As for the partial side, that’s slightly more complicated. So, to help out, we added a sample version that allows for pretty Bootstrap dropdowns when you create child pages in your navigation. This file is located in the common directory, &lt;code&gt;menu-partial.phtml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;nav nav-pills navbar-left&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;?&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;php&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isVisible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;navigation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;accept&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$hasChildren&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;hasPages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$hasChildren&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;            &amp;lt;li &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;class=&amp;quot;active&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; role=&amp;quot;presentation&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                &amp;lt;a class=&amp;quot;nav-header&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                &amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;            &amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;            &amp;lt;li class=&amp;quot;dropdown &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;active&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;quot; role=&amp;quot;presentation&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                &amp;lt;a class=&amp;quot;dropdown-toggle&amp;quot; data-toggle=&amp;quot;dropdown&amp;quot; href=&amp;quot;#&amp;quot; role=&amp;quot;button&amp;quot; aria-haspopup=&amp;quot;true&amp;quot; aria-expanded=&amp;quot;false&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                    &amp;lt;span class=&amp;quot;caret&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                &amp;lt;/a&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;x&quot;&gt;                &amp;lt;ul class=&amp;quot;dropdown-menu&amp;quot; id=&amp;quot;page_&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getPages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isVisible&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;navigation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;accept&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                        &amp;lt;li &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isActive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;class=&amp;quot;active&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                            &amp;lt;a href=&amp;quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getHref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                                &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLabel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                            &amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                        &amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endforeach&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;                &amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;            &amp;lt;/li&amp;gt;   &lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;        &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;endforeach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This partial gets called by Zend and walks through building the navigation—first, each top level page, and if it has child pages each page below it. If you’re doing something custom, it should be easy to manipulate or create your own walker for your project!&lt;/p&gt;
+
+&lt;p&gt;If you haven’t checked out our Omeka starter theme, &lt;a href=&quot;https://github.com/InteractiveMechanics/omeka-starter-theme&quot;&gt;fork it now&lt;/a&gt; and start your own project!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Nov 2015 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2015/11/custom-bootstrap-menus-with-omeka/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2015/11/custom-bootstrap-menus-with-omeka/</guid>
+        
+        
+        <category>Tools and Tech</category>
+        
+      </item>
+    
+      <item>
+        <title>Microsoft Kinect with Processing</title>
+        <description>&lt;p&gt;Before making the decision to use Microsoft’s Kinect SDK, we researched alternative ways to make the most of the hardware. One that got us the most excited was SimpleOpenNI with Processing, a language that we already knew well.&lt;/p&gt;
+
+&lt;p&gt;Daniel Shiffman’s &lt;a href=&quot;http://shiffman.net/p5/kinect/&quot;&gt;Getting Started with Kinect and Processing&lt;/a&gt; post is a great primer on the basics (including getting everything installed). We’re going to use &lt;a href=&quot;https://code.google.com/p/simple-openni/&quot;&gt;SimpleOpenNI&lt;/a&gt; though instead of OpenKinect, which can easily be installed Processing’s Library Import. Through this article, we’ll take a look at a simple example using some of the Kinect’s coolest features that you can use in your own projects.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-basic-sketch&quot;&gt;The Basic Sketch&lt;/h3&gt;
+&lt;p&gt;If you read Shiffman’s article, you’ll know the basic setup. Here is the foundation of our sketch (what Processing calls a document or project):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SimpleOpenNI.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;640&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;480&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;P2D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isInit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()){&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Can&amp;#39;t initialize SimpleOpenNI, camera not connected properly.&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; 
+     &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;enableRGB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;rgbImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Let’s walk through this. We start by importing SimpleOpenNI, the framework that will give us access to the Kinect sensor. We then create a SimpleOpenNI variable called “context.” We’ll add a few more variables later, but for now, this is all we need.&lt;/p&gt;
+
+&lt;p&gt;We have two functions: &lt;code&gt;setup()&lt;/code&gt; and &lt;code&gt;draw()&lt;/code&gt;. &lt;code&gt;draw()&lt;/code&gt; is just going to get the latest frame and print it to the screen. &lt;code&gt;context.rgbImage()&lt;/code&gt; will take the latest frame returned from the RGB camera. &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;setup()&lt;/code&gt; is a bit more complicated: first, we define the size of our sketch (640 width by 480 height is the default size for the Kinect v1 sensor). We assign context to a new instance of SimpleOpenNI and then check to see if we’re able to initialize the device (can’t do anything if the Kinect isn’t connected or doesn’t turn on). Finally, we enable the RGB sensors that we need.&lt;/p&gt;
+
+&lt;p&gt;If you run the sketch now, you should see a simple webcam-style streaming video getting returned. Nothing fancy, but you can likely already see how powerful this could be.&lt;/p&gt;
+
+&lt;h3 id=&quot;drawing-the-skeleton&quot;&gt;Drawing the skeleton&lt;/h3&gt;
+&lt;p&gt;Now that we have some basic data getting returned and displayed, let’s take it a step further and use the depth camera and joint detection. The Kinect does a surprisingly good job of recognizing the human body to track joints and motion, which you can use to create interactivity in your sketches. Here’s the basic setup:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;SimpleOpenNI.*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]{&lt;/span&gt; 
+  &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1260&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;960&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;P2D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isInit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Can&amp;#39;t initialize SimpleOpenNI, camera not connected properly.&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; 
+     &lt;span class=&quot;n&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;enableDepth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;enableUser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setMirror&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+ 
+  &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strokeWeight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;smooth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;  
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Mostly the same as last time, but now we’re using the depth camera instead of the simple RGB camera. We’re also turning on &lt;code&gt;enableUser()&lt;/code&gt; which will recognize bodies picked up by the depth sensor. &lt;code&gt;setMirror(false)&lt;/code&gt; will tell the sensor not to flip the frame to make our motion a little more intuitive.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;userImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getUsers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;isTrackingSkeleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])){&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;drawSkeleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;    
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Our &lt;code&gt;draw()&lt;/code&gt; function this time uses the userImage returned from the depth camera. It’ll look like a heatmap when you run it, with objects closer appearing brighter than points further away. To draw our skeletons, we’ll need to loop through all of the users that the Kinect is able to detect. We start by getting an array of users that we’re able to loop through, and before drawing the skeleton, confirm that the sensor is able to track that user. If so, we pick a color from our userColor array and draw the series of joints that make up the skeleton for that user.&lt;/p&gt;
+
+&lt;p&gt;Next, let’s look at that &lt;code&gt;drawSkeleton()&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;drawSkeleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;  
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_HEAD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_NECK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_NECK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_SHOULDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_SHOULDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_ELBOW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_ELBOW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_HAND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_NECK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_SHOULDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_SHOULDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_ELBOW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_ELBOW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_HAND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_SHOULDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_TORSO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_SHOULDER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_TORSO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_TORSO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_HIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_HIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_KNEE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_KNEE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_LEFT_FOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_TORSO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_HIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_HIP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_KNEE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawLimb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_KNEE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SKEL_RIGHT_FOOT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It looks like a lot is happening here, but we’re really just creating connections between the user’s joints. For example, we create a line between the foot and the knee, the knee and the hip. The Kinect v1 has access to 17 joints, whereas the newer sensor has access to 25. Finally, there are a few events that we need to add in:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onNewUser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;onNewUser - userId: &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;curContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startTrackingSkeleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onLostUser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;onLostUser - userId: &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onVisibleUser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SimpleOpenNI&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;curContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;onVisibleUser - userId: &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The important one here is the &lt;code&gt;onNewUser()&lt;/code&gt; function, which begins tracking the user’s skeleton once it is picked up by the sensor.&lt;/p&gt;
+
+&lt;p&gt;Run the sketch, and walk in front of your sensor. You’ll see a colored skeleton that does a pretty good job tracking your body’s major joints. You could take this further: perhaps tracking just the hand joints to create a painting game, or an interface that you can play with.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-processing-over-microsofts-kinect-sdk&quot;&gt;Why Processing over Microsoft’s Kinect SDK?&lt;/h3&gt;
+&lt;p&gt;Processing is known for being used by artists. If you’re looking for a way to combine streaming video into your work, Processing with the Kinect might be the right pairing for you. Unfortunately, the open source libraries available right now haven’t had much love over the past few years. With the release of the new Kinect sensor in 2014, several of these projects died out or have been struggling to stay alive.&lt;/p&gt;
+
+&lt;p&gt;The Microsoft Kinect SDK has the benefit of an improved API and much more flexibility with how you develop with it. For the Kinect v2 SDK, you’ll have access to powerful facial detection, hand state (like opened and closed), and additional joints.&lt;/p&gt;
+
+&lt;p&gt;If you want to learn more on Processing and Kinect, I’d highly recommend Greg Borenstein’s book, &lt;a href=&quot;http://www.amazon.com/Making-Things-See-Processing-MakerBot/dp/1449307078/ref=as_li_ss_tl?ie=UTF8&amp;amp;linkCode=sl1&amp;amp;tag=learniproces-20&amp;amp;linkId=742b2c243f8e415b108d559a422faf5c&quot;&gt;Making Things See: 3D Vision with Kinect, Processing, Arduino, and MakerBot&lt;/a&gt; to take things further. If you build something cool and found this post helpful, send us a link or video so we can take a look!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Oct 2015 00:00:00 -0400</pubDate>
+        <link>http://interactivemechanics.com/news/2015/10/kinect-with-processing/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2015/10/kinect-with-processing/</guid>
+        
+        
+        <category>Tools and Tech</category>
+        
+      </item>
+    
+      <item>
+        <title>See you at...</title>
+        <description>&lt;p&gt;There’s a lot going on this fall, and I’m super excited to kick things off this weekend with MuseumNext’s first US conference. MuseumNext is focused on the future of museums, so you can expect top-notch technology talks, and this year’s theme is Building Inclusive Museums, so basically, everything I love in one place. Also it is IN TWO MUSEUMS. Check out my program highlights below. I’ll be hanging around till Monday afternoon if you’re in Indianapolis and want to chat - find me on twitter &lt;a href=&quot;https://twitter.com/ameliaexmachina&quot;&gt;@ameliaexmachina&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/uploads/museumnext-ima.jpg&quot; alt=&quot;Join Amelia Longo at MuseumNext at the Indianapolis Museum of Art&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;museumnext-amelias-picks&quot;&gt;MuseumNext: Amelia’s Picks&lt;/h3&gt;
+
+&lt;h5 id=&quot;leading-inclusionhttpwwwmuseumnextcomconferencesessionleading-inclusion&quot;&gt;&lt;a href=&quot;http://www.museumnext.com/conference/session/leading-inclusion/&quot;&gt;Leading Inclusion&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Seema Rao&lt;/strong&gt;, Director, Intergenerational Learning, Cleveland Museum of Art&lt;br /&gt;
+&lt;em&gt;A call to arms empowering all of us to use technology as a tool of inclusion in the museums of the future.&lt;/em&gt;
+I’ve definitely seen tech both help and hinder inclusivity, and I’m excited to get some tips and insights from Seema, whose background is a killer trifecta of Art History, User Experience Design, and Library Sciences.&lt;/p&gt;
+
+&lt;h5 id=&quot;the-born-digital-art-institutionhttpwwwmuseumnextcomconferencesessionthe-born-digital-art-institution&quot;&gt;&lt;a href=&quot;http://www.museumnext.com/conference/session/the-born-digital-art-institution/&quot;&gt;The Born-Digital Art Institution&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Zachary Kaplan&lt;/strong&gt;, Assistant Director, Rhizome&lt;br /&gt;
+&lt;em&gt;New models for what an art institution can be when it organizes itself with the internet at its core.&lt;/em&gt;
+Zachary will talk about Rhizome and other internet-based art institutions. I’m super curious about similarities and differences in audiences (and audience building strategies) between internet-based and traditional museums.&lt;/p&gt;
+
+&lt;h5 id=&quot;mining-the-digital-landscape-engaging-communities-of-colorhttpwwwmuseumnextcomconferencesessiondigitallandscape&quot;&gt;&lt;a href=&quot;http://www.museumnext.com/conference/session/digitallandscape/&quot;&gt;Mining the Digital Landscape, Engaging Communities of Color&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Adrianne Russell&lt;/strong&gt;, Museum educator, literary artist and nonprofit consultant&lt;br /&gt;
+&lt;strong&gt;Ravon Ruffin&lt;/strong&gt;, Co-Creator, Brown Girls Museum Blog&lt;br /&gt;
+&lt;em&gt;Exploring digital havens for marginalized black and brown communities and ways museums can engage them.&lt;/em&gt;
+I love that Adrianne and Ravon will be discussing both what’s already existing (and often ignored) in marginalized communities, as well as ways for museums to truly engage them. I have a hunch there will be some applications for user experience as well.&lt;/p&gt;
+
+&lt;h3 id=&quot;other-fall-event-picks&quot;&gt;Other Fall Event Picks&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sep 25-26&lt;/td&gt;
+      &lt;td&gt;MuseumNext (Indianapolis)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sep 29&lt;/td&gt;
+      &lt;td&gt;MuseumCouncil’s Emerging, Expanding, and Entrepreneurial&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sep 30&lt;/td&gt;
+      &lt;td&gt;La Salle University Art Museum Collage and Conflict Opening&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 1-31&lt;/td&gt;
+      &lt;td&gt;Archives Month&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 9&lt;/td&gt;
+      &lt;td&gt;2015 PPA Partners in the Arts Project Stream Check Ceremony&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 11-13&lt;/td&gt;
+      &lt;td&gt;Visitor Experience Conference&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 15&lt;/td&gt;
+      &lt;td&gt;Free License with Shepard Fairey and Rich Miner&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 16-24&lt;/td&gt;
+      &lt;td&gt;State of Young Philly&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 21-23&lt;/td&gt;
+      &lt;td&gt;Mid-Atlantic Association of Museums Annual Meeting&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 22&lt;/td&gt;
+      &lt;td&gt;Philly EdTech Lightning Talks&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Oct 26&lt;/td&gt;
+      &lt;td&gt;Greater Philadelphia Cultural Alliance Annual Member Meeting&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Nov 4-7&lt;/td&gt;
+      &lt;td&gt;Museum Computer Network 2015 (Minneapolis)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Nov 16-17&lt;/td&gt;
+      &lt;td&gt;IMLS Focus Conference (New Orleans)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Fri, 25 Sep 2015 00:00:00 -0400</pubDate>
+        <link>http://interactivemechanics.com/news/2015/09/see-you-at/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2015/09/see-you-at/</guid>
+        
+        
+        <category>Community</category>
+        
+      </item>
+    
+      <item>
+        <title>Remembering Lincoln 150 Years Later</title>
+        <description>&lt;p&gt;Since October, we’ve collaborated with Ford’s digital projects and education team to conceptualize, design, and develop an online exhibit and collection that would support the anniversary and act as a resource for educators and enthusiasts after the events.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/uploads/remembering-lincoln-150-years.png&quot; alt=&quot;Collections from Remembering Lincoln&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;an-exhibit-collection-and-teaching-resource&quot;&gt;An exhibit, collection, and teaching resource&lt;/h3&gt;
+&lt;p&gt;Remembering Lincoln was built to be versatile: share responses of the assassination from different perspectives, supplement the events of Ford’s 150, and act as an on-going resource in the classroom after the events come to a close.
+The project aims to tell a rich story by allowing visitors to explore the breadth and variety of reactions to the events surrounding the assassination and funeral. We wanted to allow visitors to explore the site and find connections to the story that are relevant to them. When you find a piece of the story—a letter, a ribbon, or a photograph—that impacts you emotionally, you could add it to you personal collection to save for later.
+This also serves as a way to keep the site relevant past the events in April. By providing teaching resources, contributed by teachers and refined by Ford’s Theatre, the site allows educators to use Remembering Lincoln as a way to engage students with the story and objects in the collection. Eventually, the objects will return to their respective institutions—the project serves as a way for them to live together to create a cohesive experience far into the future. &lt;/p&gt;
+
+&lt;h3 id=&quot;comments-and-responses&quot;&gt;Comments and responses&lt;/h3&gt;
+&lt;p&gt;Remembering Lincoln has received some great feedback and responses so far. Here are just a few of the positive remarks the project has received since the launch last week:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Really impressed by the new Lincoln archival website by &lt;a href=&quot;https://twitter.com/dpmckenzie&quot;&gt;@dpmckenzie&lt;/a&gt; &amp;amp; co. at &lt;a href=&quot;https://twitter.com/fordstheatre&quot;&gt;@fordstheatre&lt;/a&gt; &lt;a href=&quot;http://t.co/uj5guFuuJX&quot;&gt;http://t.co/uj5guFuuJX&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/musesocial?src=hash&quot;&gt;#musesocial&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/musetech?src=hash&quot;&gt;#musetech&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nancy Proctor (@nancyproctor) &lt;a href=&quot;https://twitter.com/nancyproctor/status/578515442232373248&quot;&gt;March 19, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;We are proud to be one of the largest contributors to &lt;a href=&quot;https://twitter.com/fordstheatre&quot;&gt;@fordstheatre&lt;/a&gt; Remembering Lincoln digital archive. &lt;a href=&quot;http://t.co/QuB0V3n9Hd&quot;&gt;http://t.co/QuB0V3n9Hd&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/RememberAbe?src=hash&quot;&gt;#RememberAbe&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mo History Museum (@mohistorymuseum) &lt;a href=&quot;https://twitter.com/mohistorymuseum/status/578232837675040768&quot;&gt;March 18, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;how-we-collaborated-with-fords-theatre&quot;&gt;How we collaborated with Ford’s Theatre&lt;/h3&gt;
+&lt;p&gt;Interactive Mechanics joined &lt;a href=&quot;http://fords.org/&quot;&gt;Ford’s Theatre&lt;/a&gt; as a digital partner to help bring the concept and previous work on content and strategy to the web (see the amazing grant work completed by David McKenzie and his team: &lt;a href=&quot;http://blog.fords.org/2014/07/11/user-experience/&quot;&gt;http://blog.fords.org/2014/07/11/user-experience/&lt;/a&gt;).
+Our team was involved from the discovery and content development phase through the development and launch of the site in March 2015. This was an important initiative for Ford’s—one of the first online digital projects that the museum has built. We wanted to help make this a significant milestone for the museum. Some of the ways we were involved included: content audit and strategy; user research and testing; interactive and visual design; development with Drupal; and documentation to help ensure the site remains up-to-date and fresh in the future.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://interactivemechanics.com/news/2015/03/remembering-lincoln/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2015/03/remembering-lincoln/</guid>
+        
+        
+        <category>Project Updates</category>
+        
+      </item>
+    
+      <item>
+        <title>Digital Projects 101 at Philly Tech Week 2015</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/uploads/digital-projects.jpg&quot; alt=&quot;Michael Tedeschi teaching with Girl Develop It Philly&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Join our team during &lt;a href=&quot;http://2015.phillytechweek.com/&quot;&gt;Philly Tech Week 2015&lt;/a&gt; for a lunch and learn—food and drinks included—to increase your understanding of digital projects in the arts and culture sector. In this lunchtime digital primer, you’ll learn how to define key elements of your project, conduct relevant research, draft a request for proposals, select a vendor, and maintain your project once it’s built. We’ll also discuss common project types and key terminology, so you can feel confident talking to partners, funders, external stakeholders, and your team.&lt;/p&gt;
+
+&lt;p&gt;Interested in attending? &lt;a href=&quot;http://interactivemechanics.ticketleap.com/digital-projects-for-arts-and-culture/&quot;&gt;Register now through TicketLeap&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Feb 2015 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2015/02/digital-projects-for-arts-culture/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2015/02/digital-projects-for-arts-culture/</guid>
+        
+        
+        <category>Community</category>
+        
+      </item>
+    
+      <item>
+        <title>Highlights from BarCamp 2014</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/uploads/barcamp-bacon.jpg&quot; alt=&quot;Bacon at BarCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bacon&quot;&gt;1. Bacon!&lt;/h3&gt;
+&lt;p&gt;BarCamp promised bacon and they delivered with not 1, not 2, but 3 types of bacon at breakfast. A great way to start the day!&lt;/p&gt;
+
+&lt;h3 id=&quot;bala-petersons-gospel-of-specialization&quot;&gt;2. Bala Peterson’s Gospel of Specialization&lt;/h3&gt;
+&lt;p&gt;Bala, who transitioned from a jack-of-all-tech-trades to a JavaScript specialist, discussed the ways in which benefits of determining a focus for your career can be professionally and personally beneficial. He said, “When we’re jumping from thing to thing, it means we’re running away from something … you let things happened to you when you don’t choose.”&lt;/p&gt;
+
+&lt;h3 id=&quot;jeff-avallone-im-a-web-developer--ama&quot;&gt;3. Jeff Avallone: I’m a Web Developer – AMA!&lt;/h3&gt;
+&lt;p&gt;Jeff Avallone is a principal software engineer and JavaScript specialist for Comcast Interactive Media. He was welcoming, insightful, and engaging. Here are just a few practical takeaways from his talk:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Upgrade when security is at risk or there are features you need – don’t upgrade for the sake of upgrading&lt;/li&gt;
+  &lt;li&gt;If you write a piece of code twice, it should be in a class or function&lt;/li&gt;
+  &lt;li&gt;Resist the temptation to learn a library before you learn JavaScript&lt;/li&gt;
+  &lt;li&gt;There is nothing wrong with PHP. There is a perception that PHP is bad code because inexperienced developers write in PHP, but there is nothing wrong with PHP itself.&lt;/li&gt;
+  &lt;li&gt;Don’t underestimate the importance of being able to prove what you know – always be prepared to show your work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jana-velkov-on-accessibility-for-front-end-developers&quot;&gt;4. Jana Velíšková on Accessibility for Front-End Developers&lt;/h3&gt;
+&lt;p&gt;Jana is a regular presence at Girl Develop It events, where she has served as a speaker and TA. She reminded the audience of the importance of considering accessibility throughout the development and design process and demonstrating empathy for all users. “Every step requires empathy,” she said. She stressed the importance of usability and cross-browser testing, using proper semantics, and experiencing a screen reader in action. I’ve never done that and am looking for an opportunity to do so.&lt;/p&gt;
+
+&lt;p&gt;She also mentioned a few tools that can help developers ensure that projects are accessible as possible. The Wave toolbar can evaluate your site and identify accessibility errors, such as missing alt tags and form labels. Fangs is a tool that shows you exactly how a website would be read by JAWS, the world’s most popular screen reader. It only catches the errors you’re looking for, but is worth the time.&lt;/p&gt;
+
+&lt;h3 id=&quot;no-coat-check-no-problem&quot;&gt;5. No coat check? No problem.&lt;/h3&gt;
+&lt;p&gt;I was extremely impressed with the welcoming, friendly atmosphere of BarCamp. That vibe was embodied by one particular phenomenon. It was a cold day and most people wore heavy coats. Since there wasn’t a coat check, attendees improvised, laying their coats over a set of rails beneath an escalator. There were piles and piles of coats on the rails. No one was tasked with minding the coats. There was an implicit trust that people would not take one another’s stuff. In a world of “unattended bags will be confiscated” that level of trust was downright heartwarming.&lt;/p&gt;
+
+&lt;p&gt;There were so many other great moments at BarCamp 2014–the eight-year-old who led a session on iPad movie production, Lauren Ancona’s talk on how Code for Philly changed her life–and I’m so glad to have had the opportunity to attend. Can’t wait until next year!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2014/12/highlights-from-barcamp/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2014/12/highlights-from-barcamp/</guid>
+        
+        
+        <category>Community</category>
+        
+      </item>
+    
+      <item>
+        <title>Meet Christina, Design &amp; Development Apprentice</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/uploads/christina-deemer.jpg&quot; alt=&quot;Meet Christina Deemer, Design &amp;amp; Development Apprentice&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;how-did-you-get-into-design-and-development&quot;&gt;How did you get into design and development?&lt;/h3&gt;
+
+&lt;p&gt;After more than a decade in arts management and fundraising, I was ready to make a change but I wasn’t sure how to move forward. Web design and development found me by accident.&lt;/p&gt;
+
+&lt;p&gt;While on vacation in Mendocino, my husband and I were listening to a NPR program about some of the new programs that teach technology skills to women. One of the women profiled pointed out the similarities between learning to code and learning languages. That caught my attention. I have a lifelong interest in language. I was an English major, and took seven years of Russian in high school and college. I thought, maybe web development work could be as awesome as conjugating Russian verbs or analyzing a poem.&lt;/p&gt;
+
+&lt;p&gt;When I got home from California I began taking online tutorials through Codecademy. I enjoyed not only learning the vocabulary and syntax of code, but also the beauty and utility of what that code created. I’ve always loved making things that are beautiful, from cakes to quilts. My interest grew and I began taking courses through Girl Develop It and the University of the Arts. Those experiences directly led to my apprenticeship with Interactive Mechanics.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-did-you-do-before-working-with-interactive-mechanics&quot;&gt;What did you do before working with Interactive Mechanics?&lt;/h3&gt;
+
+&lt;p&gt;I started my career in arts management as an editorial intern at the American Poetry Review in 2001 and most recently was the Director of Annual Giving at Opera Philadelphia. In between were stints at The Chamber Orchestra of Philadelphia, the Library Company of Philadelphia, and the Rosenbach Museum &amp;amp; Library. Philadelphia has such a dynamic and diverse arts scene and I feel privileged to have helped some of its most well regarded institutions meet their missions.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-your-go-to-place-to-spark-your-creativity-blogs-podcasts-websites-etc&quot;&gt;What’s your go-to place to spark your creativity (blogs, podcasts, websites, etc)?&lt;/h3&gt;
+
+&lt;p&gt;I find inspiration in so many places. The design projects featured on &lt;a href=&quot;http://www.thisiscolossal.com/&quot;&gt;Colossal&lt;/a&gt; are really striking and imaginative. I find posts on &lt;a href=&quot;http://www.creativebloq.com/&quot;&gt;Creative Bloq&lt;/a&gt;, &lt;a href=&quot;http://www.coolhunting.com/&quot;&gt;Cool Hunting&lt;/a&gt;, and &lt;a href=&quot;http://www.smashingmagazine.com/&quot;&gt;Smashing Magazine&lt;/a&gt;, and &lt;a href=&quot;http://alistapart.com/&quot;&gt;A List Apart&lt;/a&gt; to be very useful.&lt;/p&gt;
+
+&lt;p&gt;Also, I find a lot of inspiration offline. The teachers and students in the classes I take with UArts and Girl Develop It leave me feeling empowered and motivated. I can’t say enough good things about them.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-are-your-favorite-apps-on-your-phone-right-now&quot;&gt;What are your favorite apps on your phone right now?&lt;/h3&gt;
+
+&lt;p&gt;Right now my favorite app is &lt;a href=&quot;http://dayoneapp.com/&quot;&gt;Day One&lt;/a&gt;, a journaling app with a simple and elegant interface. It takes all of the features that you find in blogging – tags, photos, day/time stamps, etc. – and puts them into a private journal. One of my favorite features is the short writing prompt at the top of each page, such as “What was your first paying job?” or “What winter activities do you participate in?” It helps me get started. I’ve been journaling since fourth grade and Day One is the first electronic tool that really works for me.&lt;/p&gt;
+
+&lt;h3 id=&quot;favorite-place-or-spot-in-philadelphia&quot;&gt;Favorite place or spot in Philadelphia?&lt;/h3&gt;
+
+&lt;p&gt;There are so many awesome spots in Philadelphia. A new addition to my list of Favorite Places is &lt;a href=&quot;http://www.cultureworksphila.org/&quot;&gt;CultureWorks&lt;/a&gt;. It’s a really a great place to get things done. There is so much natural light and the white walls, white tables, and white chairs give the main room such a great airy quality.&lt;/p&gt;
+
+&lt;p&gt;Some of my longtime Favorite Places are 30th Street Station, Independence Hall, the Academy of Music, the Curtis Institute of Music, the main branch of the Free Library, Reading Terminal Market, La Colombe, DiBruno Brothers, Rittenhouse Square, Tria, Barbuzzo, Isgro’s Bakery, the 2000 block of Delancey Place, and 13th Street between Market and Pine. I lived in a tiny studio on Pine between Broad and 13th when I was younger and watching 13th Street blossom into Midtown Village has been really cool.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-skills-are-you-hoping-to-grow-and-develop-through-the-apprenticeship&quot;&gt;What skills are you hoping to grow and develop through the apprenticeship?&lt;/h3&gt;
+
+&lt;p&gt;I’ve been so thrilled with the apprenticeship because it is giving me the opportunity to road test certain skills that I’ve learned through classes and online tutorials, such as wireframing, usability testing, HTML/CSS, CSS frameworks, and CMSes. Also, I’m excited about acquiring new skills – UX and UI techniques and best practices, Git/GitHub, debugging best practices, and JavaScript and JavaScript libraries.&lt;/p&gt;
+
+&lt;p&gt;Want to learn more about Christina’s apprenticeship? Follow her on Twitter at &lt;a href=&quot;https://twitter.com/cahdeemer&quot;&gt;@cahdeemer&lt;/a&gt; or contact us at &lt;a href=&quot;hello@interactivemechanics.com&quot;&gt;hello@interactivemechanics.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2014/12/meet-christina/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2014/12/meet-christina/</guid>
+        
+        
+        <category>Behind the Scenes</category>
+        
+      </item>
+    
+      <item>
+        <title>See you at Museums and the Web 2015!</title>
+        <description>&lt;p&gt;Our workshop will serve as a crash course on Omeka, giving new users the basic skills they need to get an Omeka site up-and-running quickly. We’ll also explain some of the advance features of the platform, like using the built-in API for developing your own, custom projects.&lt;/p&gt;
+
+&lt;p&gt;What to expect from our workshop:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Learn what Omeka is, why it can be useful, and how it differs from systems like Drupal and WordPress.&lt;/li&gt;
+  &lt;li&gt;Explore the basics of building an Omeka site, including how to install and use plugins or themes.&lt;/li&gt;
+  &lt;li&gt;Review how to modify or work with Omeka’s theme structure to customize your site.&lt;/li&gt;
+  &lt;li&gt;See how to use the Omeka API to export or interact with your data, or build a custom system using it.
+M
+useums and the Web is currently offering early-bird and discounted registration until January 1, 2015. If you’re interested in attending our workshop, be sure to register soon: &lt;a href=&quot;http://mw2015.museumsandtheweb.com/registration/&quot;&gt;http://mw2015.museumsandtheweb.com/registration/&lt;/a&gt;. If we don’t see you at the workshop, be sure to say hello at the Exhibitor’s Hall or during one of the many opportunities to network!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 10 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2014/12/see-you-at-museums-web/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2014/12/see-you-at-museums-web/</guid>
+        
+        
+        <category>Community</category>
+        
+      </item>
+    
+      <item>
+        <title>Page Templates with Omeka Simple Pages</title>
+        <description>&lt;p&gt;Out of the box, Simple Pages gives you a single template: &lt;strong&gt;show.php&lt;/strong&gt;. What if you’d like to customize the way certain pages look? For example, your “About our collection” page might need to look unique from the rest of your pages. In your theme folder, you’ll need to to have a &lt;code&gt;simple-pages/page&lt;/code&gt; directory to override the default &lt;strong&gt;show.php&lt;/strong&gt; page template. Let’s add some code to the top of this page:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$bodyclass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;page simple-page&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;simple_pages_earliest_ancestor_page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Build appropriate page titles&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_current_record&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;simple_pages_page&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$topSlug&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;slug&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;simple_pages_page&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;nv&quot;&gt;$subtitle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;simple_pages_page&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;title&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;title&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;bodyclass&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$bodyclass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;bodyid&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;simple_pages_page&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;slug&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;subtitle&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$subtitle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;&amp;#39;currentUriOverride&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$topSlug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// If there is a file that matches the slug of this page, display that as the template&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Otherwise, use the template below on show.php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$fname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dirname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;simple_pages_page&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;slug&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;is_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fname&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$fname&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Close your PHP tags and add your show.php content here.&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This block of code creates some smarter titles based on page hierarchy, calls our standard &lt;code&gt;head()&lt;/code&gt; function to build the page header, and then does a check for new page templates based on the slug. Again, the slug is the machine-readable name of the page. From our earlier example, the slug of “About our organization” might be “about” or “about-our-organization”. If there is a new template in our directory that shares that name (e.g. &lt;strong&gt;about-our-organization.php&lt;/strong&gt;), then include that content instead of the default in &lt;strong&gt;show.php&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/uploads/page-templates-omeka.png&quot; alt=&quot;How to properly set up your Omeka Simple Page files. Image contributed by Hafiz Hanif, University of Warwick&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We hope this helps you take your Omeka site to the next level! This feature could be extended in a number of different ways (for Items, Collections, or Exhibits), and is just the start of how to add some more advanced customization options into your custom Omeka theme. Questions? Tweet us at @interactivemech!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Dec 2014 00:00:00 -0500</pubDate>
+        <link>http://interactivemechanics.com/news/2014/12/page-templates-omeka/</link>
+        <guid isPermaLink="true">http://interactivemechanics.com/news/2014/12/page-templates-omeka/</guid>
+        
+        
+        <category>Tools and Tech</category>
+        
+      </item>
+    
+  </channel>
+</rss>

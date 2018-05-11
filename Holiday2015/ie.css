@@ -1,0 +1,11 @@
+.wrapper {
+	display: none;
+}
+
+.on-load-modal {
+	display: none !important;
+}
+
+.ie-only {
+	display: block !important;
+}

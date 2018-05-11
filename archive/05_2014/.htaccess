@@ -1,0 +1,18 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /05_2014/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /05_2014/index.php [L]
+</IfModule>
+
+# END WordPress
+
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+AddType video/webm .webm
+AddType video/ogg .ogv
+AddType video/mp4 .mp4
