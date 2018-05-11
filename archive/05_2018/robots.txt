@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /contact.php
+Disallow: /archive/
+Disallow: /ipad.html
+
+User-agent: Twitterbot
+Disallow:
