@@ -160,7 +160,7 @@ get_header(); ?>
 						<h3>Our Team</h3>
 					</div>
 					
-					<?php $args = array( 'post_type' => 'team_bios');
+					<?php $args = array( 'post_type' => 'team_bios', 'posts_per_page' => -1 );
 					
 						$loop = new WP_Query( $args );
 					
