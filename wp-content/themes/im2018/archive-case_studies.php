@@ -80,7 +80,7 @@ get_header(); ?>
 						<div class="col-sm-12">
 							<a href="<?php echo $featured_link; ?>" class="feat-content-block-wide"  style="background: <?php echo $overlay_color; ?>, url('<?php echo $featured_banner_img; ?>');">
 								
-								<?php
+								<!--<?php
 
 									$terms = get_the_terms( $post->ID , 'services' );
 	
@@ -90,7 +90,9 @@ get_header(); ?>
 	
 									}				
 
-								?>
+								?>-->
+								
+								<h5>Featured Case Study</h5>
 								
 								<h3><?php echo $featured_title; ?></h3>
 								

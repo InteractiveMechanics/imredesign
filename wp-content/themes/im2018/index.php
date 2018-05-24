@@ -87,7 +87,7 @@ get_header(); ?>
 						    ?>
 					   			<a href="<?php echo get_permalink( $p->ID ); ?>" class="feat-content-block-wide"  style="background: <?php echo $overlay_color; ?>, url('<?php the_field("banner_img", $p->ID); ?>'); background-size: cover;">
 							
-								<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
+									<h5>Featured Post</h5>
 								
 								<h3><?php echo get_the_title( $p->ID ); ?></h3>
 								
