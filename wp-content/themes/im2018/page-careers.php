@@ -105,12 +105,14 @@ get_header(); ?>
 							$gallery_img = get_sub_field('gallery_img');
 					?>
 					
-					<img class="grid-item" src="<?php echo $gallery_img['url']; ?>" alt="<?php echo $gallery_img['alt']; ?>"/>
+					<a href="<?php echo $gallery_img['url']; ?>">
+						<img class="grid-item" src="<?php echo $gallery_img['url']; ?>" alt="<?php echo $gallery_img['alt']; ?>"/>
+					</a>
 						
 						
 						
 					
-					<img src="<?php echo $gallery_img; ?>" alt=""/>
+					
 					
 					<?php endwhile; ?>
 					

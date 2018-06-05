@@ -72,7 +72,8 @@
 							<?php endif; ?>
 							
 							<?php if ($project_video): ?>
-								<a class="btn btn-default btn-gold" href="<?php echo $project_video; ?>" role="button" target="_blank">Watch the Video</a>
+<!-- 								<a class="btn btn-default btn-gold" href="<?php echo $project_video; ?>" role="button" target="_blank">Watch the Video</a> -->
+									<button class="btn btn-default btn-gold" data-toggle="modal" data-target="#myModal">Watch the Video</button>
 							<?php endif; ?>
 							
 							
@@ -136,7 +137,9 @@
 							$gallery_img = get_sub_field('gallery_img');
 					?>
 					
-					<img class="grid-item" src="<?php echo $gallery_img['url']; ?>" alt="<?php echo $gallery_img['alt']; ?>"/>
+					<a href="<?php echo $gallery_img['url']; ?>">
+						<img class="grid-item" src="<?php echo $gallery_img['url']; ?>" alt="<?php echo $gallery_img['alt']; ?>"/>
+					</a>
 					
 					<?php endwhile; ?>
 					
@@ -443,6 +446,25 @@
 	<?php endif; ?>	
 	<!-- end ACF repeater -->	
 
+
+	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 	
 	

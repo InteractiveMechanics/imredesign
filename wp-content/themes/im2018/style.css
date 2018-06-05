@@ -1013,6 +1013,17 @@ input[type="submit"] {
   padding: 10px 15px;
   margin: 0px 10px 10px 0px; }
 
+button.lg-icon {
+  background-image: initial;
+  background-color: transparent; }
+  button.lg-icon:before {
+    background-image: initial;
+    opacity: 1.0; }
+  button.lg-icon:hover {
+    background: initial; }
+  button.lg-icon:active, button.lg-icon:focus {
+    border-color: initial; }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1672,6 +1683,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     width: 100%;
     height: auto;
     vertical-align: top; }
+    .gallery-wrapper img:hover {
+      opacity: 0.78; }
   @media (max-width: 767px) {
     .gallery-wrapper {
       -webkit-column-count: 1;

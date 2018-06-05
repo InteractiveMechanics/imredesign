@@ -246,24 +246,30 @@ add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
  * Enqueue scripts and styles.
  */
 function im2018_scripts() {
-	wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+	wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 	
-	wp_enqueue_style('animate-css', 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
+	wp_enqueue_style( 'animate-css', 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
+	
+	wp_enqueue_style( 'lightgallery-css',  get_template_directory_uri() . '/js/lightgallery/css/lightgallery.min.css');
 	
 	wp_enqueue_style( 'im2018-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',  array('jquery'), '3.3.7', true);
 	
+	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',  array('jquery'), '3.3.7', true);
 
 	wp_enqueue_script( 'im2018-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'im2018-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
-	wp_enqueue_script( 'lottie', get_template_directory_uri() . '/js/lottie.js', array()); 
+	wp_enqueue_script( 'lottie', get_template_directory_uri() . '/js/lottie.js', array());
 	
-	wp_enqueue_script('im2018-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), true);
+	wp_enqueue_script( 'lightgallery', get_template_directory_uri() . '/js/lightgallery/js/lightgallery.min.js', array('jquery'), true);
+	
+	wp_enqueue_script( 'im2018-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), true);
 
-	wp_enqueue_script('im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'), true);
+	wp_enqueue_script( 'im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'),  date("h:i:s"), true);
+	
+	
 	
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
