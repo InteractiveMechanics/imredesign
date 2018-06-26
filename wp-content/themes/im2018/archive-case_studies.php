@@ -15,15 +15,39 @@ get_header(); ?>
 			
 			<div class="container-fluid">
 				<div class="row">
-					
-					<div class="col-md-7 col-sm-10">
+						<div class="col-md-12 hero-text-wrapper">
+<!-- 					<div class="col-md-7 col-sm-10"> -->
 						<h1><?php the_field('case_study_archive_page_heading', 'option'); ?></h1>
+						<ul class="filter-group filter-blue hidden-xs">
+							<li><a href="<?php echo get_post_type_archive_link('case_studies'); ?>" class="active">All Work</a></li>
+							
+							<?php
+								$terms = get_terms( array(
+								    'taxonomy' => 'services',
+								    'orderby' => 'name',
+									'order'   => 'ASC'
+								) ); 
+							
+							?>
+							
+							<?php foreach ($terms as $term):
+								$term_name = $term->name;
+								$term_link = get_term_link( $term->term_id );
+							?>
+							
+							
+							<li><a href="<?php echo $term_link; ?>"><?php echo $term_name; ?></a></li>
+							<?php endforeach; ?>			
+						</ul>
+
 					</div>
 					
+<!--
 					<div class="col-md-7 col-sm-10">
 						<p><?php the_field('case_study_archive_page_subtitle', 'option'); ?></p>
 			
 					</div>
+-->
 					
 				</div>	
   			</div>
@@ -32,6 +56,7 @@ get_header(); ?>
 	<article id="cs-archive">
 		<section class="container-fluid">
 				<div class="row">
+<!--
 					<div class="col-sm-12">
 						<ul class="filter-group filter-blue hidden-xs">
 							<li><a href="<?php echo get_post_type_archive_link('case_studies'); ?>" class="active">All Work</a></li>
@@ -55,6 +80,7 @@ get_header(); ?>
 							<?php endforeach; ?>			
 						</ul>
 					</div>
+-->
 					
 					
 					<?php

@@ -412,6 +412,9 @@ input:focus {
   outline-color: #3a598d;
   outline-width: 3px; }
 
+iframe {
+  margin-bottom: 40px; }
+
 ul, ol {
   margin: 0 0 1.5em 3em; }
 
@@ -711,8 +714,6 @@ table {
   height: auto;
   margin: 5px 0px;
   transition: all 0.25s ease-in-out; }
-  .client-block:hover {
-    opacity: 0.65; }
 
 /*--------------------------------------------------------------
 # Featured Content Blocks
@@ -1120,13 +1121,17 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 
 .filter-group {
   margin: 0px 0px 48px 40px;
-  -webkit-padding-start: 0px; }
+  -webkit-padding-start: 0px;
+  flex: 3; }
   .filter-group li {
     display: inline-block;
     margin-right: 35px; }
-    @media (min-width: 768px) and (max-width: 991px) {
+    @media (max-width: 1199px) {
       .filter-group li {
         margin-bottom: 20px; } }
+  @media (max-width: 1199px) {
+    .filter-group {
+      margin: 10px 0px 0px 0px; } }
 
 .filter-group > li > a {
   font-size: 14px;
@@ -1662,6 +1667,13 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   @media (max-width: 480px) {
     .jumbo-short {
       padding-bottom: 0px; } }
+
+.hero-text-wrapper {
+  display: flex;
+  align-items: baseline; }
+  @media (max-width: 1199px) {
+    .hero-text-wrapper {
+      display: initial; } }
 
 /*--------------------------------------------------------------
 # Gallery

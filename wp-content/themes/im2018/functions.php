@@ -237,9 +237,56 @@ function be_menu_item_classes( $classes, $item, $args ) {
 add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
 
 
+/**
+* Remove p tags from Shortcodes
+*/
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop');
+add_filter( 'the_content', 'shortcode_unautop');
 
 
+// Remove p tags from images, scripts, and iframes.
+function remove_some_ptags( $content ) {
+  $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+  $content = preg_replace('/<p>\s*(<script.*>*.<\/script>)\s*<\/p>/iU', '\1', $content);
+  $content = preg_replace('/<p>\s*(<iframe.*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+  return $content;
+}
+add_filter( 'the_content', 'remove_some_ptags' );
 
+/**
+ * Remove empty paragraphs created by wpautop()
+ * @author Ryan Hamilton
+ * @link https://gist.github.com/Fantikerz/5557617
+ */
+function remove_empty_p( $content ) {
+	$content = force_balance_tags( $content );
+	$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+	$content = preg_replace( '~\s?<p>(\s| )+</p>\s?~', '', $content );
+	return $content;
+}
+add_filter('the_content', 'remove_empty_p', 20, 1);
+
+add_filter('the_content', 'remove_empty_tags_recursive', 20, 1);
+function remove_empty_tags_recursive ($str, $repto = NULL) {
+         $str = force_balance_tags($str);
+         //** Return if string not given or empty.
+         if (!is_string ($str)
+         || trim ($str) == '')
+        return $str;
+ 
+        //** Recursive empty HTML tags.
+       return preg_replace (
+ 
+              //** Pattern written by Junaid Atari.
+              '~\s?<p>(\s|&nbsp;)+</p>\s?~',
+ 
+             //** Replace with nothing if string empty.
+             !is_string ($repto) ? '' : $repto,
+ 
+            //** Source string
+           $str
+);}
 
 
 /**

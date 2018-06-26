@@ -90,3 +90,11 @@
 	}
 }
 
+.hero-text-wrapper {
+	display: flex;
+	align-items: baseline;
+	@include screen-ltlg {
+		display: initial;
+	}
+}
+

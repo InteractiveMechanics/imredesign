@@ -212,7 +212,7 @@ get_header(); ?>
 							<div class="client-block">
 								<?php $client_logo = get_field('logo'); ?>
 								
-								<a href="<?php the_field('website'); ?>" target="_blank"><img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/></a>
+								<img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/>
 							</div>
 						</div> 
 						
