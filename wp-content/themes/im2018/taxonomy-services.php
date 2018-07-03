@@ -15,24 +15,10 @@
 			<div class="container-fluid">
 				<div class="row">
 					
-					<div class="col-sm-7">
+					<div class="col-md-12 hero-text-wrapper">
 						<h1><?php the_field('case_study_archive_page_heading', 'option'); ?></h1>
 						<h5 class="visible-xs"><a href="<?php echo get_post_type_archive_link( 'case_studies' ); ?>">View All Projects</a></h5>
-					</div>
-					
-					<div class="col-sm-7">
-						<p><?php the_field('case_study_archive_page_subtitle', 'option'); ?></p>
-			
-					</div>
-					
-				</div>	
-  			</div>
-	</div>
-	
-	<article id="cs-archive">
-		<section class="container-fluid">
-				<div class="row">
-					<div class="col-sm-12">
+						
 						<ul class="filter-group filter-blue hidden-xs">
 							<li><a href="<?php echo get_post_type_archive_link('case_studies'); ?>">All Work</a></li>
 							
@@ -63,6 +49,54 @@
 								
 							<?php endforeach; ?>			
 						</ul>
+
+					</div>
+					
+					<div class="col-sm-7">
+						<p><?php the_field('case_study_archive_page_subtitle', 'option'); ?></p>
+			
+					</div>
+					
+				</div>	
+  			</div>
+	</div>
+	
+	<article id="cs-archive">
+		<section class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+<!--
+						<ul class="filter-group filter-blue hidden-xs">
+							<li><a href="<?php echo get_post_type_archive_link('case_studies'); ?>">All Work</a></li>
+							
+							<?php
+								$current_tax = get_queried_object();
+								$current_tax_name = $current_tax->name;
+								$current_tax_id = $current_tax->term_id;	
+								
+								$terms = get_terms( array(
+								    'taxonomy' => 'services',
+								    'orderby' => 'name',
+									'order'   => 'ASC'
+								) ); 
+							
+							?>
+							
+							<?php foreach ($terms as $term):
+								$term_name = $term->name;
+								$term_link = get_term_link( $term->term_id );
+								$term_id = $term->term_id;
+							?>
+							
+								<?php if ($current_tax_id == $term_id): ?>
+									<li><a href="<?php echo $term_link; ?>" class="active"><?php echo $term_name; ?></a></li>
+								<?php else: ?>
+									<li><a href="<?php echo $term_link; ?>"><?php echo $term_name; ?></a></li>
+								<?php endif; ?>
+								
+							<?php endforeach; ?>			
+						</ul>
+-->
 					</div>
 					
 					
