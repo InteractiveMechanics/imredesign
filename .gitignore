@@ -26,6 +26,9 @@ wp-content/plugins/bj-lazy-load
 wp-content/plugins/visual-editor-custom-buttons
 wp-content/plugins/wordpress-seo
 wp-content/plugins/wp-edit
+wp-content/plugins/tinymce-advanced
+wp-content/plugins/wp-super-cache
+wp-content/plugins/hello.php
 
 
 /.htaccess
