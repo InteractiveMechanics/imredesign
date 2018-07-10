@@ -1,0 +1,745 @@
+<html>
+<head>
+	<title>Interactive Mechanics Holiday e-Card</title>
+	<link rel="shortcut icon" sizes="32x32 64x64" href="images/favicon-64x64.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon-64x64.png" />
+    
+	<meta property="og:title" content="Happy Holidays from Interactive Mechanics" />
+	<meta property="og:type" content="video.movie" />
+	<meta property="og:url" content="http://interactivemechanics.com/Holiday2015/" />
+	<meta property="og:description" content="As we at @InteractiveMechanics reflect this holiday season, we’ve realized can’t begin to express what a joy it’s been to share our work with you. So, we made you this." />
+	<meta property="og:image" content="https://s3.amazonaws.com/com.interactivemechanics.www/uploads/InteractiveMechanics-Holiday2015.jpg" />
+	<meta property="og:site_name" content="Interactive Mechanics" />
+	<meta name="viewport" content="width=500, initial-scale=.7">
+	
+<link rel="stylesheet" href="animations.css" title="Css Animations" type="text/css" media="screen" charset="utf-8">
+
+<style type="text/css">
+body {
+	margin: 0;
+	max-width: 100%;
+	padding: 0;
+	overflow-x: hidden;
+}
+.wrapper {
+	padding: 10px 20px;
+}
+
+.menu-options {
+	position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000000;
+}
+
+.menu-options ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu-options ul li {
+	list-style: none;
+	cursor: pointer;
+	margin: 0 0 7px;
+	line-height: 36px;
+	font-size: 1.2em;
+	text-align: center;
+	transition: 0.5s all;
+	height: 36px;
+	width: 36px;
+}
+
+.menu-options a {
+	text-decoration: none;
+}
+
+.menu-options ul li span {
+	position: absolute;
+	font-size: 14px;
+	font-weight: 400;
+	color: #BBB;
+	font-family: 'museo-sans';
+	text-align: right;
+	right: 50px;
+}
+
+.menu-options ul li.play-icon {
+	background: url('images/button-play.svg');
+}
+
+.menu-options ul li.play-icon.active {
+	background: url('images/button-play-active.svg');
+}
+
+.menu-options ul li.play-icon:hover {
+	background: url('images/button-play-active.svg');
+}
+
+.menu-options ul li.record-icon {
+	background: url('images/button-record.svg');
+}
+
+.menu-options ul li.record-icon.active {
+	background: url('images/button-record-active.svg');
+}
+
+.menu-options ul li.record-icon:hover {
+	background: url('images/button-record-active.svg');
+}
+
+.menu-options ul li.twitter-icon {
+	background: url('images/button-twitter.svg');
+}
+
+.menu-options ul li.twitter-icon:hover {
+	background: url('images/button-twitter-active.svg');
+}
+
+.menu-options ul li.facebook-icon {
+	background: url('images/button-facebook.svg');
+}
+
+.menu-options ul li.facebook-icon:hover {
+	background: url('images/button-facebook-active.svg');
+}
+
+.menu-options ul li.info-icon {
+	background: url('images/button-info.svg');
+}
+
+.menu-options ul li.info-icon:hover {
+	background: url('images/button-info-active.svg');
+}
+
+.holiday-message {
+	width: 45%;
+	margin: 50px auto;
+}
+
+.holiday-message h1 {
+	text-align: center;
+	font-size: 3em;
+    margin: 15px 0;
+    font-family: 'adobe-caslon-pro';
+    color: #000099;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.holiday-message p {
+	font-family:'museo-sans';
+	line-height: 36px;
+	font-size: 1.2em;
+	text-align: center;
+
+}
+
+.holiday-message p a {
+	color: #000099;
+	font-weight: 600;
+}
+
+.holiday-message p a:hover {
+	text-decoration: none;
+}
+
+.holiday-image img {
+	width: 100%;
+	cursor: pointer;
+	border: none;
+}
+
+.swowglobe-bg {
+	pointer-events: none;
+}
+
+.swowglobe-bg .globe-area {
+	text-align: center;
+	pointer-events: none;
+}
+
+
+.swowglobe-bg img.globe {
+	z-index: -1000;
+	width:400px;
+	margin: 0 auto;
+	left:0;
+	right:0;
+	pointer-events: none;
+}
+
+.globe-area-foreground img.globe-foreground {
+	width: 400px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 10px;
+    pointer-events: none;
+}
+
+.globe-area-background img.shadow-foreground {
+	width: 650px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 375px;
+    z-index: -10000000;
+    pointer-events: none;
+}
+
+.character {
+	float: left;
+    margin-left: -80px;
+}
+
+.character-row {
+	margin: 0 auto;
+    left: 152px;
+    right: 0;
+    position: absolute;
+    width: 305px;
+    top: 194px;
+    pointer-events: none;
+}
+
+.character img {
+	width: 50%;
+}
+
+.character .head {
+    position: relative;
+}
+
+.character .head .top {
+	margin-top: -10px;
+}
+
+.character .head .bottom {
+	margin-top: -6px;
+}
+
+.character .body {
+	margin-top:-10px;
+}
+
+.character.mike {
+	
+}
+
+.character.jeff {
+	margin-top: 40px;
+}
+
+.character.amelia {
+
+}
+
+.character.stacey {
+	margin-top: 40px;
+}
+
+.character.christina {
+
+}
+
+.character-rocking {
+  animation: rock-character 1.25s linear 0s;
+  transform-origin: 25%;
+  
+  -webkit-animation: rock-character 1.25s linear 0s;
+  -webkit-transform-origin: 25%;
+  
+  -moz-animation: rock-character 1.25s linear 0s;
+  -moz-transform-origin: 25%;
+  
+  -ms-animation: rock-character 1.25s linear 0s;
+  -ms-transform-origin: 25%;
+}
+
+.head-rocking {
+  animation: animationFrames .7s linear 0s;
+  transform-origin: 25%;
+
+  -webkit-animation: animationFrames .7s linear 0s;
+  -webkit-transform-origin: 25%;
+ 
+  -moz-animation: animationFrames .7s linear 0s;
+  -moz-transform-origin: 25%;
+  
+  -ms-animation: animationFrames .7s linear 0s;
+  -ms-transform-origin: 25%;
+}
+
+.drastic-rocking {
+  animation: drasticFrames .7s linear 0s;
+  transform-origin: 25%;
+
+  -webkit-animation: drasticFrames .7s linear 0s;
+  -webkit-transform-origin: 25%;
+
+  -moz-animation: drasticFrames .7s linear 0s;
+  -moz-transform-origin: 25%;
+  
+  -ms-animation: drasticFrames .7s linear 0s;
+  -ms-transform-origin: 25%;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(255,255,255,.75);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modal .keyboard-modal {
+	width: 65%;
+	margin: 150px auto 0;
+}
+
+.modal .keyboard-modal img.keyboard {
+	width: 100%;
+}
+
+.modal:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modal .close {
+	float: right;
+	margin-right: -35px;
+	margin-top: 7px;
+}
+
+.holiday-image {
+	margin: 0 auto;
+    left: 510px;
+    right: 0;
+    position: absolute;
+    width: 305px;
+    top: 264px;
+    z-index: -1;
+}
+
+.light img {
+	width: 400px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 10px;
+}
+
+.light-1,
+.light-2,
+.light-3,
+.light-4,
+.light-5,
+.light-6,
+.light-7 {
+	display: none;
+}
+
+
+@media (min-width: 1500px) {
+
+
+
+.swowglobe-bg img.globe {
+	z-index: -1000;
+	width:600px;
+	margin: 0 auto;
+	left:0;
+	right:0;
+	pointer-events: none;
+}
+
+.globe-area-foreground img.globe-foreground {
+	width: 600px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 10px;
+    pointer-events: none;
+}
+
+.globe-area-background img.shadow-foreground {
+	width: 850px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 500px;
+    z-index: -10000000;
+    pointer-events: none;
+}
+
+#snow{
+width:590px;
+height: 535px;
+pointer-events: none;
+}
+
+.light img {
+	width: 600px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 10px;
+    pointer-events: none;
+}
+
+.character {
+	float: left;
+    margin-left: -60px;
+}
+
+.character-row {
+	margin: 0 auto;
+    left: 152px;
+    right: 0;
+    position: absolute;
+    width: 435px;
+    top: 325px;
+    pointer-events: none;
+}
+
+.character img {
+	width: 60%;
+}
+
+.character .head {
+	top:0px;
+    position: relative;
+}
+
+.character .head .top {
+	margin-top: -10px;
+}
+
+.character .head .bottom {
+	margin-top: -7px;
+}
+
+.holiday-image {
+	margin: 0 auto;
+    left: 725px;
+    right: 0;
+    position: absolute;
+    width: 375px;
+    top: 375px;
+    z-index: -1;
+}
+
+
+
+}
+
+@media (max-width: 775px) {
+
+.menu-options ul li span {
+	display: none;
+}
+
+.menu-options ul li span.play-span {
+	display: block;
+}
+
+.menu-options ul li.play-icon,
+.menu-options ul li.play-icon.active, 
+.menu-options ul li.record-icon,
+.menu-options ul li.record-icon.active,
+.menu-options ul li.info-icon {
+	display: none;
+}
+
+.holiday-image {
+    left: 440px;
+}
+
+.holiday-message {
+	width: 80%;
+	margin: 20px auto;
+}
+
+
+}
+
+@media (max-width: 600px) {
+
+.holiday-image {
+    display: none;
+}
+
+}
+
+.on-load-modal {
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0; 
+	background: rgba(255,255,255,.75); 
+	z-index: 99999999; 
+	opacity: 0; 
+	-webkit-transition: opacity 400ms ease-in; 
+	-moz-transition: opacity 400ms ease-in; 
+	transition: opacity 400ms ease-in; 
+	pointer-events: none;
+}
+
+</style>
+
+<!--[if lte IE 9]>
+      <link rel="stylesheet" type="text/css" href="ie.css">
+    <![endif]-->
+
+</head>
+
+<script type="text/javascript" src="lowlag.js"></script>
+<script type="text/javascript" src="sm2/js/soundmanager2.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="https://use.typekit.net/dau5muz.js"></script> <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<body>
+	<audio class="audio-area"></audio>
+	<div class="wrapper">
+		<div class="menu-options">
+			<ul>
+				<li style="display:none;" onclick="playHolidayCard();" class="play-icon">
+					<span class="play-span" style=" width: 80px;">Play Jingle</span>
+				</li>
+				<li onclick="startRecording();" class="record-icon">
+					<span style=" width: 135px;">Record a song</span>
+				</li>
+				<li onclick="sendToTwitter();" class="twitter-icon">
+					<span style="width: 120px;" >Share on Twitter</span>
+				</li>
+				<li onclick="sendToFacebook();" class="facebook-icon">
+					<span style="width: 130px;" >Share on Facebook</span>
+				</li>
+				<a href="#open-modal"><li onclick="scrollToMessage();" class="info-icon">
+					<span style="width: 95px;">How it works</span>
+				</li></a>
+			</ul>
+		</div>
+
+		<div class="swowglobe-bg">
+			<div class="globe-area">
+				<img class='globe' src='images/snowglobe-background@2x.png'  />
+			</div>
+
+			<div class="globe-area-foreground">
+				<img class='globe-foreground' src='images/snowglobe-foreground@2x.png'  />
+			</div>
+			
+			<div id="snow">
+				
+			</div>
+			
+			<div class="lights-row">
+				
+				<div class="light light-1">
+					<img src="images/highlight-01@2x.png" />
+				</div>
+				
+				<div class="light light-2">
+					<img src="images/highlight-02@2x.png" />
+				</div>
+				
+				<div class="light light-3">
+					<img src="images/highlight-03@2x.png" />
+				</div>
+				
+				<div class="light light-4">
+					<img src="images/highlight-04@2x.png" />
+				</div>
+				
+				<div class="light light-5">
+					<img src="images/highlight-05@2x.png" />
+				</div>
+				
+				<div class="light light-6">
+					<img src="images/highlight-06@2x.png" />
+				</div>
+				
+				<div class="light light-7">
+					<img src="images/highlight-07@2x.png" />
+				</div>
+				
+			</div>
+			
+			<div class="character-row">
+
+				<div class="character mike">
+
+					<div class="head">
+						<div class="top">
+							<img src="images/head-mike@2x.png" />
+						</div>
+
+						<div class="bottom">
+							<img src="images/mouth-mike@2x.png" />
+						</div>
+					</div>
+
+					<div class="body">
+						<img src="images/body-mike@2x.png" alt="Jeff's Body" />
+					</div>
+
+				</div>
+
+				<div class="character jeff">
+
+					<div class="head">
+						<div class="top">
+							<img src="images/head-jeff@2x.png" />
+						</div>
+
+						<div class="bottom">
+							<img src="images/mouth-jeff@2x.png" />
+						</div>
+					</div>
+
+					<div class="body">
+						<img src="images/body-jeff@2x.png" alt="Jeff's Body" />
+					</div>
+					
+				</div>
+
+				<div class="character amelia">
+
+					<div class="head">
+						<div class="top">
+							<img src="images/head-amelia@2x.png" />
+						</div>
+
+						<div class="bottom">
+							<img src="images/mouth-amelia@2x.png" />
+						</div>
+					</div>
+
+					<div class="body">
+						<img src="images/body-amelia@2x.png" alt="Jeff's Body" />
+					</div>
+					
+				</div>
+
+				<div class="character stacey">
+
+					<div class="head">
+						<div class="top">
+							<img src="images/head-stacey@2x.png" />
+						</div>
+
+						<div class="bottom">
+							<img src="images/mouth-stacey@2x.png" />
+						</div>
+					</div>
+
+					<div class="body">
+						<img src="images/body-stacey@2x.png" alt="Jeff's Body" />
+					</div>
+					
+				</div>
+
+				<div class="character christina">
+
+					<div class="head">
+						<div class="top">
+							<img src="images/head-christina@2x.png" />
+						</div>
+
+						<div class="bottom">
+							<img src="images/mouth-christina@2x.png" />
+						</div>
+					</div>
+
+					<div class="body">
+						<img src="images/body-christina@2x.png" alt="Jeff's Body" />
+					</div>
+					
+				</div>
+
+				<br style="clear:left;" />
+
+			</div>
+
+		</div>
+
+		<div id="message" class="holiday-message">
+			<p class="desktop-message">
+				We love holiday music! Use your <a href="#open-modal">keyboard</a> to play a festive tune, then record 
+				and share on <a onclick="sendToTwitter();" href="javascript: void();">Twitter</a> or 
+				<a onclick="sendToFacebook();" href="javascript: void();">Facebook</a> to spread a little bit of holiday
+				cheer.
+			</p>
+			
+			<p class="mobile-message" style="display:none;">
+				We love holiday music! Jump on your laptop or desktop to play a festive tune, and share on 
+				<a onclick="sendToTwitter();" href="javascript: void();">Twitter</a> or 
+				<a onclick="sendToFacebook();" href="javascript: void();">Facebook</a> to spread a little bit of holiday cheer.
+			</p>
+
+			<div class="holiday-image">
+				<a href="http://interactivemechanics.com/" target="_blank">
+					<img src="images/logo@2x.png" alt="Happy Holiday's from Interactive Mechanics" />
+				</a>
+			</div>
+		</div>
+
+
+
+		<div id="open-modal" class="modal">
+			<div>
+				<div class="keyboard-modal">
+					<a href="#close" title="Close" class="close">
+						<img src="images/button-close.svg" />
+					</a>
+					<img src="images/keyboard@2x.png" class="keyboard" />
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="on-load-modal">
+		
+		<div style="position: absolute; width: 447px; left: 0; right: 0; margin: 0 auto; top: 50px; z-index: 9999999999999999999;">
+			<img src="images/how-to-play@2x.png" class="how-to-keyboard" />
+		</div>
+		
+	</div>
+	
+	<div class="ie-only" style="display: none;">
+		<div class="outdated-image" style="margin: 50px auto 0; width:65%">
+			<img src="images/outdated-browser@2x.jpg" width="100%" alt="outdated-browser@2x" />
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./app.js"></script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-28789452-1', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
+
+</body>
+</html>

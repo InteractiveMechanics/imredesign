@@ -1,0 +1,416 @@
+/** Characters Dancing **/
+@keyframes rock-character {
+  0% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-webkit-keyframes rock-character {
+  0% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-webkit-transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-webkit-transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-webkit-transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-webkit-transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+
+}
+
+
+@-moz-keyframes rock-character {
+  0% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-moz-transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-moz-transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-moz-transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-moz-transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+
+}
+
+@-ms-keyframes rock-character {
+  0% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-ms-transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-ms-transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-ms-transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-ms-transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+
+}
+
+
+/** Head Movements **/
+
+@keyframes animationFrames {
+  0% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+
+@-webkit-keyframes animationFrames {
+  0% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-webkit-transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-webkit-transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-webkit-transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-webkit-transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-moz-keyframes animationFrames {
+  0% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-moz-transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-moz-transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-moz-transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-moz-transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-ms-transform:  translate(0px,-6px)  rotate(-10deg) ;
+  }
+  28% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-ms-transform:  translate(0px,-6px)  rotate(10deg) ;
+  }
+  56% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-ms-transform:  translate(0px,-12px)  rotate(0deg) ;
+  }
+  84% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-ms-transform:  translate(0px,5px)  rotate(0deg) ;
+  }
+  100% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+
+/** Crazy Head Movements **/
+
+@keyframes drasticFrames {
+  0% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	transform:  translate(0px,-12px)  rotate(-20deg) ;
+  }
+  28% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	transform:  translate(0px,-12px)  rotate(20deg) ;
+  }
+  56% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	transform:  translate(0px,-24px)  rotate(0deg) ;
+  }
+  84% {
+  	transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	transform:  translate(0px,10px)  rotate(0deg) ;
+  }
+  100% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-webkit-keyframes drasticFrames {
+  0% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-webkit-transform:  translate(0px,-12px)  rotate(-20deg) ;
+  }
+  28% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-webkit-transform:  translate(0px,-12px)  rotate(20deg) ;
+  }
+  56% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-webkit-transform:  translate(0px,-24px)  rotate(0deg) ;
+  }
+  84% {
+  	-webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-webkit-transform:  translate(0px,10px)  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-moz-keyframes drasticFrames {
+  0% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-moz-transform:  translate(0px,-12px)  rotate(-20deg) ;
+  }
+  28% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-moz-transform:  translate(0px,-12px)  rotate(20deg) ;
+  }
+  56% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-moz-transform:  translate(0px,-24px)  rotate(0deg) ;
+  }
+  84% {
+  	-moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-moz-transform:  translate(0px,10px)  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-ms-keyframes drasticFrames {
+  0% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  14% {
+  	-ms-transform:  translate(0px,-12px)  rotate(-20deg) ;
+  }
+  28% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  42% {
+  	-ms-transform:  translate(0px,-12px)  rotate(20deg) ;
+  }
+  56% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  70% {
+  	-ms-transform:  translate(0px,-24px)  rotate(0deg) ;
+  }
+  84% {
+  	-ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  95% {
+  	-ms-transform:  translate(0px,10px)  rotate(0deg) ;
+  }
+  100% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+/* Snow Animation Credit: Nicky Christensen(http://codepen.io/NickyCDK/pen/AIonk) */
+#snow{
+	background: none;
+	font-family: Androgyne;
+	background-image: url('./images/snow1.png'), 
+					  url('./images/snow2.png'), 
+					  url('./images/snow3.png');
+	position: absolute;
+	top: 0;
+	width: 390px;
+	z-index:1;
+	-webkit-animation: snow 10s linear infinite;
+	-moz-animation: snow 10s linear infinite;
+	-ms-animation: snow 10s linear infinite;
+	animation: snow 10s linear infinite;
+	left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 330px;
+    pointer-events: none;
+}
+
+
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}	

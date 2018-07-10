@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Since earlier this year, we’ve been working heavily with the Kinect—an inexpensive piece of hardware produced by Microsoft that includes a series of cameras (infrared and RGB) and sensors (audio). If you’re a gamer, then you probably know that the Kinect has had its ups and downs, and was never the huge success that Microsoft hoped it would be as an accessory for motion-based gaming. It is, however, a great solution for hands-free interactivity for museums, art installations, and other spaces.
+">
+
+    <meta name="p:domain_verify" content="9913a0f3e8a64539388abe3a5f299e6a"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@interactivemech">
+    <meta name="twitter:creator" content="@interactivemech">
+    
+        <meta property="og:title" content="Microsoft Kinect with Processing - Interactive Mechanics">
+    
+
+    
+        <meta property="og:description" content="Since earlier this year, we’ve been working heavily with the Kinect—an inexpensive piece of hardware produced by Microsoft that includes a series of cameras (infrared and RGB) and sensors (audio). If you’re a gamer, then you probably know that the Kinect has had its ups and downs, and was never the huge success that Microsoft hoped it would be as an accessory for motion-based gaming. It is, however, a great solution for hands-free interactivity for museums, art installations, and other spaces.
+">
+    
+
+    
+        <meta property="og:image" content="http://interactivemechanics.com/images/uploads/focus-web.jpg">
+    
+
+    <title>
+        
+            Microsoft Kinect with Processing - Interactive Mechanics
+        
+    </title>
+    <script src="https://use.typekit.net/dau5muz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+ 
+    <link rel="canonical" href="http://interactivemechanics.com/news/2015/10/kinect-with-processing/">
+    
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/images/icons/64_favicon.png">
+
+    <link href="/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/lib/pygments.css" rel="stylesheet">
+    <link href="/css/lib/animate.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '322707194854191'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=322707194854191&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body >
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-28789452-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+    <header>
+    <div class="container">
+        <a class="brand" href="/"><!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="59.3px" height="56.8px" viewBox="0 0 59.3 56.8" enable-background="new 0 0 59.3 56.8"
+	 xml:space="preserve">
+<defs>
+</defs>
+<path id="hammer" d="M5,5.9h20c0,0,9.2,0.6,11.5,0.8V0h3.1c0,0-1.3,5.3,3.4,5.3v10.4h-6.3v-5.3c0,0-6.3,0.2-11.5,0.4H5V5.9z"/>
+<path d="M40.1,32.3c18.7-5,19.3-10.9,19.3-10.9H42.7v-1.9H0V25h6.4c0,0,8-0.3,8,9.1c0,9.4-9.1,9.9-9.1,9.9v2.7H0v9.9h48.3v-9.9h-5.6
+	V44c-6.8,0-6.4-6-6.4-6S35.5,34.7,40.1,32.3z M13.9,46.9c0,0,4-3,10.2-3c6.2,0,10.2,3,10.2,3H13.9z"/>
+</svg>
+</a>
+        <div class="pull-right ">
+            <ul class="list-inline hidden-xs">
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li >
+                            <a href="/about-us/">
+                                
+                                    About us
+                                
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li >
+                            <a href="/services/">
+                                
+                                    Services
+                                
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li >
+                            <a href="/work/">
+                                
+                                    Work
+                                
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li >
+                            <a href="/workshops/">
+                                
+                                    Workshops
+                                
+                            </a>
+                        </li>
+                    
+                
+                    
+                        <li class="active">
+                            <a href="/news/">
+                                
+                                    Blog
+                                
+                            </a>
+                        </li>
+                    
+                
+                    
+                
+                    
+                        <li >
+                            <a href="/contact/">
+                                
+                                    Contact
+                                
+                            </a>
+                        </li>
+                    
+                
+                <li class="callout-nav"><a href="/jobs">We're Hiring!</a></li>
+            </ul>
+        </div>
+    </div>
+    <a class="mobile-menu "><!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="34.6px" height="27.7px" viewBox="0 0 34.6 27.7" enable-background="new 0 0 34.6 27.7"
+	 xml:space="preserve">
+<defs>
+</defs>
+<rect y="23.5" fill="#7BCFDE" width="34.6" height="4.2"/>
+<rect y="11.8" fill="#7BCFDE" width="34.6" height="4.2"/>
+<rect fill="#7BCFDE" width="34.6" height="4.2"/>
+</svg>
+</a>
+</header>
+
+    <main>
+        <section>
+    <div class="container">
+        <div class="post-header">
+            <h5 class="post-meta">Posted October 2015 in Tools and Tech</h5>
+            <h1 class="post-title">Microsoft Kinect with Processing</h1>
+        </div>
+        <article>
+            <div class="row">
+                <div class="col-md-8 post-content">
+                    <h2>Since earlier this year, we’ve been working heavily with the Kinect—an inexpensive piece of hardware produced by Microsoft that includes a series of cameras (infrared and RGB) and sensors (audio). If you’re a gamer, then you probably know that the Kinect has had its ups and downs, and was never the huge success that Microsoft hoped it would be as an accessory for motion-based gaming. It is, however, a great solution for hands-free interactivity for museums, art installations, and other spaces.
+</h2>
+                    <p>Before making the decision to use Microsoft’s Kinect SDK, we researched alternative ways to make the most of the hardware. One that got us the most excited was SimpleOpenNI with Processing, a language that we already knew well.</p>
+
+<p>Daniel Shiffman’s <a href="http://shiffman.net/p5/kinect/">Getting Started with Kinect and Processing</a> post is a great primer on the basics (including getting everything installed). We’re going to use <a href="https://code.google.com/p/simple-openni/">SimpleOpenNI</a> though instead of OpenKinect, which can easily be installed Processing’s Library Import. Through this article, we’ll take a look at a simple example using some of the Kinect’s coolest features that you can use in your own projects.</p>
+
+<h3 id="the-basic-sketch">The Basic Sketch</h3>
+<p>If you read Shiffman’s article, you’ll know the basic setup. Here is the foundation of our sketch (what Processing calls a document or project):</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">import SimpleOpenNI.*;
+SimpleOpenNI context;
+
+void setup(){
+  size(640, 480, P2D);
+  
+  context = new SimpleOpenNI(this);
+  if(!context.isInit()){
+     println(&quot;Can&#39;t initialize SimpleOpenNI, camera not connected properly.&quot;); 
+     exit();
+     return;  
+  }
+  context.enableRGB();
+  background(0);
+}
+
+void draw() {
+  context.update();
+  image(context.rgbImage(), 0, 0);
+}</code></pre></figure>
+
+<p>Let’s walk through this. We start by importing SimpleOpenNI, the framework that will give us access to the Kinect sensor. We then create a SimpleOpenNI variable called “context.” We’ll add a few more variables later, but for now, this is all we need.</p>
+
+<p>We have two functions: <code>setup()</code> and <code>draw()</code>. <code>draw()</code> is just going to get the latest frame and print it to the screen. <code>context.rgbImage()</code> will take the latest frame returned from the RGB camera.</p>
+
+<p><code>setup()</code> is a bit more complicated: first, we define the size of our sketch (640 width by 480 height is the default size for the Kinect v1 sensor). We assign context to a new instance of SimpleOpenNI and then check to see if we’re able to initialize the device (can’t do anything if the Kinect isn’t connected or doesn’t turn on). Finally, we enable the RGB sensors that we need.</p>
+
+<p>If you run the sketch now, you should see a simple webcam-style streaming video getting returned. Nothing fancy, but you can likely already see how powerful this could be.</p>
+
+<h3 id="drawing-the-skeleton">Drawing the skeleton</h3>
+<p>Now that we have some basic data getting returned and displayed, let’s take it a step further and use the depth camera and joint detection. The Kinect does a surprisingly good job of recognizing the human body to track joints and motion, which you can use to create interactivity in your sketches. Here’s the basic setup:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">import SimpleOpenNI.*;
+SimpleOpenNI context;
+
+color[] userColor = new color[]{ 
+  color(255,0,0),
+  color(0,255,0),
+  color(0,0,255),
+  color(255,255,0),
+  color(255,0,255),
+  color(0,255,255)
+};
+
+void setup(){
+  size(1260, 960, P2D);
+  
+  context = new SimpleOpenNI(this);
+  if(context.isInit() == false){
+     println(&quot;Can&#39;t initialize SimpleOpenNI, camera not connected properly.&quot;); 
+     exit();
+     return;  
+  }
+  
+  context.enableDepth();
+  context.enableUser();
+  context.setMirror(false);
+ 
+  background(0);
+
+  stroke(0,0,255);
+  strokeWeight(3);
+  smooth();  
+}</code></pre></figure>
+
+<p>Mostly the same as last time, but now we’re using the depth camera instead of the simple RGB camera. We’re also turning on <code>enableUser()</code> which will recognize bodies picked up by the depth sensor. <code>setMirror(false)</code> will tell the sensor not to flip the frame to make our motion a little more intuitive.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">void draw(){
+  context.update();
+  scale(2);
+  
+  image(context.userImage(),0,0);
+  
+  int[] userList = context.getUsers();
+  for(int i=0;i&lt;userList.length;i++){
+    if(context.isTrackingSkeleton(userList[i])){
+      stroke(userColor[ (userList[i] - 1) % userColor.length ]);
+      background(0);
+      drawSkeleton(userList[i]);
+    }
+  }    
+}</code></pre></figure>
+
+<p>Our <code>draw()</code> function this time uses the userImage returned from the depth camera. It’ll look like a heatmap when you run it, with objects closer appearing brighter than points further away. To draw our skeletons, we’ll need to loop through all of the users that the Kinect is able to detect. We start by getting an array of users that we’re able to loop through, and before drawing the skeleton, confirm that the sensor is able to track that user. If so, we pick a color from our userColor array and draw the series of joints that make up the skeleton for that user.</p>
+
+<p>Next, let’s look at that <code>drawSkeleton()</code> function:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">void drawSkeleton(int userId){  
+  context.drawLimb(userId, SimpleOpenNI.SKEL_HEAD, SimpleOpenNI.SKEL_NECK);
+
+  context.drawLimb(userId, SimpleOpenNI.SKEL_NECK, SimpleOpenNI.SKEL_LEFT_SHOULDER);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_LEFT_SHOULDER, SimpleOpenNI.SKEL_LEFT_ELBOW);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_LEFT_ELBOW, SimpleOpenNI.SKEL_LEFT_HAND);
+
+  context.drawLimb(userId, SimpleOpenNI.SKEL_NECK, SimpleOpenNI.SKEL_RIGHT_SHOULDER);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_RIGHT_SHOULDER, SimpleOpenNI.SKEL_RIGHT_ELBOW);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_RIGHT_ELBOW, SimpleOpenNI.SKEL_RIGHT_HAND);
+
+  context.drawLimb(userId, SimpleOpenNI.SKEL_LEFT_SHOULDER, SimpleOpenNI.SKEL_TORSO);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_RIGHT_SHOULDER, SimpleOpenNI.SKEL_TORSO);
+
+  context.drawLimb(userId, SimpleOpenNI.SKEL_TORSO, SimpleOpenNI.SKEL_LEFT_HIP);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_LEFT_HIP, SimpleOpenNI.SKEL_LEFT_KNEE);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_LEFT_KNEE, SimpleOpenNI.SKEL_LEFT_FOOT);
+
+  context.drawLimb(userId, SimpleOpenNI.SKEL_TORSO, SimpleOpenNI.SKEL_RIGHT_HIP);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_RIGHT_HIP, SimpleOpenNI.SKEL_RIGHT_KNEE);
+  context.drawLimb(userId, SimpleOpenNI.SKEL_RIGHT_KNEE, SimpleOpenNI.SKEL_RIGHT_FOOT);  
+}</code></pre></figure>
+
+<p>It looks like a lot is happening here, but we’re really just creating connections between the user’s joints. For example, we create a line between the foot and the knee, the knee and the hip. The Kinect v1 has access to 17 joints, whereas the newer sensor has access to 25. Finally, there are a few events that we need to add in:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">void onNewUser(SimpleOpenNI curContext, int userId){
+  println(&quot;onNewUser - userId: &quot; + userId);
+  curContext.startTrackingSkeleton(userId);
+}
+
+void onLostUser(SimpleOpenNI curContext, int userId){
+  println(&quot;onLostUser - userId: &quot; + userId);
+}
+
+void onVisibleUser(SimpleOpenNI curContext, int userId){
+  println(&quot;onVisibleUser - userId: &quot; + userId);
+}</code></pre></figure>
+
+<p>The important one here is the <code>onNewUser()</code> function, which begins tracking the user’s skeleton once it is picked up by the sensor.</p>
+
+<p>Run the sketch, and walk in front of your sensor. You’ll see a colored skeleton that does a pretty good job tracking your body’s major joints. You could take this further: perhaps tracking just the hand joints to create a painting game, or an interface that you can play with.</p>
+
+<h3 id="why-processing-over-microsofts-kinect-sdk">Why Processing over Microsoft’s Kinect SDK?</h3>
+<p>Processing is known for being used by artists. If you’re looking for a way to combine streaming video into your work, Processing with the Kinect might be the right pairing for you. Unfortunately, the open source libraries available right now haven’t had much love over the past few years. With the release of the new Kinect sensor in 2014, several of these projects died out or have been struggling to stay alive.</p>
+
+<p>The Microsoft Kinect SDK has the benefit of an improved API and much more flexibility with how you develop with it. For the Kinect v2 SDK, you’ll have access to powerful facial detection, hand state (like opened and closed), and additional joints.</p>
+
+<p>If you want to learn more on Processing and Kinect, I’d highly recommend Greg Borenstein’s book, <a href="http://www.amazon.com/Making-Things-See-Processing-MakerBot/dp/1449307078/ref=as_li_ss_tl?ie=UTF8&amp;linkCode=sl1&amp;tag=learniproces-20&amp;linkId=742b2c243f8e415b108d559a422faf5c">Making Things See: 3D Vision with Kinect, Processing, Arduino, and MakerBot</a> to take things further. If you build something cool and found this post helpful, send us a link or video so we can take a look!</p>
+
+                </div>
+                <aside class="col-md-4 post-sidebar">
+                    
+                        
+                        
+                            
+                            <div class="metadata">
+    <div class="thumb"><img src="/images/staff/thumb_tedeschi.jpg" alt="Michael Tedeschi" /></div>
+    <h3>Michael Tedeschi</h3>
+    <h5>Creative Director</h5>
+</div>
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                </aside>
+            </div>
+        </article>
+    </div>
+</section>
+<section class="gray">
+    <div class="container">
+        <div class="footer-callout">
+    <h2>Sign up for monthly updates.</h2>
+    <form action="http://interactivemechanics.us4.list-manage.com/subscribe/post?u=60a7a9b85d71c540f39a195f3&amp;id=185fdc2b87" 
+          class="form-inline"
+          id="mc-embedded-subscribe-form" 
+          role="form" 
+          name="mc-embedded-subscribe-form"
+          method="post"
+          novalidate="">
+        <div class="row">
+            <div class="col-sm-8 col-md-9">
+                <input type="checkbox" value="1" name="group[19733][1]" id="mce-group[19733]-19733-0" checked="checked" class="hidden">
+                <input name="EMAIL" type="email" class="form-control input-lg" placeholder="john.doe@company.me">
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <button type="submit" class="pull-right btn btn-default">Sign up <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+        <div class="row">
+            
+                <div class="col-md-4 news-container active" data-category=behind-the-scenes>
+    <a class="article image" href="/news/2018/04/reclaiming-our-narrative/">
+        <div class="overlay behind-the-scenes" style="background-image: url(/images/uploads/2018-04-reclaiming-our-narrative-thumb.jpg);"></div>
+        <div class="article-container">
+            <h5>Behind the Scenes<span class="divider"></span>April 2018</h5>
+            <h2>Reclaiming Our Narrative: One Fellow’s Journey in Community Building</h2>
+        </div>
+    </a>
+</div>
+            
+                <div class="col-md-4 news-container active" data-category=process>
+    <a class="article image" href="/news/2018/03/analytics-for-digital-interactives/">
+        <div class="overlay process" style="background-image: url(/images/uploads/2018-03-analytics-for-digital-thumb.png);"></div>
+        <div class="article-container">
+            <h5>Process<span class="divider"></span>March 2018</h5>
+            <h2>How to Make the Most of Google Analytics for Digital Interactives</h2>
+        </div>
+    </a>
+</div>
+            
+                <div class="col-md-4 news-container active" data-category=project-updates>
+    <a class="article image" href="/news/2018/03/interactive-learning-nmai-launch/">
+        <div class="overlay project-updates" style="background-image: url(/images/uploads/Puzzle_thumb.png);"></div>
+        <div class="article-container">
+            <h5>Project Updates<span class="divider"></span>March 2018</h5>
+            <h2>Interactive Learning Resources for National Museum of the American Indian Launched</h2>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer>
+    <div class="with-love">
+        <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="59.3px" height="56.8px" viewBox="0 0 59.3 56.8" enable-background="new 0 0 59.3 56.8"
+	 xml:space="preserve">
+<defs>
+</defs>
+<path id="hammer" d="M5,5.9h20c0,0,9.2,0.6,11.5,0.8V0h3.1c0,0-1.3,5.3,3.4,5.3v10.4h-6.3v-5.3c0,0-6.3,0.2-11.5,0.4H5V5.9z"/>
+<path d="M40.1,32.3c18.7-5,19.3-10.9,19.3-10.9H42.7v-1.9H0V25h6.4c0,0,8-0.3,8,9.1c0,9.4-9.1,9.9-9.1,9.9v2.7H0v9.9h48.3v-9.9h-5.6
+	V44c-6.8,0-6.4-6-6.4-6S35.5,34.7,40.1,32.3z M13.9,46.9c0,0,4-3,10.2-3c6.2,0,10.2,3,10.2,3H13.9z"/>
+</svg>
+
+        <h4>Lots of love from Philly.</h4>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2016 Interactive Mechanics. All Rights Reserved.</p>
+        <div class="pull-right hidden-xs">
+            <ul class="list-inline">
+                <li><a href="/jobs" target="_blank">Jobs</a></li>
+                <li><a href="https://twitter.com/InteractiveMech" target="_blank">@interactivemech</a></li>
+                <li><a href="mailto:hello@interactivemechanics.com" target="_blank">hello@interactivemechanics.com</a></li>
+                <li><a href="https://www.google.com/maps/place/Interactive+Mechanics/@39.9514833,-75.1466361,17z/data=!3m1!4b1!4m13!1m7!3m6!1s0x89c6c885e6a807b3:0x44044c4eb85b4adf!2s219+Cuthbert+St,+Philadelphia,+PA+19106!3b1!8m2!3d39.9514833!4d-75.1444474!3m4!1s0x89c6c885de427fa5:0x242e7b5511f1dede!8m2!3d39.9514833!4d-75.1444474" target="_blank">Directions</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<dialog id="nav-overlay" class="hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                <nav>
+                    
+                    <ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                <a href="/about-us/">
+                                    About us
+                                    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                <a href="/services/">
+                                    Services
+                                    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                <a href="/work/">
+                                    Our Work
+                                    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li >
+                                <a href="/workshops/">
+                                    Workshops & Webinars
+                                    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li class="active">
+                                <a href="/news/">
+                                    Blog
+                                    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                            <li >
+                                <a href="/contact/">
+                                    Contact
+                                    <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+
+                                </a>
+                            </li>
+                        
+                    
+                    <li><a href="/fellowship">Fellowship <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="24px" height="16.4px" viewBox="0 0 24 16.4" enable-background="new 0 0 24 16.4" xml:space="preserve">
+<defs>
+</defs>
+<g>
+	<g>
+		<line fill="none" stroke="#BCBEC0" stroke-width="2" stroke-miterlimit="10" x1="0" y1="8.2" x2="21.8" y2="8.2"/>
+		<g>
+			<polygon fill="#BCBEC0" points="15.2,16.4 13.8,14.9 21.1,8.2 13.8,1.5 15.2,0 24,8.2 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <a class="close"><!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="34.6px" height="27.7px" viewBox="0 0 34.6 27.7" enable-background="new 0 0 34.6 27.7"
+	 xml:space="preserve">
+<defs>
+</defs>
+<rect y="23.5" fill="#7BCFDE" width="34.6" height="4.2"/>
+<rect y="11.8" fill="#7BCFDE" width="34.6" height="4.2"/>
+<rect fill="#7BCFDE" width="34.6" height="4.2"/>
+</svg>
+</a>
+</dialog>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
