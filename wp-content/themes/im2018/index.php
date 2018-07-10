@@ -24,14 +24,39 @@ get_header(); ?>
 					
 					<div class="container-fluid">
 						<div class="row">
-							
-							<div class="col-md-7 col-sm-10">
+							<div class="col-md-12 hero-text-wrapper">
+<!-- 							<div class="col-md-7 col-sm-10"> -->
 								<h1>Blog</h1>
+								<ul class="filter-group filter-blue hidden-xs">
+								<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="active">All Articles</a></li>
+								
+								<?php 
+									
+									$categories = get_categories(array(
+								    	'orderby' => 'name',
+										'order'   => 'ASC',
+										'exclude' => 1  //exclude uncategorized
+									) );
+								
+									foreach ($categories as $category): 
+										$cat_name = $category->name;
+										$cat_link = get_category_link( $category->term_id );
+									
+									
+								?>
+								
+									<li><a href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
+								
+								<?php endforeach; ?>		
+							</ul>
+
 							</div>
 							
+<!--
 							<div class="col-md-7 col-sm-10">
 								<p></p>
 							</div>
+-->
 							
 												
 						</div>	
@@ -41,6 +66,7 @@ get_header(); ?>
 			<article id="cs-archive">
 				<section class="container-fluid">
 					<div class="row">
+<!--
 						<div class="col-sm-12">
 							<ul class="filter-group filter-blue hidden-xs">
 								<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="active">All Articles</a></li>
@@ -66,6 +92,7 @@ get_header(); ?>
 							</ul>
 						</div>
 						
+-->
 					
 					
 					
@@ -87,7 +114,7 @@ get_header(); ?>
 						    ?>
 					   			<a href="<?php echo get_permalink( $p->ID ); ?>" class="feat-content-block-wide"  style="background: <?php echo $overlay_color; ?>, url('<?php the_field("banner_img", $p->ID); ?>'); background-size: cover;">
 							
-								<h5><span class="blog-cat"><?php echo $first_category; ?></span> / <span class="blog-date"><?php echo $post_date; ?></span></h5>
+									<h5>Featured Post</h5>
 								
 								<h3><?php echo get_the_title( $p->ID ); ?></h3>
 								

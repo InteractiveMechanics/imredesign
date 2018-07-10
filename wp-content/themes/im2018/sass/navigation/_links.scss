@@ -72,13 +72,18 @@ h4>a {
 .filter-group {
 	margin: 0px 0px 48px 40px;
 	-webkit-padding-start: 0px;
+	flex: 3;
 	
 	li {
 		display: inline-block;
 		margin-right: 35px;
-		@include screen-sm {
+		@include screen-ltlg {
 			margin-bottom: 20px;
 		}
+	}
+	
+	@include screen-ltlg {
+		margin: 10px 0px 0px 0px;
 	}
 	
 	

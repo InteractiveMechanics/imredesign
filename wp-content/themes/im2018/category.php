@@ -12,21 +12,10 @@
 					<div class="container-fluid">
 						<div class="row">
 							
-							<div class="col-sm-7">
+							<div class="col-md-12 hero-text-wrapper">
 								<h1>Blog</h1>
 								<h5 class="visible-xs"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">View All Posts</a></h5>
-							</div>
-							
-												
-						</div>	
-		  			</div>
-			</div>
-			
-			<article id="cs-archive">
-				<section class="container-fluid">
-					<div class="row">
-						<div class="col-sm-12">
-							<ul class="filter-group filter-blue hidden-xs">
+								<ul class="filter-group filter-blue hidden-xs">
 								<li><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">All Articles</a></li>
 								
 								<?php 
@@ -59,6 +48,18 @@
 								
 								<?php endforeach; ?>		
 							</ul>
+
+							</div>
+							
+												
+						</div>	
+		  			</div>
+			</div>
+			
+			<article id="cs-archive">
+				<section class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
 						</div>
 						
 					

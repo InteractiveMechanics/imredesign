@@ -180,7 +180,7 @@ get_header(); ?>
 										<div class="client-block">
 											<?php $client_logo = get_field('logo'); ?>
 											
-											<a href="<?php the_field('website'); ?>" target="_blank"><img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/></a>
+											<img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/>
 											
 										</div>
 									</div> 
@@ -190,23 +190,7 @@ get_header(); ?>
 						    <?php endforeach; ?>
 						    
 						    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-					<?php endif; ?>
-					
-<!--
-					<?php $args = array( 'post_type' => 'im_clients');
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); ?>
-						
-						<div class="col-sm-3 col-xs-6">
-							<div class="client-block">
-								<a href="<?php the_field('website'); ?>" target="_blank"><img src="<?php the_field('logo'); ?>" /></a>
-							</div>
-						</div> 
-						
-					<?php endwhile; ?>
--->
-
-									
+					<?php endif; ?>								
 						
 				</div>
 			</section>

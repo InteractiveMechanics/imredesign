@@ -38,6 +38,8 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 define('FS_METHOD', 'direct');
+define('WP_CACHE', true);
+define('WPCACHEHOME', '/var/www/vhosts/interactivemechanics.com/dev/imredesign/wp-content/plugins/wp-super-cache/');
 
 /**#@+
  * Authentication Unique Keys and Salts.

@@ -148,7 +148,7 @@
 			
 					<?php $args = array( 
 						'post_type' => 'team_bios', 
-						'posts_per_page' => 10,
+						'posts_per_page' => -1,
 						'post__not_in' => array( $post->ID )
 					
 					 );

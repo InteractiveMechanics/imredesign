@@ -237,33 +237,86 @@ function be_menu_item_classes( $classes, $item, $args ) {
 add_filter( 'nav_menu_css_class', 'be_menu_item_classes', 10, 3 );
 
 
+/**
+* Remove p tags from Shortcodes
+*/
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop');
+add_filter( 'the_content', 'shortcode_unautop');
 
 
+// Remove p tags from images, scripts, and iframes.
+function remove_some_ptags( $content ) {
+  $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+  $content = preg_replace('/<p>\s*(<script.*>*.<\/script>)\s*<\/p>/iU', '\1', $content);
+  $content = preg_replace('/<p>\s*(<iframe.*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+  return $content;
+}
+add_filter( 'the_content', 'remove_some_ptags' );
 
+/**
+ * Remove empty paragraphs created by wpautop()
+ * @author Ryan Hamilton
+ * @link https://gist.github.com/Fantikerz/5557617
+ */
+function remove_empty_p( $content ) {
+	$content = force_balance_tags( $content );
+	$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+	$content = preg_replace( '~\s?<p>(\s| )+</p>\s?~', '', $content );
+	return $content;
+}
+add_filter('the_content', 'remove_empty_p', 20, 1);
+
+add_filter('the_content', 'remove_empty_tags_recursive', 20, 1);
+function remove_empty_tags_recursive ($str, $repto = NULL) {
+         $str = force_balance_tags($str);
+         //** Return if string not given or empty.
+         if (!is_string ($str)
+         || trim ($str) == '')
+        return $str;
+ 
+        //** Recursive empty HTML tags.
+       return preg_replace (
+ 
+              //** Pattern written by Junaid Atari.
+              '~\s?<p>(\s|&nbsp;)+</p>\s?~',
+ 
+             //** Replace with nothing if string empty.
+             !is_string ($repto) ? '' : $repto,
+ 
+            //** Source string
+           $str
+);}
 
 
 /**
  * Enqueue scripts and styles.
  */
 function im2018_scripts() {
-	wp_enqueue_style('bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+	wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 	
-	wp_enqueue_style('animate-css', 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
+	wp_enqueue_style( 'animate-css', 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
+	
+	wp_enqueue_style( 'lightgallery-css',  get_template_directory_uri() . '/js/lightgallery/css/lightgallery.min.css');
 	
 	wp_enqueue_style( 'im2018-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',  array('jquery'), '3.3.7', true);
 	
+	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',  array('jquery'), '3.3.7', true);
 
 	wp_enqueue_script( 'im2018-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'im2018-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
-	wp_enqueue_script( 'lottie', get_template_directory_uri() . '/js/lottie.js', array()); 
+	wp_enqueue_script( 'lottie', get_template_directory_uri() . '/js/lottie.js', array());
 	
-	wp_enqueue_script('im2018-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), true);
+	wp_enqueue_script( 'lightgallery', get_template_directory_uri() . '/js/lightgallery/js/lightgallery.min.js', array('jquery'), true);
+	
+	wp_enqueue_script( 'im2018-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), true);
 
-	wp_enqueue_script('im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'), true);
+	wp_enqueue_script( 'im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'),  date("h:i:s"), true);
+	
+	
 	
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

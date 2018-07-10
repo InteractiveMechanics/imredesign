@@ -10,7 +10,6 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 
-
 # END WordPress
 
 Redirect 301 /services http://interactivemechanics.com/about-us/
@@ -93,3 +92,4 @@ Redirect 301 /blog/jekyll-versus-the-cms-building-the-new-grand-round-table-webs
 Redirect 301 /blog/the-basics-of-building-omeka-themes	http://interactivemechanics.com/2014/09/08/building-omeka-themes/
 Redirect 301 /blog/mobile-devices-and-digital-humanities	http://interactivemechanics.com/2012/12/23/mobile-devices-digital-humanities/
 Redirect 301 /blog/making-more-of-personas-scenarios	http://interactivemechanics.com/2012/11/08/making-personas-scenarios/
+

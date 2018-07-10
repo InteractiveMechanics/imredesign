@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /archive/
-Disallow: /ipad.html
-
-User-agent: Twitterbot
-Disallow:

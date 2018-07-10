@@ -160,7 +160,7 @@ get_header(); ?>
 						<h3>Our Team</h3>
 					</div>
 					
-					<?php $args = array( 'post_type' => 'team_bios', 'posts_per_page' => 10 );
+					<?php $args = array( 'post_type' => 'team_bios', 'posts_per_page' => -1 );
 					
 						$loop = new WP_Query( $args );
 					
@@ -212,7 +212,7 @@ get_header(); ?>
 							<div class="client-block">
 								<?php $client_logo = get_field('logo'); ?>
 								
-								<a href="<?php the_field('website'); ?>"><img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/></a>
+								<img src="<?php echo $client_logo['url']; ?>"  alt="<?php echo $client_logo['alt']; ?>"/>
 							</div>
 						</div> 
 						

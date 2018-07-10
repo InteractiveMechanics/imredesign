@@ -18,13 +18,13 @@ var init = function() {
 	        anim = lottie.loadAnimation({
 	            container: document.getElementById('myAnimation'),
 	            renderer: 'svg',
-	            loop: true,
-	            autoplay: true,
-	            path: 'http://dev.interactivemechanics.com/imredesign/wp-content/themes/im2018/json/404pg-attract.json'
+	            loop: false,
+	            autoplay: false,
+	            path: 'http://dev.interactivemechanics.com/imredesign/wp-content/themes/im2018/json/404pg-ani.json'
 	            });
 	
 	        anim.play();
-	        console.log('my Animation');
+	        console.log('testing Animation');
 	
 	}
 	
@@ -58,15 +58,12 @@ var init = function() {
 		
 	}
 	
-
-	
+		
 		
 	myAnimation();
 	animEl.addEventListener('click', myHoverAnimation, false);	
 	
-	
-	
-	
+
 
 }
 
@@ -76,14 +73,8 @@ var init = function() {
 document.addEventListener('DOMContentLoaded', init, false);
 
 
-( function( $ ) {
-	$('.grid').packery({
-	  // options
-	  itemSelector: '.grid-item',
-	  gutter: 0
-	});
+(function( $ ) {
+	$('.gallery-wrapper').lightGallery();
+})(jQuery);
 
 
-	$('body').bind('touchstart', function() {});
-
-} )(jQuery);

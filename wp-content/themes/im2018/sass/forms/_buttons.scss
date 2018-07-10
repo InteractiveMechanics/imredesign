@@ -87,6 +87,8 @@ input[type="submit"] {
 	&:before {
 	    background-image: linear-gradient(to right, $dark_gold, $dark_gold);
 	}
+	
+	
 
 }
 
@@ -95,5 +97,26 @@ input[type="submit"] {
 	border-radius: 99px;
 	padding: 10px 15px;
 	margin: 0px 10px 10px 0px;
+	
+}
+
+button.lg-icon {
+	background-image: initial;
+	background-color: transparent;
+	
+	&:before {
+		background-image: initial;
+		opacity: 1.0;
+	}
+	
+	&:hover {
+		background: initial;
+	}
+	
+	&:active,
+	&:focus {
+		border-color: initial;
+	}
+	
 	
 }

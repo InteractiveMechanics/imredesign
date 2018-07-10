@@ -9,10 +9,23 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
+wp-content/themes/twentyfifteen/
+wp-content/themes/twentysixteen/
+wp-content/themes/twentyseventeen/
 
 wp-content/themes/im2018/node_modules/
 wp-content/themes/im2018/bower_components
 wp-content/themes/im2018/dist
+
+wp-content/plugins/advanced-custom-fields-pro
+wp-content/plugins/ajax-load-more-for-acf
+wp-content/plugins/ajax-load-more-repeaters-v2
+wp-content/plugins/ajax-load-more
+wp-content/plugins/akismet
+wp-content/plugins/bj-lazy-load
+wp-content/plugins/visual-editor-custom-buttons
+wp-content/plugins/wordpress-seo
+wp-content/plugins/wp-edit
 
 
 /.htaccess
@@ -26,3 +39,24 @@ wp-content/themes/im2018/dist
 /Holiday2015
 /Holiday2016
 /ipad.html
+
+wp-admin/
+wp-includes/
+
+/index.php
+/robots.txt
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+
+
