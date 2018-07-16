@@ -9,7 +9,7 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0px 0px 55px;
+	margin: 0px;
 	padding: 0px;
 	border-left: none;
 	border-bottom: 1px solid $light_grey;
@@ -18,8 +18,20 @@ blockquote {
 	
 	p {
 		@extend h3;
+		line-height: 50px;
 		font-family:$adelle--light;
 		color: $royal_blue;
+	}
+	
+	h4 {
+		margin-top: 20px;
+		text-transform: uppercase;
+		color: $gold;
+		letter-spacing: 2px;
+	}
+	
+	h5 {
+		color: $grey !important;
 	}
 	
 	footer {
@@ -42,7 +54,7 @@ blockquote {
 		content: url('assets/icons/icon-blockquote.svg');
 		position: absolute;
 		left: -47px;
-		top: -25px;
+		top: -14px;
 	}
 	
 	@include screen-xs {

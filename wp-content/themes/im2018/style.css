@@ -298,15 +298,23 @@ dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0px 0px 55px;
+  margin: 0px;
   padding: 0px;
   border-left: none;
   border-bottom: 1px solid #e5e5e6;
   padding-bottom: 55px;
   position: relative; }
   blockquote p {
+    line-height: 50px;
     font-family: "adelle--light", Georgia, serif;
     color: #3a598d; }
+  blockquote h4, blockquote .feat-content-block-wide p, .feat-content-block-wide blockquote p, blockquote .jumbotron p, .jumbotron blockquote p {
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: #cfa667;
+    letter-spacing: 2px; }
+  blockquote h5, blockquote .filter-group > li > a {
+    color: #808084 !important; }
   blockquote footer h5, blockquote footer .filter-group > li > a {
     color: #808084 !important; }
     blockquote footer h5:first-of-type, blockquote footer .filter-group > li > a:first-of-type {
@@ -318,7 +326,7 @@ blockquote {
     content: url("assets/icons/icon-blockquote.svg");
     position: absolute;
     left: -47px;
-    top: -25px; }
+    top: -14px; }
   @media (max-width: 767px) {
     blockquote:before {
       left: -4px;
@@ -843,8 +851,8 @@ table {
     .feat-content-block-wide img {
       width: 50%; } }
 .feat-content-block-wide .resp-client-logo {
-  position: relative;
-  bottom: -300px;
+  position: absolute;
+  bottom: 40px;
   width: 25%; }
   @media (max-width: 767px) {
     .feat-content-block-wide .resp-client-logo {
@@ -1851,34 +1859,30 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
 #cs-hero-container {
   border-bottom: 1px solid #e5e5e6; }
 
-.awards-wrapper {
-  display: flex;
-  justify-content: center; }
-  @media (max-width: 767px) {
-    .awards-wrapper {
-      flex-direction: column;
-      align-items: center; } }
+@media (max-width: 767px) {
+  .awards-wrapper {
+    flex-direction: column;
+    align-items: center; } }
 
-.awards-wrapper > a {
-  border-left: 1px solid #e5e5e6; }
-  .awards-wrapper > a:last-of-type {
-    border-right: 1px solid #e5e5e6; }
-  @media (max-width: 767px) {
-    .awards-wrapper > a {
-      border-left: none;
-      width: calc(100% + 60px);
-      text-align: center; }
-      .awards-wrapper > a:last-of-type {
-        border-right: none;
-        border-top: 1px solid #e5e5e6; } }
+@media (max-width: 767px) {
+  .awards-wrapper > a {
+    border-left: none;
+    width: calc(100% + 60px);
+    text-align: center; }
+    .awards-wrapper > a:last-of-type {
+      border-right: none;
+      border-top: 1px solid #e5e5e6; } }
 
 .awards-block {
-  display: block;
+  display: inline-block;
   height: 140px;
   width: 330px; }
-  @media (max-width: 767px) {
-    .awards-block img {
-      width: 330px; } }
+  .awards-block img {
+    position: initial;
+    width: initial; }
+    @media (max-width: 767px) {
+      .awards-block img {
+        width: 330px; } }
 
 #cs-main {
   padding-top: 90px; }
@@ -1914,6 +1918,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
   @media (max-width: 767px) {
     #project-details .col-sm-7 h3, #project-details .col-sm-7 blockquote p, blockquote #project-details .col-sm-7 p {
       margin-top: 60px; } }
+  #project-details .cs-project-link {
+    margin-top: 40px; }
 
 #cs-learn-more {
   padding-top: 65px;
@@ -2038,6 +2044,22 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block; }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden; }
+
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 /*--------------------------------------------------------------
 ## Captions

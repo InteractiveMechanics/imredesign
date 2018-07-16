@@ -142,8 +142,8 @@
 	
 	//exists bc wp hates js
 	.resp-client-logo {
-		position: relative;
-		bottom: -300px;
+		position: absolute;
+		bottom: 40px;
 		
 		width: 25%;
 		@include screen-xs {

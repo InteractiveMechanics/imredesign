@@ -50,6 +50,23 @@
 							
 							<h3><?php the_title(); ?></h3>
 							
+							<div class="awards-wrapper">
+							<?php if( have_rows('case_study_awards') ): ?>
+							
+								<?php while (have_rows('case_study_awards')): the_row(); 
+									$award_img = get_sub_field('award_img');
+								?>
+						
+						
+									<a class="awards-block">
+										<img src="<?php echo $award_img; ?>" />
+									</a>
+						
+								<?php endwhile; ?>
+								
+							<?php endif; ?>					
+							</div>
+							
 							
 							<?php 
 
@@ -67,14 +84,11 @@
 							<?php endif; ?>
 							
 							
-							<?php if ($project_url): ?>
-								<a class="btn btn-default btn-gold" href="<?php echo $project_url; ?>" role="button" target="_blank">Visit the Site</a>
-							<?php endif; ?>
-							
-							<?php if ($project_video): ?>
+													
+<!-- 							<?php if ($project_video): ?> -->
 <!-- 								<a class="btn btn-default btn-gold" href="<?php echo $project_video; ?>" role="button" target="_blank">Watch the Video</a> -->
-									<button class="btn btn-default btn-gold" data-toggle="modal" data-target="#myModal">Watch the Video</button>
-							<?php endif; ?>
+<!-- 									<button class="btn btn-default btn-gold" data-toggle="modal" data-target="#myModal">Watch the Video</button> -->
+<!-- 							<?php endif; ?> -->
 							
 							
 							
@@ -84,34 +98,6 @@
 					</div>
 				</div>
 			</section>
-			
-			<!-- ACF repeater starts -->
-			<?php if( have_rows('case_study_awards') ): ?>
-
-			<section class="container-fluid">
-				<div class="row">
-					<div class="col-sm-12 awards-wrapper">
-						
-						
-						<?php while (have_rows('case_study_awards')): the_row(); 
-							$award_img = get_sub_field('award_img');
-						?>
-						
-						<a class="awards-block">
-							<img src="<?php echo $award_img; ?>" />
-						</a>
-						
-						<?php endwhile; ?>
-												
-						
-						
-					</div>
-				</div>
-			</section>
-			
-			<?php endif; ?>
-			<!-- ACF repeater ends -->
-			
 	</article>
 	
 	<article id="cs-main">
@@ -206,7 +192,12 @@
 
 								}				
 
-							?>
+						?>
+							
+						<?php if ($project_url): ?>
+								<a class="btn btn-default btn-gold cs-project-link" href="<?php echo $project_url; ?>" role="button" target="_blank">Visit the Site</a>
+						<?php endif; ?>
+
 						
 					</div>
 					
