@@ -1,0 +1,1 @@
+cd /var/www/vhosts/interactivemechanics.com/httpdocs ; git pull origin master 2>&1 ; 
