@@ -3,8 +3,6 @@
 }
 
 .awards-wrapper {
-	display: flex;
-	justify-content: center;
 	@include screen-xs {
 		flex-direction: column;
 		align-items: center;
@@ -12,11 +10,6 @@
 }
 
 .awards-wrapper>a {
-	border-left: 1px solid $light_grey;
-	
-	&:last-of-type {
-		border-right: 1px solid $light_grey;
-	}
 	@include screen-xs {
 		border-left: none;
 		width: calc(100% + 60px);
@@ -30,10 +23,12 @@
 }
 
 .awards-block {
-	display: block;
+	display: inline-block;
 	height: 140px;
 	width: 330px;
 	img {
+		position: initial;
+		width: initial;
 		@include screen-xs {
 			width: 330px;
 		}
@@ -93,6 +88,10 @@
 				margin-top: 60px;
 			}
 		}
+	}
+	
+	.cs-project-link {
+		margin-top: 40px;
 	}
 	
 }
