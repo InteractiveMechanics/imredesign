@@ -64,7 +64,9 @@ get_header(); ?>
 		
 					<?php
 					// find date time now
-					$date_now = date('Y-m-d H:i:s');
+					$date_now = date('Y-m-d');
+					
+					
 					
 					$posts = get_posts(array(
 						//'posts_per_page'	=> -1,
@@ -75,7 +77,7 @@ get_header(); ?>
 						        'key'			=> 'webinar_date',
 						        'compare'		=> '>=',
 						        'value'			=> $date_now,
-						        'type'			=> 'DATETIME'
+						        'type'			=> 'DATE'
 						    )
 			
 					    ),
@@ -99,7 +101,7 @@ get_header(); ?>
 					
 								
 					<div class="col-sm-4">
-						
+						<?php echo $new_date; ?>
 						<a href="<?php echo $webinar_link; ?>" class="feat-content-block" style="background: linear-gradient(rgba(71,142,187, 0.7), rgba(58,89,141, 0.7)), url('<?php echo $thumbnail_img_url; ?>');">
 							
 							<h5><?php echo $webinar_date; ?></h5>
