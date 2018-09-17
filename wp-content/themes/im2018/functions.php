@@ -304,8 +304,6 @@ function remove_empty_tags_recursive ($str, $repto = NULL) {
 function im2018_scripts() {
 	wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 	
-	wp_enqueue_style( 'animate-css', 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css');
-	
 	wp_enqueue_style( 'lightgallery-css',  get_template_directory_uri() . '/js/lightgallery/css/lightgallery.min.css');
 	
 	wp_enqueue_style( 'im2018-style', get_stylesheet_uri() );
@@ -320,8 +318,6 @@ function im2018_scripts() {
 	wp_enqueue_script( 'lottie', get_template_directory_uri() . '/js/lottie.js', array());
 	
 	wp_enqueue_script( 'lightgallery', get_template_directory_uri() . '/js/lightgallery/js/lightgallery.min.js', array('jquery'), true);
-	
-	wp_enqueue_script( 'im2018-menu', get_template_directory_uri() . '/js/menu.js', array('jquery'), true);
 
 	wp_enqueue_script( 'im2018-main', get_template_directory_uri() . '/js/main.js', array('jquery'),  date("h:i:s"), true);
 	
