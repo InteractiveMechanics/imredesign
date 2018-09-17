@@ -1224,7 +1224,17 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     padding-bottom: 10px; }
 
   .collapse.in {
-    display: block !important; } }
+    display: block !important; }
+
+  .collapsing {
+    margin-left: -45px;
+    margin-right: -45px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(58, 89, 141, 0.95);
+    color: transparent; } }
 .navbar-brand {
   height: 65px;
   margin-left: 0px !important;
