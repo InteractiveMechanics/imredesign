@@ -1919,7 +1919,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     #project-details .col-sm-7 h3, #project-details .col-sm-7 blockquote p, blockquote #project-details .col-sm-7 p {
       margin-top: 60px; } }
   #project-details .cs-project-link {
-    margin-top: 40px; }
+    margin-top: 40px;
+    display: table; }
 
 #cs-learn-more {
   padding-top: 65px;
