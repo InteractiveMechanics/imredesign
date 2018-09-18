@@ -298,7 +298,7 @@ dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0px;
+  margin: 50px;
   padding: 0px;
   border-left: none;
   border-bottom: 1px solid #e5e5e6;
