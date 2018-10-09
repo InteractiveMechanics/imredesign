@@ -298,11 +298,12 @@ dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0px;
+  margin: 50px;
   padding: 0px;
   border-left: none;
   border-bottom: 1px solid #e5e5e6;
-  padding-bottom: 55px;
+  padding-bottom: 35px;
+  margin-bottom: 50px;
   position: relative; }
   blockquote p {
     line-height: 50px;
@@ -1223,7 +1224,17 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     padding-bottom: 10px; }
 
   .collapse.in {
-    display: block !important; } }
+    display: block !important; }
+
+  .collapsing {
+    margin-left: -45px;
+    margin-right: -45px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(58, 89, 141, 0.95);
+    color: transparent; } }
 .navbar-brand {
   height: 65px;
   margin-left: 0px !important;
@@ -1919,7 +1930,8 @@ h4 > a, .feat-content-block-wide p > a, .jumbotron p > a {
     #project-details .col-sm-7 h3, #project-details .col-sm-7 blockquote p, blockquote #project-details .col-sm-7 p {
       margin-top: 60px; } }
   #project-details .cs-project-link {
-    margin-top: 40px; }
+    margin-top: 40px;
+    display: table; }
 
 #cs-learn-more {
   padding-top: 65px;
